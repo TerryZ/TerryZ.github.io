@@ -13,6 +13,12 @@ header{
 .content{
   background-color: white;
 }
+.content .jumbotron{
+  background-color: white;
+}
+.content .row h2{
+  text-align: center;
+}
 
 .footer div.container{
   color: #F0F0F0;
