@@ -1,0 +1,21 @@
+@CHARSET "UTF-8";
+
+body{
+  background-color: #727f80;
+}
+.navbar{
+  margin-bottom: 0px;
+}
+header{
+  background-color: white;
+  color: #666666;
+}
+.content{
+  background-color: white;
+}
+
+.footer div.container{
+  color: #F0F0F0;
+  text-align: center;
+  padding: 50px 0px;
+}
