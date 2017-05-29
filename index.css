@@ -1,27 +1,40 @@
 @CHARSET "UTF-8";
 
 body{
-  background-color: #727f80;
+	background-color: #727f80;
 }
 .navbar{
-  margin-bottom: 0px;
+	margin-bottom: 0px;
 }
 header{
-  background-color: white;
-  color: #666666;
+	background-color: white;
+	color: #666666;
 }
 .content{
-  background-color: white;
+	background-color: white;
 }
 .content .jumbotron{
-  background-color: white;
+	background-color: white;
 }
-.content .row h2{
-  text-align: center;
+.content .row h3{
+	text-align: center;
+	color: #337AB7;
+}
+.content .desc{
+	font-size: 15px;
+	color: #666666;
+	margin: 0px 50px 20px 50px;
+}
+
+.pluginImg{
+	text-align: right;
+}
+.pluginImg img{
+	margin-top: 50px;
 }
 
 .footer div.container{
-  color: #F0F0F0;
-  text-align: center;
-  padding: 50px 0px;
+	color: #F0F0F0;
+	text-align: center;
+	padding: 50px 0px;
 }
