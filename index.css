@@ -15,10 +15,18 @@ header{
 }
 .content .jumbotron{
 	background-color: white;
+	padding-left: 0px;
+	margin-bottom: 10px;
+}
+.content .jumbotron h1 {
+	font-size: 50px;
+	font-weight: lighter;
 }
 .content .row h3{
 	text-align: center;
 	color: #337AB7;
+}
+.content .row h3 i{
 }
 .content .desc{
 	font-size: 15px;
