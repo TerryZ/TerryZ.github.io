@@ -21,6 +21,7 @@ header{
 }
 .content .container{
 	width: 800px;
+	padding-bottom: 30px;
 }
 .content .jumbotron{
 	background-color: white;
