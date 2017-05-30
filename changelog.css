@@ -1,7 +1,7 @@
 @CHARSET "UTF-8";
 
 body{
-	/* background-color: #727f80; */
+	background-color: #727f80;
 }
 .navbar{
 	margin-bottom: 0px;
@@ -18,6 +18,9 @@ header{
 }
 .content{
 	background-color: white;
+}
+.content .container{
+	width: 800px;
 }
 .content .jumbotron{
 	background-color: white;
@@ -39,6 +42,9 @@ header{
 	color: #666666;
 	margin: 0px 50px 20px 50px;
 }
+.content p{
+	margin: 0px 0px 5px;
+}
 
 .pluginImg{
 	text-align: right;
@@ -51,8 +57,4 @@ header{
 	color: #F0F0F0;
 	text-align: center;
 	padding: 50px 0px;
-}
-.logBox{
-	background-color: #EEEEEE;height: 100px;margin-top: 5px;border-radius: 4px;padding: 5px 10px;
-	overflow-y:auto; 
 }
