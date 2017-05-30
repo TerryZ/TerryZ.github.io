@@ -1,8 +1,5 @@
 @CHARSET "UTF-8";
 
-body{
-	background-color: #727f80;
-}
 .navbar{
 	margin-bottom: 0px;
 }
@@ -16,8 +13,27 @@ header{
 	color: #555;
 	background-color: #e7e7e7;
 }
+.navBox .nav li a{
+	color: #666666;
+	font-size: 13px;
+	font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+	padding: 4px 20px;
+	text-align: right;
+}
+.navBox .nav li.current a{
+	font-weight: 700;
+	color: #337AB7;
+	border-right: 3px solid #337AB7;
+}
+.navBox .nav li {
+	width: 170px;
+}
 .content{
 	background-color: white;
+}
+.content .container{
+	width: 800px;
+	padding-bottom: 100px;
 }
 .content .jumbotron{
 	background-color: white;
@@ -29,8 +45,7 @@ header{
 	font-weight: lighter;
 }
 .content .row h3{
-	text-align: center;
-	color: #337AB7;
+	color: black;
 }
 .content .row h3 i{
 }
@@ -40,15 +55,16 @@ header{
 	margin: 0px 50px 20px 50px;
 }
 
-.pluginImg{
-	text-align: right;
-}
-.pluginImg img{
-	margin-top: 50px;
+.propertiesBox ul li{
+	margin-bottom: 10px;
 }
 
-.footer div.container{
-	color: #F0F0F0;
-	text-align: center;
-	padding: 50px 0px;
+.usageBox {
+	margin: 10px 0px 0px 0px;
+	background-color: #F5F5F5;
+	padding: 10px;
+	color: #525252;
+}
+.usageBox p {
+	color: #525252;
 }

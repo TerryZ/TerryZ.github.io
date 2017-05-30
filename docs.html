@@ -26,14 +26,14 @@
                 <li>
                     <a href="demo.html" >实例</a>
                 </li>
-                <li>
-                    <a href="../css/" >文档</a>
+                <li class="active">
+                    <a href="javascript:void(0);" >文档</a>
                 </li>
                 <li>
-                    <a href="../components/" >更新记录</a>
+                    <a href="changelog.html" >更新记录</a>
                 </li>
                 <li>
-                    <a href="../components/" >bDialog</a>
+                    <a href="javascript:void(0);" >bDialog</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -46,54 +46,270 @@
 
     <div class="content">
         <div class="container">
-        	<div class="row">
-            	<div class="col-md-5 pluginImg">
-            		<img alt="效果图" src="ComboSelect.png">
-            	</div>
-            	<div class="col-md-7">
-		            <div class="jumbotron">
-		                <h1>多功能下拉选择插件</h1>
-		                <p>基于jQuery、Bootstrap2（Bootstrap3未支持）开发<br>
-		                部分图标来自于<a href="http://fontawesome.io/" target="_blank">Font Awesome</a>图标库
-		                </p>
-		                <p><a class="btn btn-primary btn-lg" href="https://github.com/TerryZ/combo-select" role="button">下载插件</a></p>
-		            </div>
-            	</div>
-            </div>
-
-            <div class="row" style="margin-top: 50px;">
-                <div class="col-md-4">
-                    <h3><i class="fa fa-list"></i> 下拉列表</h3>
-                    <p class="desc">待选项目将以下拉列表的形式进行展示</p>
-                </div>
-                <div class="col-md-4">
-                    <h3><i class="fa fa-terminal"></i> 自动补全</h3>
-                    <p class="desc">根据在输入框中输入的关键字时行快速检索，并在列表中展示匹配的项目</p>
-                </div>
-                <div class="col-md-4">
-                    <h3><i class="fa fa-file-text-o"></i> 分页</h3>
-                    <p class="desc">待选项目在超过一定数量时，可根据指定的每页显示数进行分页展示</p>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-4">
-                    <h3><i class="fa fa-tags"></i> 多项选择</h3>
-                    <p class="desc">打开插件多项目选择功能后，选中的项目将以标签（Tag）的形式存放在输入框中</p>
-                </div>
-                <div class="col-md-4">
-                    <h3><i class="fa fa-keyboard-o"></i> 键盘操作</h3>
-                    <p class="desc">插件的下拉，分页等操作均可以使用键盘进行快速导航、操作，提高输入效率</p>
-                </div>
-            </div>
+			<div class="row">
+				<div class="col-md-3">
+					<div class="navBox">
+					<ul class="nav" id="nav">
+						<li class="current"><a href="#data">* data</a></li>
+						<li><a href="#showField">* showField</a></li>
+						<li><a href="#keyField">* keyField</a></li>
+						<li><a href="#lang">lang</a></li>
+						<li><a href="#searchField">searchField</a></li>
+						<li><a href="#multiple">multiple</a></li>
+						<li><a href="#focusDropList">focusDropList</a></li>
+						<li><a href="#autoSelectFirst">autoSelectFirst</a></li>
+						<li><a href="#autoFillResult">autoFillResult</a></li>
+						<li><a href="#noResultClean">noResultClean</a></li>
+						<li><a href="#formatItem">formatItem</a></li>
+						<li><a href="#pageSize">pageSize</a></li>
+						<li><a href="#initField">initField</a></li>
+						<li><a href="#params">params</a></li>
+						<li><a href="#callback">callback</a></li>
+					</ul>
+					</div>
+				</div>
+				<div class="col-md-9 propertiesBox">
+					<div class="row" id="data">
+						<h3>data <small>插件列表的数据源</small></h3>
+						<ul>
+							<li><strong>类型：</strong><code>object | string</code></li>
+							<li><strong>默认值：</strong><code>无默认值，该参数为必填参数</code></li>
+							<li><strong>使用方式：</strong>
+								<div class="usageBox">
+									<p>数据源可以是json数据格式或URL</p>
+									<strong>json数据格式</strong><br>
+									<code>[{id:1,name:'张三',sex:'男'},{id:2,name:'李四',sex:'男'}]</code>
+									<p>如上所例数据，showField可设置为name或sex，keyField可设置为id</p>
+									
+									<strong>url</strong><br>
+									<code>http://xxx.com/load</code>
+									<p>使用URL执行ajax读取服务端数据，返回数据格式与上述json数据格式一致</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="row" id="showField">
+						<h3>showField <small>显示在列表中的数据字段</small></h3>
+						<ul>
+							<li><strong>类型：</strong><code>string</code></li>
+							<li><strong>默认值：</strong><code>'name'</code></li>
+							<li><strong>使用方式：</strong>
+								<div class="usageBox">
+								设置的值为data数据源中的数据字段名
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="row" id="keyField">
+						<h3>keyField <small>数据代码列</small></h3>
+						<ul>
+							<li><strong>类型：</strong><code>string</code></li>
+							<li><strong>默认值：</strong><code>'id'</code></li>
+							<li><strong>使用方式：</strong>
+								<div class="usageBox">
+								设置的值为data数据源中的数据字段名
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="row" id="lang">
+						<h3>lang <small>插件语言，默认为'cn'简体中文</small></h3>
+						<ul>
+							<li><strong>类型：</strong><code>string</code></li>
+							<li><strong>默认值：</strong><code>'cn'</code></li>
+							<li><strong>使用方式：</strong>
+								<div class="usageBox">
+								可设置的语言
+								<table class="table table-bordered">
+									<thead>
+										<tr>
+											<th>代码</th>
+											<th>语言</th>
+											<th>描述</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>de</td>
+											<td>German</td>
+											<td>德语</td>
+										</tr>
+										<tr>
+											<td>en</td>
+											<td>English</td>
+											<td>英文</td>
+										</tr>
+										<tr>
+											<td>cn</td>
+											<td>Chinese</td>
+											<td>中文</td>
+										</tr>
+										<tr>
+											<td>es</td>
+											<td>Spanish</td>
+											<td>西班牙语</td>
+										</tr>
+										<tr>
+											<td>pt-br</td>
+											<td>Brazilian Portuguese</td>
+											<td>巴西葡萄牙语</td>
+										</tr>
+										<tr>
+											<td>ja</td>
+											<td>Japanese</td>
+											<td>日语</td>
+										</tr>
+									</tbody>
+								</table>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="row" id="searchField">
+						<h3>searchField <small>查询关键字字段</small></h3>
+						<ul>
+							<li><strong>类型：</strong><code>string</code></li>
+							<li><strong>默认值：</strong><code>无</code></li>
+							<li><strong>使用方式：</strong>
+								<div class="usageBox">
+								查询字段，仅为使用URL(ajax)方式查询服务端时，设置后端查询的字段，不设置则默认使用showField设置的字段
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="row" id="multiple">
+						<h3>multiple <small>多选模式</small></h3>
+						<ul>
+							<li><strong>类型：</strong><code>boolean</code></li>
+							<li><strong>默认值：</strong><code>false</code></li>
+							<li><strong>使用方式：</strong>
+								<div class="usageBox">
+								设置插件选择模式，默认为单选模式
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="row" id="focusDropList">
+						<h3>focusDropList <small>是否在输入框获得焦点时，展开下拉窗口</small></h3>
+						<ul>
+							<li><strong>类型：</strong><code>boolean</code></li>
+							<li><strong>默认值：</strong><code>true</code></li>
+							<li><strong>使用方式：</strong>
+								<div class="usageBox">
+								设置当输入框获得焦点时，是否展开数据列表
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="row" id="autoSelectFirst">
+						<h3>autoSelectFirst <small>是否自动选择列表中的第一项内容</small></h3>
+						<ul>
+							<li><strong>类型：</strong><code>boolean</code></li>
+							<li><strong>默认值：</strong><code>true</code></li>
+							<li><strong>使用方式：</strong>
+								<div class="usageBox">
+								是否自动选择列表中的第一项内容(输入关键字查询模式，直接使用鼠标下拉并不触发)
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="row" id="autoFillResult">
+						<h3>autoFillResult <small>是否自动填充内容</small></h3>
+						<ul>
+							<li><strong>类型：</strong><code>boolean</code></li>
+							<li><strong>默认值：</strong><code>true</code></li>
+							<li><strong>使用方式：</strong>
+								<div class="usageBox">
+								若有列表项目被高亮显示，在焦点离开控件后，自动设置该项为选中内容
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="row" id="noResultClean">
+						<h3>noResultClean <small>是否清空输入关键字</small></h3>
+						<ul>
+							<li><strong>类型：</strong><code>boolean</code></li>
+							<li><strong>默认值：</strong><code>true</code></li>
+							<li><strong>使用方式：</strong>
+								<div class="usageBox">
+								在输入框中输入内容进行查询，但没有匹配的内容返回，在焦点离开控件后，自动清空输入框输入的内容
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="row" id="formatItem">
+						<h3>formatItem <small>列表项目显示内容格式化</small></h3>
+						<ul>
+							<li><strong>类型：</strong><code>function</code></li>
+							<li><strong>默认值：</strong><code>无</code></li>
+							<li><strong>使用方式：</strong>
+								<div class="usageBox">
+								参数1：data，行数据object格式
+								返回：string
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="row" id="pageSize">
+						<h3>pageSize <small>每页显示记录数</small></h3>
+						<ul>
+							<li><strong>类型：</strong><code>number</code></li>
+							<li><strong>默认值：</strong><code>10</code></li>
+						</ul>
+					</div>
+					<div class="row" id="initField">
+						<h3>initField <small>初始化数据列</small></h3>
+						<ul>
+							<li><strong>类型：</strong><code>string</code></li>
+							<li><strong>默认值：</strong><code>'data-init'</code></li>
+							<li><strong>使用方式：</strong>
+								<div class="usageBox">
+								<p>初始化数据列，默认设置为data-init属性，该属性设置了初始化插件时默认显示的内容</p>
+								<p>它必须设置在input标签内，例：<code>< input type="text" data-init="20" ></code></p>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="row" id="params">
+						<h3>params <small>查询参数</small></h3>
+						<ul>
+							<li><strong>类型：</strong><code>function</code></li>
+							<li><strong>默认值：</strong><code>无</code></li>
+							<li><strong>使用方式：</strong>
+								<div class="usageBox">
+								<p>使用URL进行AJAX查询时，可传递查询参数</p>
+								<p>返回结果格式：<code>{'name':'aa','sex':1}</code></p>
+								<p>例如：<code>params : function(){return {'name':'aa','sex':1};}</code></p>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="row" id="callback">
+						<h3>callback <small>事件回调，响应项目被选中后的事件处理</small></h3>
+						<ul>
+							<li><strong>类型：</strong><code>function</code></li>
+							<li><strong>默认值：</strong><code>无</code></li>
+							<li><strong>使用方式：</strong>
+								<div class="usageBox">
+								参数：data：选中行的原始JSON数据
+								<p><code>callback : function(data){ $('xxx').val(data.name + data.sex); }</code></p>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
         </div>
     </div>
 
 
-    <footer class="footer">
-        <div class="container">
-        Copyright © 2016-2017 Terry Zeng
-        </div>
-    </footer>
+
+
+
+
+<script type="text/javascript" src="lib/jquery.min.js" ></script>
+<script type="text/javascript" src="lib/nav/jquery.nav.js" ></script>
+<script type="text/javascript" src="lib/stickUp/stickUp.min.js" ></script>
+<script type="text/javascript" src="js/docs.js" ></script>
 </body>
 </html>
