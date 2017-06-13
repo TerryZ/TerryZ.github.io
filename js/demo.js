@@ -31,17 +31,17 @@ $(function(){
 		{id:29,name:'New Orleans Pelicans',desc:'新奥尔良鹈鹕'},
 		{id:30,name:'San Antonio Spurs',desc:'圣安东尼奥马刺'}
 	];
-	$('#comboSelect').bComboSelect({
+	$('#selectPage').bSelectPage({
 		showField : 'name',
 		keyField : 'id',
 		data : tag_data
 	});
-	$('#comboSelect1').bComboSelect({
+	$('#selectPage1').bSelectPage({
 		showField : 'desc',
 		keyField : 'id',
 		data : tag_data
 	});
-	$('#comboSelect2').bComboSelect({
+	$('#selectPage2').bSelectPage({
 		showField : 'name',
 		keyField : 'id',
 		data : tag_data,
@@ -49,13 +49,13 @@ $(function(){
 			return data.desc + '(' + data.name + ')';
 		}
 	});
-	$('#comboSelect3').bComboSelect({
+	$('#selectPage3').bSelectPage({
 		showField : 'name',
 		keyField : 'id',
 		data : tag_data,
 		multiple : true
 	});
-	$('#comboSelect4').bComboSelect({
+	$('#selectPage4').bSelectPage({
 		showField : 'name',
 		keyField : 'id',
 		data : tag_data,

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>ComboSelect更新记录</title>
+    <title>SelectPage更新记录</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="lib/bootstrap/3.3.7/css/bootstrap.min.css" />
     <link rel="stylesheet" href="lib/font-awesome-4.6.3/css/font-awesome.min.css" />
@@ -22,7 +22,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="https://terryz.github.io/" class="navbar-brand">ComboSelect</a>
+            <a href="https://terryz.github.io/" class="navbar-brand">SelectPage</a>
         </div>
         <nav id="bs-navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
@@ -43,7 +43,7 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="https://github.com/TerryZ/combo-select" target="_blank"><i class="fa fa-lg fa-github"></i> Github</a></li>
+                <li><a href="https://github.com/TerryZ/SelectPage" target="_blank"><i class="fa fa-lg fa-github"></i> Github</a></li>
             </ul>
         </nav>
     </div>
@@ -57,11 +57,11 @@
 <script type="syntaxhighlighter" class="brush:html">
 <![CDATA[
 <!-- 插件使用的样式表文件 -->
-<link rel="stylesheet" href="lib/comboselect/comboselect.css" type="text/css">
+<link rel="stylesheet" href="lib/selectpage/selectpage.css" type="text/css">
 <!-- 插件核心脚本 -->
-<script type="text/javascript" src="lib/comboselect/comboselect.js" >< /script>
+<script type="text/javascript" src="lib/selectpage/selectpage.js" >< /script>
 <!-- 插件快速使用脚本 -->
-<script type="text/javascript" src="lib/comboselect/b.comboselect.js" >< /script>
+<script type="text/javascript" src="lib/selectpage/b.selectpage.js" >< /script>
 ]]>
 </script>
 
@@ -70,7 +70,7 @@
 <script type="syntaxhighlighter" class="brush:html">
 <![CDATA[
 <!-- 设置文本框为插件基本元素 -->
-<input type="text" id="comboSelect" class="input-block-level" >
+<input type="text" id="selectPage" class="input-block-level" >
 ]]>
 </script>
 
@@ -85,7 +85,7 @@ var tag_data = [
 	{id:4 ,name:'Indiana Pacers',desc:'印第安纳步行者'}
 ];
 //初始化插件
-$('#comboSelect').bComboSelect({
+$('#selectPage').bSelectPage({
 	showField : 'desc',
 	keyField : 'id',
 	data : tag_data
