@@ -39,6 +39,7 @@ div.bDialog div.modal-body iframe {
 div.bDialog div.modal-header button.close {
 	opacity: 0.3;
 	font-size: 26px !important;
+	margin-top: 3px;
 }
 div.bDialog div.modal-header button.close:hover {
 	opacity: 1;
