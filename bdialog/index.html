@@ -6,7 +6,8 @@
     <link rel="stylesheet" href="../lib/bootstrap/3.3.7/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../lib/font-awesome-4.6.3/css/font-awesome.min.css" />
     
-    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../css/bdialog/header.css" />
+    <link rel="stylesheet" href="../css/bdialog/index.css" />
 </head>
 
 <body>
@@ -19,7 +20,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="https://terryz.github.io/" class="navbar-brand">SelectPage</a>
+            <a href="https://terryz.github.io/bdialog/index.html" class="navbar-brand">bDialog</a>
         </div>
         <nav id="bs-navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
@@ -36,57 +37,79 @@
                     <a href="changelog.html" >更新记录</a>
                 </li>
                 <li>
-                    <a href="javascript:void(0);" >bDialog</a>
+                    <a href="https://terryz.github.io/" >SelectPage</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="https://github.com/TerryZ/SelectPage" target="_blank"><i class="fa fa-lg fa-github"></i> Github</a></li>
+                <li><a href="https://github.com/TerryZ/bDialog" target="_blank"><i class="fa fa-lg fa-github"></i> Fork on Github</a></li>
             </ul>
         </nav>
     </div>
     </header>
 
+	<div class="headerBox">
+		<div class="container">
+			<div class="row headerArea">
+				<div class="jumbotron col-md-6 text-left">
+					<h1>可多层嵌套<br>高定制化的弹出窗口</h1>
+					<p>基于jQuery、Bootstrap Modal插件进行开发</p>
+					<p>
+						<a class="btn btn-default btn-lg" href="guide.html" role="button">使用入门</a>
+						<a class="btn btn-default btn-lg" href="https://github.com/TerryZ/bDialog" role="button">下载插件</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="container">
+		<div class="row text-center">
+			<img alt="效果图" src="../image/bDialog.png">
+		</div>
+	</div>
+
 
     <div class="content">
         <div class="container">
-        	<div class="row">
-            	<div class="col-md-5 pluginImg">
-            		<img alt="效果图" src="image/SelectPage.png">
-            	</div>
-            	<div class="col-md-7">
-		            <div class="jumbotron">
-		                <h1>多功能下拉选择插件</h1>
-		                <p>基于jQuery、Bootstrap2（Bootstrap3未支持）开发<br>
-		                部分图标来自于<a href="http://fontawesome.io/" target="_blank">Font Awesome</a>图标库
-		                </p>
-		                <p><a class="btn btn-primary btn-lg" href="https://github.com/TerryZ/SelectPage" role="button">下载插件</a></p>
-		            </div>
-            	</div>
-            </div>
-
-            <div class="row" style="margin-top: 50px;">
-                <div class="col-md-4">
-                    <h3><i class="fa fa-list"></i> 下拉列表</h3>
-                    <p class="desc">待选项目将以下拉列表的形式进行展示</p>
+			<div class="row" style="margin-top: 50px;">
+                <div class="col-md-6">
+                    <h3><i class="fa fa-flag"></i> Bootstrap</h3>
+                    <p class="desc">可方便地使用于Bootstrap2、Bootstrap3环境中</p>
                 </div>
-                <div class="col-md-4">
-                    <h3><i class="fa fa-terminal"></i> 自动补全</h3>
-                    <p class="desc">根据在输入框中输入的关键字时行快速检索，并在列表中展示匹配的项目</p>
-                </div>
-                <div class="col-md-4">
-                    <h3><i class="fa fa-file-text-o"></i> 分页</h3>
-                    <p class="desc">待选项目在超过一定数量时，可根据指定的每页显示数进行分页展示</p>
+                <div class="col-md-6">
+                    <h3><i class="fa fa-commenting-o"></i> 参数传递</h3>
+                    <p class="desc">在打开窗口和关闭窗口时可传递参数，方便处理上下文内容控制</p>
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-md-4">
-                    <h3><i class="fa fa-tags"></i> 多项选择</h3>
-                    <p class="desc">打开插件多项目选择功能后，选中的项目将以标签（Tag）的形式存放在输入框中</p>
+                <div class="col-md-6">
+                    <h3><i class="fa fa-object-ungroup"></i> 多层嵌套</h3>
+                    <p class="desc">插件支持在已打开的窗口上再次打开新的窗口</p>
+                    <p class="desc"><span class="label label-default">友情提示</span> 虽然插件经过各种努力实现了窗口多开，尤其是要支持<strong>IE8</strong>这样的难题，但建议在页面交互的设计上，尽可能避免出现窗口多开的情况出现！</p>
                 </div>
-                <div class="col-md-4">
-                    <h3><i class="fa fa-keyboard-o"></i> 键盘操作</h3>
-                    <p class="desc">插件的下拉，分页等操作均可以使用键盘进行快速导航、操作，提高输入效率</p>
+                <div class="col-md-6">
+                    <h3><i class="fa fa-puzzle-piece"></i> 可定制化</h3>
+                    <p class="desc">通过设置初始化参数的，可打开/关闭如标题栏、关闭按钮、全宽度窗口等功能</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <h3><i class="fa fa-tachometer "></i> 多皮肤快速应用</h3>
+                    <p class="desc">在需要使用不同样式的皮肤时，只需要定义好皮肤的样式内容，插件可在初始化时，设置指定的皮肤名称</p>
+                </div>
+                <div class="col-md-6">
+                    <h3><i class="fa fa-file-text-o"></i> 内容展示</h3>
+                    <p class="desc">插件支持通过URL获得页面，以iFrame的方式载入页面以获得独立上下文，也支持将页面片段HTML直接放入</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <h3><i class="fa fa-reply-all"></i> 丰富的回调函数</h3>
+                    <p class="desc">窗口打开前、后，关闭前、后均提供事件回调，并提供窗口对象方便进行各种操作</p>
                 </div>
             </div>
         </div>

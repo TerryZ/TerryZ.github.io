@@ -1,21 +1,5 @@
 @CHARSET "UTF-8";
 
-body{
-	background-color: #727f80;
-}
-.navbar{
-	margin-bottom: 0px;
-}
-header{
-	background-color: white;
-	color: #666666;
-}
-.navbar-nav > .active > a,
-.navbar-nav > .active > a:hover,
-.navbar-nav > .active > a:focus {
-	color: #555;
-	background-color: #e7e7e7;
-}
 .content{
 	background-color: white;
 }
@@ -45,10 +29,4 @@ header{
 }
 .pluginImg img{
 	margin-top: 50px;
-}
-
-.footer div.container{
-	color: #F0F0F0;
-	text-align: center;
-	padding: 50px 0px;
 }

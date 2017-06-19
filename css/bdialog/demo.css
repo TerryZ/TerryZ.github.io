@@ -4,17 +4,8 @@
 	background-color: white;
 }
 .content .container{
-	width: 800px;
+	width: 900px;
 	padding-bottom: 30px;
-}
-.content .jumbotron{
-	background-color: white;
-	padding-left: 0px;
-	margin-bottom: 10px;
-}
-.content .jumbotron h1 {
-	font-size: 50px;
-	font-weight: lighter;
 }
 .content .row h3{
 	text-align: center;
@@ -26,8 +17,4 @@
 	font-size: 15px;
 	color: #666666;
 	margin: 0px 50px 20px 50px;
-}
-.content p{
-	margin: 0px 0px 5px;
-	font-size: 16px;
 }

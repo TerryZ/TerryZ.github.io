@@ -1,20 +1,12 @@
 @CHARSET "UTF-8";
 
+
 .content{
 	background-color: white;
 }
 .content .container{
 	width: 800px;
 	padding-bottom: 30px;
-}
-.content .jumbotron{
-	background-color: white;
-	padding-left: 0px;
-	margin-bottom: 10px;
-}
-.content .jumbotron h1 {
-	font-size: 50px;
-	font-weight: lighter;
 }
 .content .row h3{
 	text-align: center;
@@ -29,5 +21,4 @@
 }
 .content p{
 	margin: 0px 0px 5px;
-	font-size: 16px;
 }

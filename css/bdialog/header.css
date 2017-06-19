@@ -1,0 +1,36 @@
+@CHARSET "UTF-8";
+
+body{
+}
+.navbar{
+	margin-bottom: 0px;
+}
+header{
+	background-color: #0866C6;
+	color: #666666;
+}
+.navbar-brand {
+	color: #bbbbbb;
+}
+.navbar-brand:hover{
+	color: white;
+}
+.navbar-nav > li > a {
+	color: #bbbbbb;
+}
+.navbar-nav > li > a:hover {
+	color: white;
+	background-color: transparent;
+}
+.navbar-nav > .active > a,
+.navbar-nav > .active > a:hover,
+.navbar-nav > .active > a:focus {
+	color: white;
+	background-color: #0052A2;
+}
+
+.footer div.container{
+	color: #666666;
+	text-align: center;
+	padding: 50px 0px;
+}

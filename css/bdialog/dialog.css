@@ -1,0 +1,62 @@
+@CHARSET "UTF-8";
+
+div.original{
+	-webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+div.original div.modal-header {
+	background-color: white;
+	-webkit-border-top-left-radius: 8px;
+    -moz-border-top-left-radius: 8px;
+    border-top-left-radius: 8px;
+	-webkit-border-top-right-radius: 8px;
+    -moz-border-top-right-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+div.blue{
+	-webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+div.blue div.modal-header {
+	background-color: #0866C6;
+}
+div.blue div.modal-header h3 {
+	color: white;
+}
+div.blue div.modal-header button.close {
+	opacity: 1;
+	color: white;
+	font-weight: normal;
+}
+
+
+div.simple div.modal-header {
+	background-color: white;
+	border-bottom: 0px;
+}
+div.simple div.modal-header h3 {
+	display: none;
+}
+div.simple div.modal-header button.close {
+	opacity: 1;
+	font-size: 26px !important;
+	border: 3px solid white;
+	background-color: black;
+	width: 40px;
+	height: 40px;
+	-webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    color: #EEEEEE;
+	text-shadow:none;
+	font-weight: normal;
+	position: absolute;
+	right: -20px;
+	top: -25px;
+	z-index: 10;
+}
+div.simple div.modal-header button.close:hover {
+}
