@@ -2,27 +2,41 @@
 
 div.bDialog {
 	border: none;
+	
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: none;
+	overflow: hidden;
+	-webkit-overflow-scrolling: touch;
+	outline: 0;
+	background-color: transparent;
+	
+	margin: 0px;
+	width: 100%;
+}
+div.bDialog.in div.modal-dialog {
+    -webkit-transform: translate(0,0);
+    -ms-transform: translate(0,0);
+    -o-transform: translate(0,0);
+    transform: translate(0,0);
+}
+div.bDialog div.modal-dialog {
+	position: relative;
+	margin: 0px auto;
+	width: 100%;
+}
+div.bDialog div.modal-content {
+	position: relative;
+	-webkit-box-shadow: 0 5px 30px rgba(0,0,0,0.9);
+	box-shadow: 0 5px 30px rgba(0,0,0,0.9);
+	background-color: white;
+	
 	-webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     border-radius: 2px;
-	-webkit-box-shadow: 0 5px 30px rgba(0,0,0,0.9);
-	box-shadow: 0 5px 30px rgba(0,0,0,0.9);
-}
-div.bDialog.fullWidth {
-	width: 100%;
-	-webkit-border-radius: 0px;
-    -moz-border-radius: 0px;
-    border-radius: 0px;
-}
-div.bDialog.fullWidth  div.modal-header {
-	-webkit-border-radius: 0px;
-    -moz-border-radius: 0px;
-    border-radius: 0px;
-    background-color: white;
-    border-bottom: 0px;
-}
-div.bDialog.fullWidth  div.modal-header h3 {
-	text-align: center;
 }
 div.bDialog div.modal-header {
 	-webkit-border-top-left-radius: 2px;
@@ -31,6 +45,11 @@ div.bDialog div.modal-header {
 	-webkit-border-top-right-radius: 2px;
     -moz-border-top-right-radius: 2px;
     border-top-right-radius: 2px;
+	padding: 5px 15px;
+}
+div.bDialog div.modal-header h3 {
+	margin: 0;
+    line-height: 30px;
 }
 div.bDialog div.modal-body {
 	padding: 5px;
@@ -53,6 +72,25 @@ div.modal-backdrop, div.modal-backdrop.fade.in {
 	background-color: black;
 }
 
+
+
+
+div.bDialog.fullWidth {
+	width: 100%;
+	-webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+}
+div.bDialog.fullWidth  div.modal-header {
+	-webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    background-color: white;
+    border-bottom: 0px;
+}
+div.bDialog.fullWidth  div.modal-header h3 {
+	text-align: center;
+}
 
 
 /*

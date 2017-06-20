@@ -4,7 +4,7 @@ $(function(){
 			title : '窗口标题',
 			width : 500,
 			height : 450,
-			url : 'https://terryz.github.io/bdialog/open.html',
+			url : 'https://terryz.github.io/bdialog/opentext.html',
 			params : {
 				'userName' : 'zhangsan'
 			},
