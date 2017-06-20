@@ -6,8 +6,8 @@
     <link rel="stylesheet" href="../lib/bootstrap/3.3.7/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../lib/font-awesome-4.6.3/css/font-awesome.min.css" />
     
-    <link rel="stylesheet" href="../css/bdialog/header.css" />
-    <link rel="stylesheet" href="../css/bdialog/changelog.css" />
+	<link rel="stylesheet" href="../lib/bdialog/b.dialog.bootstrap3.css" type="text/css">
+	<link rel="stylesheet" href="../css/bdialog/dialog.css" type="text/css">
 </head>
 
 <body>
@@ -50,11 +50,11 @@
 		<div class="">
 			<div class="control-group">
 				<div class="controls">
-					<button type="button" class="btn btn-primary" id="btnFormSave"><i class="fa fa-check"></i> 保　存</button>
-					<button type="button" class="btn" id="btnReturn"><i class="fa fa-undo"></i> 返　回</button>
+					<button type="button" class="btn btn-primary" id="btnFormSave"><i class="fa fa-check"></i> 保存并回传值</button>
+					<button type="button" class="btn" id="btnReturn"><i class="fa fa-undo"></i> 关闭窗口</button>
 					<button type="button" class="btn" id="btnOpen"><i class="fa fa-eject"></i> 打开窗口</button>
-					<button class="btn" type="button" id="btnOpenColorWindow">弹出颜色窗口</button>
-					<button class="btn" type="button" id="btnOpenSimpleWindow">弹出简洁样式窗口</button>
+					<button class="btn" type="button" id="btnOpenColorWindow">打开颜色窗口</button>
+					<button class="btn" type="button" id="btnOpenSimpleWindow">打开简洁样式窗口</button>
 				</div>
 			</div>
 		</div>
@@ -81,14 +81,14 @@ $(function(){
 		bDialog.closeCurrent({userName:'李四'});
 	});
 	$('#btnReturn').click(function(e){
-		eDialog.alert('返回');
+		bDialog.closeCurrent();
 	});
 	$('#btnOpenColorWindow').click(function(){
 		bDialog.open({
 			title : '弹出颜色窗口',
 			width : 400,
 			height : 500,
-			url : $webroot + 'jsp/manage/demo/openPage.jsp',
+			url : 'https://terryz.github.io/bdialog/opentext.html',
 			customClass : 'blue',
 			callback:function(data){}
 		});
@@ -98,7 +98,7 @@ $(function(){
 			title : '弹出简洁样式窗口',
 			width : 400,
 			height : 500,
-			url : $webroot + 'jsp/manage/demo/openPage.jsp',
+			url : 'https://terryz.github.io/bdialog/opentext.html',
 			customClass : 'simple',
 			callback:function(data){}
 		});
