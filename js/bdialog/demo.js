@@ -1,10 +1,18 @@
 $(function(){
-	$('#btnDefault').click(function(){
+	$('#btnDialog').click(function(){
 		bDialog.open({
 			title : '窗口标题',
 			width : 500,
 			height : 450,
-			url : 'https://terryz.github.io/bdialog/opentext.html',
+			url : 'https://terryz.github.io/bdialog/opentext.html'
+		});
+	});
+	$('#btnDialog1').click(function(){
+		bDialog.open({
+			title : '窗口标题',
+			width : 500,
+			height : 450,
+			url : 'https://terryz.github.io/bdialog/open.html',
 			params : {
 				'userName' : 'zhangsan'
 			},

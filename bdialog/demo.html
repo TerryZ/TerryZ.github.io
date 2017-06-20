@@ -58,7 +58,7 @@
 		<h1 class="heading">可多层嵌套高定制化的弹出窗口 <small>支持多层嵌套、高可定制化</small></h1>
 		<div class="row-fluid">
 			<h4 class="heading">基本初始化 <small></small></h4>
-			<button class="btn btn-default" type="button" id="btnDefault">打开窗口</button>
+			<button class="btn btn-default" type="button" id="btnDialog">打开窗口</button>
 <script type="syntaxhighlighter" class="brush:js">
 <![CDATA[
 bDialog.open({
@@ -81,10 +81,8 @@ bDialog.open({
 </script>
 		</div>
 		<div class="row-fluid">
-			<h4 class="heading">设置初始化选中项目 <small>以及请求参数传递等……</small></h4>
-			<div class="pull-right">
-				<input type="text" id="selectPage1"  class="input-medium" data-init="4" >
-			</div>
+			<h4 class="heading">参数的传递与回传 <small>父窗口与打开窗口之间的数据交互</small></h4>
+			<button class="btn btn-default" type="button" id="btnDialog1">打开窗口</button>
 <script type="syntaxhighlighter" class="brush:js">
 <![CDATA[
 //data-init：设置列表初始被选中的项目，传递值为keyField对应的内容
