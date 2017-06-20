@@ -57,8 +57,15 @@
 		<h3>资源导入 <small>在网页上引用css样式、js脚本等文件</small></h3>
 <script type="syntaxhighlighter" class="brush:html">
 <![CDATA[
-<!-- 插件使用的样式表文件 -->
+<!-- 插件使用的样式表文件，分bootstrap2和bootstrap3两个环境使用，根据使用环境引用 -->
+<!-- bootstrap2环境使用 -->
 <link rel="stylesheet" href="b.dialog.css" type="text/css">
+<!-- bootstrap3环境使用 -->
+<link rel="stylesheet" href="b.dialog.bootstrap3.css" type="text/css">
+
+
+<!-- 拖拽功能库 -->
+<script type="text/javascript" src="jquery-ui.min.js" >< /script>
 <!-- 插件核心脚本 -->
 <script type="text/javascript" src="b.dialog.js" >< /script>
 ]]>

@@ -3,10 +3,11 @@
 <head>
     <title>SelectPage使用文档</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="lib/bootstrap/3.3.7/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="lib/font-awesome-4.6.3/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../lib/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../lib/font-awesome-4.6.3/css/font-awesome.min.css" />
     
-    <link rel="stylesheet" href="css/docs.css" />
+    <link rel="stylesheet" href="../css/bdialog/header.css" />
+    <link rel="stylesheet" href="../css/bdialog/docs.css" />
 </head>
 
 <body>
@@ -19,7 +20,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="https://terryz.github.io/" class="navbar-brand">SelectPage</a>
+            <a href="https://terryz.github.io/bdialog/index.html" class="navbar-brand">bDialog</a>
         </div>
         <nav id="bs-navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
@@ -36,11 +37,11 @@
                     <a href="changelog.html" >更新记录</a>
                 </li>
                 <li>
-                    <a href="javascript:void(0);" >bDialog</a>
+                    <a href="https://terryz.github.io/" >SelectPage</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="https://github.com/TerryZ/SelectPage" target="_blank"><i class="fa fa-lg fa-github"></i> Github</a></li>
+                <li><a href="https://github.com/TerryZ/bDialog" target="_blank"><i class="fa fa-lg fa-github"></i> Fork on Github</a></li>
             </ul>
         </nav>
     </div>
@@ -53,253 +54,287 @@
 				<div class="col-md-3">
 					<div class="navBox">
 					<ul class="nav" id="nav">
-						<li class="current"><a href="#data">* data</a></li>
-						<li><a href="#showField">* showField</a></li>
-						<li><a href="#keyField">* keyField</a></li>
-						<li><a href="#lang">lang</a></li>
-						<li><a href="#searchField">searchField</a></li>
-						<li><a href="#multiple">multiple</a></li>
-						<li><a href="#focusDropList">focusDropList</a></li>
-						<li><a href="#autoSelectFirst">autoSelectFirst</a></li>
-						<li><a href="#autoFillResult">autoFillResult</a></li>
-						<li><a href="#noResultClean">noResultClean</a></li>
-						<li><a href="#formatItem">formatItem</a></li>
-						<li><a href="#pageSize">pageSize</a></li>
-						<li><a href="#initField">initField</a></li>
-						<li><a href="#params">params</a></li>
+						<li class="current"><a href="#url">* url</a></li>
+						<li><a href="#title">* title</a></li>
+						<li><a href="#width"> width</a></li>
+						<li><a href="#height">height</a></li>
 						<li><a href="#callback">callback</a></li>
+						<li><a href="#params">params</a></li>
+						<li><a href="#backdrop">backdrop</a></li>
+						<li><a href="#dialogCloseButton">dialogCloseButton</a></li>
+						<li><a href="#scroll">scroll</a></li>
+						<li><a href="#drag">drag</a></li>
+						<li><a href="#fullWidth">fullWidth</a></li>
+						<li><a href="#customClass">customClass</a></li>
+						<li><a href="#onShow">onShow</a></li>
+						<li><a href="#onShowed">onShowed</a></li>
+						<li><a href="#onHide">onHide</a></li>
+						<li><a href="#onHidden">onHidden</a></li>
+						<li><a href="#closeCurrent">bDialog.closeCurrent</a></li>
+						<li><a href="#getDialog">bDialog.getDialog</a></li>
+						<li><a href="#getDialogParams">bDialog.getDialogParams</a></li>
 					</ul>
 					</div>
 				</div>
 				<div class="col-md-9 propertiesBox">
-					<div class="row" id="data">
-						<h3>data <small>插件列表的数据源</small></h3>
+					<div class="row" id="url">
+						<h3>url <small>窗口打开内容的目标位置</small></h3>
 						<ul>
-							<li><strong>类型：</strong><code>object | string</code></li>
+							<li><strong>类型：</strong><code>string</code></li>
 							<li><strong>默认值：</strong><code>无默认值，该参数为必填参数</code></li>
 							<li><strong>使用方式：</strong>
 								<div class="usageBox">
-									<p>数据源可以是json数据格式或URL</p>
-									<strong>json数据格式</strong><br>
-									<code>[{id:1,name:'张三',sex:'男'},{id:2,name:'李四',sex:'男'}]</code>
-									<p>如上所例数据，showField可设置为name或sex，keyField可设置为id</p>
-									
-									<strong>url</strong><br>
 									<code>http://xxx.com/load</code>
-									<p>使用URL执行ajax读取服务端数据，返回数据格式与上述json数据格式一致</p>
+									<p>部分参数也可以在url中直接添加，页面上可使用EL表达式之类的方式进行获取</p>
+									<p>例如：<code>http://xxx.com/load?aa=1&bb=2</code></p>
 								</div>
 							</li>
 						</ul>
 					</div>
-					<div class="row" id="showField">
-						<h3>showField <small>显示在列表中的数据字段</small></h3>
+					<div class="row" id="title">
+						<h3>title <small>标题栏显示的标题文本</small></h3>
 						<ul>
-							<li><strong>类型：</strong><code>string</code></li>
-							<li><strong>默认值：</strong><code>'name'</code></li>
+							<li><strong>类型：</strong><code>string | boolean</code></li>
+							<li><strong>默认值：</strong><code>'对话框'</code></li>
 							<li><strong>使用方式：</strong>
 								<div class="usageBox">
-								设置的值为data数据源中的数据字段名
+								根据使用需要对标题内容进行设置，若需要关闭标题栏，则传递<code>false</code>值即可
 								</div>
 							</li>
 						</ul>
 					</div>
-					<div class="row" id="keyField">
-						<h3>keyField <small>数据代码列</small></h3>
-						<ul>
-							<li><strong>类型：</strong><code>string</code></li>
-							<li><strong>默认值：</strong><code>'id'</code></li>
-							<li><strong>使用方式：</strong>
-								<div class="usageBox">
-								设置的值为data数据源中的数据字段名
-								</div>
-							</li>
-						</ul>
-					</div>
-					<div class="row" id="lang">
-						<h3>lang <small>插件语言，默认为'cn'简体中文</small></h3>
-						<ul>
-							<li><strong>类型：</strong><code>string</code></li>
-							<li><strong>默认值：</strong><code>'cn'</code></li>
-							<li><strong>使用方式：</strong>
-								<div class="usageBox">
-								可设置的语言
-								<table class="table table-bordered">
-									<thead>
-										<tr>
-											<th>代码</th>
-											<th>语言</th>
-											<th>描述</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>de</td>
-											<td>German</td>
-											<td>德语</td>
-										</tr>
-										<tr>
-											<td>en</td>
-											<td>English</td>
-											<td>英文</td>
-										</tr>
-										<tr>
-											<td>cn</td>
-											<td>Chinese</td>
-											<td>中文</td>
-										</tr>
-										<tr>
-											<td>es</td>
-											<td>Spanish</td>
-											<td>西班牙语</td>
-										</tr>
-										<tr>
-											<td>pt-br</td>
-											<td>Brazilian Portuguese</td>
-											<td>巴西葡萄牙语</td>
-										</tr>
-										<tr>
-											<td>ja</td>
-											<td>Japanese</td>
-											<td>日语</td>
-										</tr>
-									</tbody>
-								</table>
-								</div>
-							</li>
-						</ul>
-					</div>
-					<div class="row" id="searchField">
-						<h3>searchField <small>查询关键字字段</small></h3>
-						<ul>
-							<li><strong>类型：</strong><code>string</code></li>
-							<li><strong>默认值：</strong><code>无</code></li>
-							<li><strong>使用方式：</strong>
-								<div class="usageBox">
-								查询字段，仅为使用URL(ajax)方式查询服务端时，设置后端查询的字段，不设置则默认使用showField设置的字段
-								</div>
-							</li>
-						</ul>
-					</div>
-					<div class="row" id="multiple">
-						<h3>multiple <small>多选模式</small></h3>
-						<ul>
-							<li><strong>类型：</strong><code>boolean</code></li>
-							<li><strong>默认值：</strong><code>false</code></li>
-							<li><strong>使用方式：</strong>
-								<div class="usageBox">
-								设置插件选择模式，默认为单选模式
-								</div>
-							</li>
-						</ul>
-					</div>
-					<div class="row" id="focusDropList">
-						<h3>focusDropList <small>是否在输入框获得焦点时，展开下拉窗口</small></h3>
-						<ul>
-							<li><strong>类型：</strong><code>boolean</code></li>
-							<li><strong>默认值：</strong><code>true</code></li>
-							<li><strong>使用方式：</strong>
-								<div class="usageBox">
-								设置当输入框获得焦点时，是否展开数据列表
-								</div>
-							</li>
-						</ul>
-					</div>
-					<div class="row" id="autoSelectFirst">
-						<h3>autoSelectFirst <small>是否自动选择列表中的第一项内容</small></h3>
-						<ul>
-							<li><strong>类型：</strong><code>boolean</code></li>
-							<li><strong>默认值：</strong><code>true</code></li>
-							<li><strong>使用方式：</strong>
-								<div class="usageBox">
-								是否自动选择列表中的第一项内容(输入关键字查询模式，直接使用鼠标下拉并不触发)
-								</div>
-							</li>
-						</ul>
-					</div>
-					<div class="row" id="autoFillResult">
-						<h3>autoFillResult <small>是否自动填充内容</small></h3>
-						<ul>
-							<li><strong>类型：</strong><code>boolean</code></li>
-							<li><strong>默认值：</strong><code>true</code></li>
-							<li><strong>使用方式：</strong>
-								<div class="usageBox">
-								若有列表项目被高亮显示，在焦点离开控件后，自动设置该项为选中内容
-								</div>
-							</li>
-						</ul>
-					</div>
-					<div class="row" id="noResultClean">
-						<h3>noResultClean <small>是否清空输入关键字</small></h3>
-						<ul>
-							<li><strong>类型：</strong><code>boolean</code></li>
-							<li><strong>默认值：</strong><code>true</code></li>
-							<li><strong>使用方式：</strong>
-								<div class="usageBox">
-								在输入框中输入内容进行查询，但没有匹配的内容返回，在焦点离开控件后，自动清空输入框输入的内容
-								</div>
-							</li>
-						</ul>
-					</div>
-					<div class="row" id="formatItem">
-						<h3>formatItem <small>列表项目显示内容格式化</small></h3>
-						<ul>
-							<li><strong>类型：</strong><code>function</code></li>
-							<li><strong>默认值：</strong><code>无</code></li>
-							<li><strong>使用方式：</strong>
-								<div class="usageBox">
-								参数1：data，行数据object格式
-								返回：string
-								</div>
-							</li>
-						</ul>
-					</div>
-					<div class="row" id="pageSize">
-						<h3>pageSize <small>每页显示记录数</small></h3>
+					<div class="row" id="width">
+						<h3>width <small>窗口宽度</small></h3>
 						<ul>
 							<li><strong>类型：</strong><code>number</code></li>
-							<li><strong>默认值：</strong><code>10</code></li>
-						</ul>
-					</div>
-					<div class="row" id="initField">
-						<h3>initField <small>初始化数据列</small></h3>
-						<ul>
-							<li><strong>类型：</strong><code>string</code></li>
-							<li><strong>默认值：</strong><code>'data-init'</code></li>
+							<li><strong>默认值：</strong><code>700</code></li>
 							<li><strong>使用方式：</strong>
 								<div class="usageBox">
-								<p>初始化数据列，默认设置为data-init属性，该属性设置了初始化插件时默认显示的内容</p>
-								<p>它必须设置在input标签内，例：<code>< input type="text" data-init="20" ></code></p>
+								设置窗口宽度，若不传递该参数，则默认使用700的宽度
 								</div>
 							</li>
 						</ul>
 					</div>
-					<div class="row" id="params">
-						<h3>params <small>查询参数</small></h3>
+					<div class="row" id="height">
+						<h3>height <small>窗口高度</small></h3>
 						<ul>
-							<li><strong>类型：</strong><code>function</code></li>
-							<li><strong>默认值：</strong><code>无</code></li>
+							<li><strong>类型：</strong><code>number</code></li>
+							<li><strong>默认值：</strong><code>400</code></li>
 							<li><strong>使用方式：</strong>
 								<div class="usageBox">
-								<p>使用URL进行AJAX查询时，可传递查询参数</p>
-								<p>返回结果格式：<code>{'name':'aa','sex':1}</code></p>
-								<p>例如：<code>params : function(){return {'name':'aa','sex':1};}</code></p>
+								设置窗口高度，若不传递该参数，则默认使用400的高度
 								</div>
 							</li>
 						</ul>
 					</div>
 					<div class="row" id="callback">
-						<h3>callback <small>事件回调，响应项目被选中后的事件处理</small></h3>
+						<h3>callback <small>窗口关闭后的回调函数</small></h3>
 						<ul>
 							<li><strong>类型：</strong><code>function</code></li>
 							<li><strong>默认值：</strong><code>无</code></li>
 							<li><strong>使用方式：</strong>
 								<div class="usageBox">
-								参数：data：选中行的原始JSON数据
-								<p><code>callback : function(data){ $('xxx').val(data.name + data.sex); }</code></p>
+								<p>参数：data - 窗口关闭时回传的数据</p>
+<pre>
+callback:function(data){
+  if(data && data.results && data.results.length > 0 ){
+    alert('已完成弹出窗口操作！\\n接收到弹出窗口传回的 userName 参数，值为：\\n' + data.results[0].userName + '</b>');
+  }else{
+    alert('弹出窗口未回传参数',$.noop,'error');
+  }
+}
+</pre>
 								</div>
 							</li>
 						</ul>
 					</div>
+					<div class="row" id="params">
+						<h3>params <small>传递参数</small></h3>
+						<ul>
+							<li><strong>类型：</strong><code>object</code></li>
+							<li><strong>默认值：</strong><code>无</code></li>
+							<li><strong>使用方式：</strong>
+								<div class="usageBox">
+								<p>父窗口打开窗口时需要传递给窗口的参数集</p>
+								<p>格式：<code>{'name':'aa','sex':1}</code></p>
+								<p>例如：<code>params : {'name':'aa','sex':1}</code></p>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="row" id="backdrop">
+						<h3>backdrop <small>背景遮罩</small></h3>
+						<ul>
+							<li><strong>类型：</strong><code>boolean | string</code></li>
+							<li><strong>默认值：</strong><code>'static'</code></li>
+							<li><strong>使用方式：</strong>
+								<div class="usageBox">
+								<p>窗口默认类型为模态窗口，打开后，不允许操作窗外以外的内容</p>
+								<p>设置<code>'static'</code>为背景遮罩打开，并不允许点击关闭</p>
+								<p>设置<code>false</code>为关闭遮罩，此时仅显示窗口本身</p>
+								<p>设置<code>true</code>为打开遮罩，但点击遮罩将自动关闭窗口</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="row" id="dialogCloseButton">
+						<h3>dialogCloseButton <small>窗口标题栏的关闭按钮是否显示</small></h3>
+						<ul>
+							<li><strong>类型：</strong><code>boolean</code></li>
+							<li><strong>默认值：</strong><code>true</code></li>
+							<li><strong>使用方式：</strong>
+								<div class="usageBox">
+								设置窗口右上角的关闭窗口按钮是否显示，默认为显示状态
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="row" id="scroll">
+						<h3>scroll <small>窗口内部是否显示滚动条</small></h3>
+						<ul>
+							<li><strong>类型：</strong><code>boolean</code></li>
+							<li><strong>默认值：</strong><code>true</code></li>
+							<li><strong>使用方式：</strong>
+								<div class="usageBox">
+								根据需要设置窗口内容区域的滚动条，默认显示滚动条
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="row" id="drag">
+						<h3>drag <small>是否允许窗口可拖拽</small></h3>
+						<ul>
+							<li><strong>类型：</strong><code>boolean</code></li>
+							<li><strong>默认值：</strong><code>true</code></li>
+							<li><strong>使用方式：</strong>
+								<div class="usageBox">
+								<p><span class="label label-default">提示</span> 使用拖拽功能需要导入jquery-ui脚本库</p>
+								根据需要设置窗口是否可被拖拽，默认允许拖拽
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="row" id="fullWidth">
+						<h3>fullWidth <small>是否展示全宽度窗口</small></h3>
+						<ul>
+							<li><strong>类型：</strong><code>boolean</code></li>
+							<li><strong>默认值：</strong><code>false</code></li>
+							<li><strong>使用方式：</strong>
+								<div class="usageBox">
+								打开该参数，窗口将会占满浏览可视宽度区域，高度依然按照参数指定的数字进行设置
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="row" id="customClass">
+						<h3>customClass <small>自定义样式，它会添加到弹出窗口的最外层DIV上</small></h3>
+						<ul>
+							<li><strong>类型：</strong><code>string</code></li>
+							<li><strong>默认值：</strong><code>无</code></li>
+							<li><strong>使用方式：</strong>
+								<div class="usageBox">
+								<p>页面中需要根据不同功能展示不同样式的弹出窗口时，可以使用该参数指定需要使用的样式名称</p>
+								<p><span class="label label-default">提示</span> 样式内容需要预先定义，插件本身并不带任何皮肤样式</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="row" id="onShow">
+						<h3>onShow <small>显示对话框前执行的回调</small></h3>
+						<ul>
+							<li><strong>类型：</strong><code>function</code></li>
+							<li><strong>默认值：</strong><code>无</code></li>
+							<li><strong>使用方式：</strong>
+								<div class="usageBox">
+								<p>该回调函数可在窗口被显示之前做一些内容的预处理工作</p>
+								<p>例：<code>onShow : function(dialog){ $('#aa',$(dialog)).val(1); }</code></p>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="row" id="onShowed">
+						<h3>onShowed <small>窗口完全展示完成后执行的回调</small></h3>
+						<ul>
+							<li><strong>类型：</strong><code>function</code></li>
+							<li><strong>默认值：</strong><code>无</code></li>
+							<li><strong>使用方式：</strong>
+								<div class="usageBox">
+								<p>该回调函数可在窗口完全显示完成后做数据处理工作</p>
+								<p>例：<code>onShowed : function(dialog){ $('#bb',$(dialog)).focus(); }</code></p>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="row" id="onHide">
+						<h3>onHide <small>关闭/隐藏对话框前执行的回调</small></h3>
+						<ul>
+							<li><strong>类型：</strong><code>function</code></li>
+							<li><strong>默认值：</strong><code>无</code></li>
+							<li><strong>使用方式：</strong>
+								<div class="usageBox">
+								<p>该回调函数可在窗口被关闭前处理数据关系等操作</p>
+								<p>例：<br><code>onHide:function(dialog){$('#aa',$(dialog)).val($('#bb',$(dialog)).val());}</code></p>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="row" id="onHidden">
+						<h3>onHidden <small>关闭/隐藏对话框后执行的回调</small></h3>
+						<ul>
+							<li><strong>类型：</strong><code>function</code></li>
+							<li><strong>默认值：</strong><code>无</code></li>
+							<li><strong>使用方式：</strong>
+								<div class="usageBox">
+								<p>该回调函数可在窗口被关闭后被执行，若没有特殊应用，仅需要设置callback回调即可，不需要设置本回调</p>
+								<p>例：<code>onHidden : function(dialog){ $('#aa',$(dialog)).val(1); }</code></p>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="row" id="closeCurrent">
+						<h3>bDialog.closeCurrent <small>关闭窗口API</small></h3>
+						<ul>
+							<li><strong>类型：</strong><code>function</code></li>
+							<li><strong>默认值：</strong><code>无</code></li>
+							<li><strong>使用方式：</strong>
+								<div class="usageBox">
+								<p>该函数可以关闭窗口，并可以在关闭窗口的时候，回传参数给父窗口</p>
+								<p>例：<br><code>bDialog.closeCurrent();</code>仅关闭窗口，不传递参数</p>
+								<p><code>bDialog.closeCurrent({name:'zhangsan',sex:1});</code>关闭窗口并传递参数</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="row" id="getDialog">
+						<h3>bDialog.getDialog <small>获得当前打开窗口对象</small></h3>
+						<ul>
+							<li><strong>类型：</strong><code>function</code></li>
+							<li><strong>默认值：</strong><code>无</code></li>
+							<li><strong>使用方式：</strong>
+								<div class="usageBox">
+								<p>该函数可获得当前被打开的窗口对象，如果打开了多个窗口，则获得最后被打开的窗口</p>
+								<p>例：<br><code>var dialog = bDialog.getDialog();</code></p>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="row" id="getDialogParams">
+						<h3>bDialog.getDialogParams <small>获得父窗口传递的参数(被打开的窗口使用)</small></h3>
+						<ul>
+							<li><strong>类型：</strong><code>function</code></li>
+							<li><strong>默认值：</strong><code>无</code></li>
+							<li><strong>使用方式：</strong>
+								<div class="usageBox">
+								<p>该函数可以获得父窗口打开窗口时传递的params参数的内容</p>
+								<p>例：<br><code>var params = bDialog.getDialogParams();</code></p>
+								</div>
+							</li>
+						</ul>
+					</div>
+					
+					
+					
+					
 				</div>
 			</div>
         </div>
@@ -310,9 +345,9 @@
 
 
 
-<script type="text/javascript" src="lib/jquery.min.js" ></script>
-<script type="text/javascript" src="lib/nav/jquery.nav.js" ></script>
-<script type="text/javascript" src="lib/stickUp/stickUp.min.js" ></script>
-<script type="text/javascript" src="js/docs.js" ></script>
+<script type="text/javascript" src="../lib/jquery.min.js" ></script>
+<script type="text/javascript" src="../lib/nav/jquery.nav.js" ></script>
+<script type="text/javascript" src="../lib/stickUp/stickUp.min.js" ></script>
+<script type="text/javascript" src="../js/docs.js" ></script>
 </body>
 </html>
