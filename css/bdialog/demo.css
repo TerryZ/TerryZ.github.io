@@ -13,6 +13,10 @@
 }
 .content .row h3 i{
 }
+.content h4 {
+	margin-top: 25px;
+	font-weight: bold;
+}
 .content .desc{
 	font-size: 15px;
 	color: #666666;
