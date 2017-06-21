@@ -18,7 +18,8 @@ header{
 .navbar-nav > li > a {
 	color: #bbbbbb;
 }
-.navbar-nav > li > a:hover {
+.navbar-nav > li > a:hover, 
+.navbar-nav > li > a:focus {
 	color: white;
 	background-color: transparent;
 }
