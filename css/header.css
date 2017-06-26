@@ -10,6 +10,14 @@ header{
 	background-color: white;
 	color: #666666;
 }
+.navbar-nav > li > a {
+	color: #337ab7;
+}
+.navbar-nav > li > a:hover, 
+.navbar-nav > li > a:focus {
+	color: #23527c;
+	background-color: transparent;
+}
 .navbar-nav > .active > a,
 .navbar-nav > .active > a:hover,
 .navbar-nav > .active > a:focus {
