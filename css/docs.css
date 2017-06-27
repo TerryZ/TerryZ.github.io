@@ -1,18 +1,5 @@
 @CHARSET "UTF-8";
 
-.navbar{
-	margin-bottom: 0px;
-}
-header{
-	background-color: white;
-	color: #666666;
-}
-.navbar-nav > .active > a,
-.navbar-nav > .active > a:hover,
-.navbar-nav > .active > a:focus {
-	color: #555;
-	background-color: #e7e7e7;
-}
 .navBox .nav li a{
 	color: #666666;
 	font-size: 13px;

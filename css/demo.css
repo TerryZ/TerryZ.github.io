@@ -1,23 +1,11 @@
 @CHARSET "UTF-8";
 
-body{
-	/* background-color: #727f80; */
-}
-.navbar{
-	margin-bottom: 0px;
-}
-header{
-	background-color: white;
-	color: #666666;
-}
-.navbar-nav > .active > a,
-.navbar-nav > .active > a:hover,
-.navbar-nav > .active > a:focus {
-	color: #555;
-	background-color: #e7e7e7;
-}
 .content{
 	background-color: white;
+}
+.content .container{
+	width: 800px;
+	padding-bottom: 30px;
 }
 .content .jumbotron{
 	background-color: white;
