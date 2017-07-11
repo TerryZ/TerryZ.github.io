@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>bPage更新记录</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../lib/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../lib/font-awesome-4.6.3/css/font-awesome.min.css" />
+    
+    <link rel="stylesheet" href="../css/bpage/header.css" />
+    <link rel="stylesheet" href="../css/bpage/changelog.css" />
+</head>
+
+<body>
+    <header class="navbar navbar-static-top" id="top">
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="https://terryz.github.io/bpage/index.html" class="navbar-brand">bPage</a>
+        </div>
+        <nav id="bs-navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="guide.html" >入门</a>
+                </li>
+                <li>
+                    <a href="demo.html" >实例</a>
+                </li>
+                <li>
+                    <a href="docs.html" >文档</a>
+                </li>
+                <li class="active">
+                    <a href="javascript:void(0);" >更新记录</a>
+                </li>
+                <li>
+                    <a href="https://terryz.github.io/" >SelectPage</a>
+                </li>
+                <li>
+                    <a href="https://terryz.github.io/bdialog/index.html" >bDialog</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="https://github.com/TerryZ/bPage" target="_blank"><i class="fa fa-lg fa-github"></i> Fork on Github</a></li>
+            </ul>
+        </nav>
+    </div>
+    </header>
+
+	<div class="content">
+	<div class="container">
+		<h1 class="text-center">更新记录</h1>
+		<h3>2016.07.10</h3>
+		<p>重构代码</p>
+		<p>解决异步模式下首次不加载的问题</p>
+		<p>解决异步模式下（服务端页面模式）参数提取的问题，开发者在服务端返回的页面中必须按要求设置分页信息内容</p>
+		<p>增加异步模式下自定义ajax返回后的处理</p>
+		<h3>2016.04.28</h3>
+		<p>增加异步分页后的回调方法，并在分页处理完成后执行该回调方法</p>
+		<h3>2015.10.08</h3>
+		<p>解决每页记录数下拉选中的值的问题</p>
+		<p>增加部分初始参数从 data- 属性中获取</p>
+		<h3>2015.09.09</h3>
+		<p>解决pageSize=undefined的问题</p>
+		<h3>2015.08.18</h3>
+		<p>插件初始开发</p>
+	</div>
+	</div>
+
+    <footer class="footer">
+        <div class="container">
+        Copyright © 2016-2017 Terry Zeng
+        </div>
+    </footer>
+</body>
+</html>

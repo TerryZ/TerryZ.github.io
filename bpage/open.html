@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://terryz.github.io/lib/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://terryz.github.io/lib/font-awesome-4.6.3/css/font-awesome.min.css" />
+    
+	<link rel="stylesheet" href="https://terryz.github.io/lib/bdialog/b.dialog.bootstrap3.css" type="text/css">
+	<link rel="stylesheet" href="https://terryz.github.io/css/bdialog/dialog.css" type="text/css">
+</head>
+
+<body>
+	<form id="detailInfoForm" class="form-horizontal required-validate">
+		<div class="formSep">
+			<div class="control-group">
+				<label class="control-label" for="name">姓名</label>
+				<div class="controls">
+					<input type="text" class="input-large required" tabindex="1" id="userName" name="code" placeholder="请输入姓名" value=""  />
+				</div>
+			</div>
+		</div>
+		<div class="formSep">
+			<div class="control-group">
+				<label class="control-label">描述</label>
+				<div class="controls">
+					<input type="text" class="input-large " name="info" tabindex="2" placeholder="对于该编码的描述" value=""/>
+					<span class="help-inline">编码对应的描述</span>
+				</div>
+			</div>
+		</div>
+		<div class="formSep">
+			<div class="control-group">
+				<label class="control-label">日期</label>
+				<div class="controls">
+					<input type="text" class="input-large required" name="createTime" value=""/>
+					<span class="help-inline">日期选择</span>
+				</div>
+			</div>
+		</div>
+		<div class="formSep">
+			<div class="control-group">
+				<label class="control-label">时间</label>
+				<div class="controls">
+					<input type="text" class="input-large" name="updateTime" value=""/>
+					<span class="help-inline">日期选择</span>
+				</div>
+			</div>
+		</div>
+		<div class="">
+			<div class="control-group">
+				<div class="controls">
+					<button type="button" class="btn btn-primary" id="btnFormSave"><i class="fa fa-check"></i> 保存并回传值</button>
+					<button type="button" class="btn" id="btnReturn"><i class="fa fa-undo"></i> 关闭窗口</button>
+					<button type="button" class="btn" id="btnOpen"><i class="fa fa-eject"></i> 打开窗口</button>
+					<button class="btn" type="button" id="btnOpenColorWindow">打开颜色窗口</button>
+					<button class="btn" type="button" id="btnOpenSimpleWindow">打开简洁样式窗口</button>
+				</div>
+			</div>
+		</div>
+	</form>
+
+<script type="text/javascript" src="https://terryz.github.io/lib/jquery.min.js" ></script>
+<script type="text/javascript" src="https://terryz.github.io/lib/bdialog/b.dialog.js" ></script>
+<script type="text/javascript">
+$(function(){
+	var param = bDialog.getDialogParams();
+	if(param){
+		$('#userName').val(param.userName);
+	}
+	$('#btnOpen').click(function(e) {
+		bDialog.open({
+			title : '弹出窗口',
+			width : 400,
+			height : 500,
+			url : 'https://terryz.github.io/bdialog/open.html',
+			callback:function(data){}
+		});
+	});
+	$('#btnFormSave').click(function(e){
+		bDialog.closeCurrent({userName:'李四'});
+	});
+	$('#btnReturn').click(function(e){
+		bDialog.closeCurrent();
+	});
+	$('#btnOpenColorWindow').click(function(){
+		bDialog.open({
+			title : '弹出颜色窗口',
+			width : 400,
+			height : 500,
+			url : 'https://terryz.github.io/bdialog/open.html',
+			customClass : 'blue',
+			callback:function(data){}
+		});
+	});
+	$('#btnOpenSimpleWindow').click(function(){
+		bDialog.open({
+			title : '弹出简洁样式窗口',
+			width : 400,
+			height : 500,
+			url : 'https://terryz.github.io/bdialog/open.html',
+			customClass : 'simple',
+			callback:function(data){}
+		});
+	});
+	$(':text:first').focus();
+});
+</script>
+</body>
+</html>

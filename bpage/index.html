@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>bPage</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../lib/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../lib/font-awesome-4.6.3/css/font-awesome.min.css" />
+    
+    <link rel="stylesheet" href="../css/bpage/header.css" />
+    <link rel="stylesheet" href="../css/bpage/index.css" />
+</head>
+
+<body>
+    <header class="navbar navbar-static-top" id="top">
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="https://terryz.github.io/bpage/index.html" class="navbar-brand">bPage</a>
+        </div>
+        <nav id="bs-navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="guide.html" >入门</a>
+                </li>
+                <li>
+                    <a href="demo.html" >实例</a>
+                </li>
+                <li>
+                    <a href="docs.html" >文档</a>
+                </li>
+                <li>
+                    <a href="changelog.html" >更新记录</a>
+                </li>
+                <li>
+                    <a href="https://terryz.github.io/" >SelectPage</a>
+                </li>
+                <li>
+                    <a href="https://terryz.github.io/bdialog/index.html" >bDialog</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="https://github.com/TerryZ/bPage" target="_blank"><i class="fa fa-lg fa-github"></i> Fork on Github</a></li>
+            </ul>
+        </nav>
+    </div>
+    </header>
+
+	<div class="headerBox">
+		<div class="container">
+			<div class="row headerArea">
+				<div class="jumbotron col-md-6 text-left">
+					<h1>可多层嵌套<br>高定制化的弹出窗口</h1>
+					<p>基于jQuery、Bootstrap Modal插件进行开发</p>
+					<p>
+						<a class="btn btn-default btn-lg" href="guide.html" role="button">使用入门</a>
+						<a class="btn btn-default btn-lg" href="https://github.com/TerryZ/bPage" role="button">下载插件</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="container">
+		<div class="row text-center">
+			<img alt="效果图" src="../image/bPage.png">
+		</div>
+	</div>
+
+
+    <div class="content">
+        <div class="container">
+			<div class="row" style="margin-top: 50px;">
+                <div class="col-md-6">
+                    <h3><i class="fa fa-flag"></i> Bootstrap</h3>
+                    <p class="desc">可方便地使用于Bootstrap2、Bootstrap3环境中</p>
+                </div>
+                <div class="col-md-6">
+                    <h3><i class="fa fa-commenting-o"></i> 参数传递</h3>
+                    <p class="desc">每次插件与服务端进行交互时，都会将分页基础参数与用户自定义参数进行合并后提交到服务端，以便业务场景处理</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <h3><i class="fa fa-tachometer "></i> 自定义皮肤</h3>
+                    <p class="desc">在需要使用不同样式的皮肤时，只需要定义好皮肤的样式内容，插件可在初始化时，设置指定的皮肤名称</p>
+                </div>
+                <div class="col-md-6">
+                    <h3><i class="fa fa-file-text-o"></i> 回调及API</h3>
+                    <p class="desc">插件支持在数据请求、分页执行完成等回调函数，以及API函数允许自定跳转指定页，以及完全刷新插件参数等功能</p>
+                </div>
+            </div>
+            
+            <div class="row">
+            	<div class="col-md-12">
+		            <h3><i class="fa fa-sliders"></i> 多种分页模式应用</h3>
+		            <ul>
+		            	<li><b>页面跳转模式</b><br>分页切换操作将以页面跳转的方式来执行</li>
+		            	<li><b>异步请求模式（服务端页面）</b><br>该模式执行分页时，以异步的方式向服务端请求已分页处理页面内容，插件会将返回的页面内容嵌入指定的页面区域</li>
+		            	<li><b>异步请求模式（服务端JSON数据）</b><br>该模式执行分页仅向服务端请求分页的源数据（JSON），并提供内容处理回调函数以自定义页面内容</li>
+		            </ul>
+	            </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="footer">
+        <div class="container">
+        Copyright © 2016-2017 Terry Zeng
+        </div>
+    </footer>
+</body>
+</html>
