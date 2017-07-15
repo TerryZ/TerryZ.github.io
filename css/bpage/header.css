@@ -6,7 +6,7 @@ body{
 	margin-bottom: 0px;
 }
 header{
-	background-color: #3BCC64;
+	background-color: #109D59;
 	color: #666666;
 }
 .navbar-brand {
@@ -27,7 +27,7 @@ header{
 .navbar-nav > .active > a:hover,
 .navbar-nav > .active > a:focus {
 	color: white;
-	background-color: #21B24B;
+	background-color: #087136;
 }
 
 .footer div.container{
