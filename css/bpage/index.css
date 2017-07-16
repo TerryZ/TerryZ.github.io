@@ -8,11 +8,12 @@
 	background-color: #109D59;
 }
 .headerArea .jumbotron {
-	margin-left: 330px;
+	margin-left: 240px;
 	background-color: #109D59;
 	padding-left: 0px;
 	margin-bottom: 0px;
 	padding-bottom: 20px;
+	width: 65%;
 }
 .headerArea .jumbotron h1 {
 	font-size: 50px;
