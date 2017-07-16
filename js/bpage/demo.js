@@ -26,7 +26,7 @@ $(function(){
 	    }
 	});
 	$('#page3').bPage({
-	    url : '../js/bpage/data.json',
+	    url : 'https://terryz.github.io/js/bpage/data.json',
 	    asyncLoad : true,
 	    serverSidePage : false,
 	    render : function(data){
