@@ -1,0 +1,43 @@
+<div class="row-fluid">
+	<table id="dataGridTable" class="bTable table table-striped table-bordered table-hover table-condensed">
+		<thead>
+			<tr>
+				<th class="selectColumn" >选择</th>
+				<th>登录名</th>
+				<th>姓名</th>
+				<th>性别</th>
+				<th>出生年月</th>
+				<th>电话</th>
+				<th>电子邮箱</th>
+				<th>状态</th>
+				<th>更新时间</th>
+			</tr>
+		</thead>
+		<tbody>
+			<c:if test="${userList.list != null}">
+				<c:forEach var="d" items="${userList.list}">
+			<tr class="<c:if test="${d.status == 0}">error</c:if>" id="${d.id}">
+				<td class="selectColumn"><input type="radio" name="userSelect" value="${d.id}" /></td>
+				<td>${d.login_name}</td>
+				<td>${d.name}</td>
+				<td>${d.sexName}</td>
+				<td><fmt:formatDate pattern="yyyy-MM-dd" value="${d.birthday}" type="date" /></td>
+				<td>${d.phone1}</td>
+				<td>${d.email}</td>
+				<td>${d.statusName}</td>
+				<td><fmt:formatDate pattern="yyyy-MM-dd" value="${d.update_time}" type="date" /></td>
+			</tr>
+				</c:forEach>
+			</c:if>
+		</tbody>
+	</table>
+</div>
+
+<c:if test="${userList != null}">
+<div class="paginationInfoBox hide">
+	<input type="hidden" id="bPagePageNumber" value="1">
+	<input type="hidden" id="bPagePageSize" value="10">
+	<input type="hidden" id="bPageTotalPage" value="3">
+	<input type="hidden" id="bPageTotalRow" value="28">
+</div>
+</c:if>

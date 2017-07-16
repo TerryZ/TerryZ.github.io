@@ -1,7 +1,6 @@
 $(function(){
-	var $webroot = '/';
 	$('#page1').bPage({
-	    url : $webroot + 'demo/manage/page',
+	    url : 'https://terryz.github.io/bpage/demo.html',
 	    totalPage : 3,
 	    totalRow : 28,
 	    pageSize : 10,
@@ -14,8 +13,9 @@ $(function(){
 	    }
 	});
 	$('#page2').bPage({
-	    url : $webroot + 'demo/manage/pageLoad',
+	    url : 'https://terryz.github.io/js/bpage/html.html',
 	    asyncLoad : true,
+	    asyncType : 'GET',
 	    serverSidePage : true,
 	    asyncTarget : '#pageContent',
 	    params : function(){
@@ -28,6 +28,7 @@ $(function(){
 	$('#page3').bPage({
 	    url : 'https://terryz.github.io/js/bpage/data.json',
 	    asyncLoad : true,
+	    asyncType : 'GET',
 	    serverSidePage : false,
 	    render : function(data){
 	    	var tb = $('#dataGridTableJson tbody');
