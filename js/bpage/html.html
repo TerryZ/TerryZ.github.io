@@ -14,30 +14,136 @@
 			</tr>
 		</thead>
 		<tbody>
-			<c:if test="${userList.list != null}">
-				<c:forEach var="d" items="${userList.list}">
-			<tr class="<c:if test="${d.status == 0}">error</c:if>" id="${d.id}">
-				<td class="selectColumn"><input type="radio" name="userSelect" value="${d.id}" /></td>
-				<td>${d.login_name}</td>
-				<td>${d.name}</td>
-				<td>${d.sexName}</td>
-				<td><fmt:formatDate pattern="yyyy-MM-dd" value="${d.birthday}" type="date" /></td>
-				<td>${d.phone1}</td>
-				<td>${d.email}</td>
-				<td>${d.statusName}</td>
-				<td><fmt:formatDate pattern="yyyy-MM-dd" value="${d.update_time}" type="date" /></td>
+				
+					
+			<tr class="" id="1">
+				<td class="selectColumn"><input type="radio" name="userSelect" value="1"></td>
+				<td>zhangsan</td>
+				<td>张三</td>
+				<td>男</td>
+				<td>2014-11-12</td>
+				<td>13655555555</td>
+				<td>aaa@aa.com</td>
+				<td>启用</td>
+				<td>2014-11-24</td>
 			</tr>
-				</c:forEach>
-			</c:if>
+				
+			<tr class="" id="5620">
+				<td class="selectColumn"><input type="radio" name="userSelect" value="5620"></td>
+				<td>lisi</td>
+				<td>李四</td>
+				<td>女</td>
+				<td>2014-11-03</td>
+				<td>1241342341431</td>
+				<td>341431@aa.comn</td>
+				<td>启用</td>
+				<td>2014-11-24</td>
+			</tr>
+				
+			<tr class="" id="14960">
+				<td class="selectColumn"><input type="radio" name="userSelect" value="14960"></td>
+				<td>admin</td>
+				<td>系统管理员</td>
+				<td>男</td>
+				<td>2014-11-05</td>
+				<td>123123123123</td>
+				<td>13123@aa.com</td>
+				<td>启用</td>
+				<td>2014-11-24</td>
+			</tr>
+				
+			<tr class="" id="14981">
+				<td class="selectColumn"><input type="radio" name="userSelect" value="14981"></td>
+				<td>bbb</td>
+				<td>bbb</td>
+				<td>男</td>
+				<td>2014-11-19</td>
+				<td>234234324234</td>
+				<td>23234324@aa.com</td>
+				<td>启用</td>
+				<td>2014-11-20</td>
+			</tr>
+				
+			<tr class="" id="14982">
+				<td class="selectColumn"><input type="radio" name="userSelect" value="14982"></td>
+				<td>cccc</td>
+				<td>cccc</td>
+				<td>男</td>
+				<td>2014-11-03</td>
+				<td></td>
+				<td></td>
+				<td>启用</td>
+				<td>2014-11-20</td>
+			</tr>
+				
+			<tr class="" id="14983">
+				<td class="selectColumn"><input type="radio" name="userSelect" value="14983"></td>
+				<td>ddd</td>
+				<td>dd</td>
+				<td>男</td>
+				<td>2014-11-04</td>
+				<td></td>
+				<td></td>
+				<td>启用</td>
+				<td>2014-11-20</td>
+			</tr>
+				
+			<tr class="" id="15020">
+				<td class="selectColumn"><input type="radio" name="userSelect" value="15020"></td>
+				<td>eee</td>
+				<td>eee</td>
+				<td>男</td>
+				<td>2014-11-04</td>
+				<td></td>
+				<td></td>
+				<td>启用</td>
+				<td>2014-11-20</td>
+			</tr>
+				
+			<tr class="" id="15060">
+				<td class="selectColumn"><input type="radio" name="userSelect" value="15060"></td>
+				<td>fff</td>
+				<td>ffff</td>
+				<td>男</td>
+				<td>2014-11-05</td>
+				<td></td>
+				<td></td>
+				<td>启用</td>
+				<td>2014-11-20</td>
+			</tr>
+				
+			<tr class="" id="15100">
+				<td class="selectColumn"><input type="radio" name="userSelect" value="15100"></td>
+				<td>ggggg</td>
+				<td>ggg</td>
+				<td>男</td>
+				<td>2014-10-27</td>
+				<td></td>
+				<td></td>
+				<td>启用</td>
+				<td>2014-11-20</td>
+			</tr>
+				
+			<tr class="" id="15600">
+				<td class="selectColumn"><input type="radio" name="userSelect" value="15600"></td>
+				<td>aaaaa</td>
+				<td>aaa</td>
+				<td>男</td>
+				<td>2014-11-04</td>
+				<td></td>
+				<td></td>
+				<td>启用</td>
+				<td>2014-11-24</td>
+			</tr>
+					
+				
 		</tbody>
 	</table>
 </div>
 
-<c:if test="${userList != null}">
 <div class="paginationInfoBox hide">
 	<input type="hidden" id="bPagePageNumber" value="1">
 	<input type="hidden" id="bPagePageSize" value="10">
 	<input type="hidden" id="bPageTotalPage" value="3">
 	<input type="hidden" id="bPageTotalRow" value="28">
 </div>
-</c:if>
