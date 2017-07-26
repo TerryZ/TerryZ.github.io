@@ -16,9 +16,13 @@
 	font-size: 50px;
 	font-weight: lighter;
 }
-.content .row h3{
-	text-align: center;
-	color: #337AB7;
+.content h3{
+	color: white;
+	border: 1px solid #cccccc;
+	background-color: #cccccc;
+	border-radius: 4px;
+	padding: 3px 5px;
+	display: inline-block;
 }
 .content .row h3 i{
 }
@@ -28,6 +32,6 @@
 	margin: 0px 50px 20px 50px;
 }
 .content p{
-	margin: 0px 0px 5px;
+	margin: 0px 0px 5px 60px;
 	font-size: 16px;
 }
