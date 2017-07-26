@@ -1,0 +1,50 @@
+@CHARSET "UTF-8";
+
+
+.headerBox{
+	background-color: #E76F3A;
+}
+.headerBox div.headerArea{
+	background-color: #E76F3A;
+}
+.headerArea .jumbotron {
+	margin-left: 330px;
+	background-color: #E76F3A;
+	padding-left: 0px;
+	margin-bottom: 0px;
+	padding-bottom: 20px;
+}
+.headerArea .jumbotron h1 {
+	font-size: 50px;
+	font-weight: lighter;
+	color: white;
+}
+.headerArea .jumbotron p {
+	color: white;
+}
+
+
+.content{
+	background-color: white;
+}
+.content .container {
+	width: 900px;
+}
+.content .row {
+}
+.content .row h3{
+	color: #222222;
+}
+.content .row h3 i{
+}
+.content .desc{
+	font-size: 15px;
+	color: #666666;
+}
+
+.pluginImg{
+	text-align: right;
+}
+.pluginImg img{
+	margin-top: 50px;
+}

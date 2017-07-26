@@ -1,0 +1,24 @@
+@CHARSET "UTF-8";
+
+.content{
+	background-color: white;
+}
+.content .container{
+	width: 900px;
+	padding-bottom: 30px;
+}
+.content .row h3{
+	text-align: center;
+	color: #337AB7;
+}
+.content .row h3 i{
+}
+.content h4 {
+	margin-top: 25px;
+	font-weight: bold;
+}
+.content .desc{
+	font-size: 15px;
+	color: #666666;
+	margin: 0px 50px 20px 50px;
+}
