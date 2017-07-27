@@ -33,9 +33,12 @@
 .content .row {
 }
 .content .row h3{
-	color: #222222;
+	color: #E76F3A;
 }
 .content .row h3 i{
+}
+.content .row p{
+	color: #777777;
 }
 .content .desc{
 	font-size: 15px;
