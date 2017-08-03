@@ -63,15 +63,25 @@
 		<h3>资源导入 <small>在网页上引用css样式、js脚本等文件</small></h3>
 <script type="syntaxhighlighter" class="brush:html">
 <![CDATA[
+<!-- 基础环境引用说明 -->
+<!-- Bootstrap的UI框架基础样式 -->
+<link rel="stylesheet" href="bootstrap.min.css" type="text/css">
+<!-- 插件使用了部分font-awesome的图标，所以需要引入该样式 -->
+<link rel="stylesheet" href="font-awesome.min.css" type="text/css">
+<!-- jQuery，Bootstrap的基础脚本引用 -->
+<script type="text/javascript" src="bootstrap.min.js" >< /script>
+<script type="text/javascript" src="jquery.min.js" >< /script>
+
+
 <!-- 插件使用的样式表文件，根据使用环境的Bootstrap版本进行引用 -->
 <!-- Bootstrap2使用 -->
-<link rel="stylesheet" href="lib/selectpage/selectpage.css" type="text/css">
+<link rel="stylesheet" href="selectpage.css" type="text/css">
 <!-- Bootstrap3使用 -->
-<link rel="stylesheet" href="lib/selectpage/selectpage.bootstrap3.css" type="text/css">
+<link rel="stylesheet" href="selectpage.bootstrap3.css" type="text/css">
 <!-- 插件核心脚本 -->
-<script type="text/javascript" src="lib/selectpage/selectpage.js" >< /script>
+<script type="text/javascript" src="selectpage.js" >< /script>
 <!-- 插件快速使用脚本 -->
-<script type="text/javascript" src="lib/selectpage/b.selectpage.js" >< /script>
+<script type="text/javascript" src="b.selectpage.js" >< /script>
 ]]>
 </script>
 
