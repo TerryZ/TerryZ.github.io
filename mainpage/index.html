@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Stylish Portfolio - Start Bootstrap Theme</title>
+    <title>Terry</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../lib/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
@@ -24,8 +24,8 @@
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <script src="../lib/support/html5shiv.js"></script>
+        <script src="../lib/support/respond.min.js"></script>
     <![endif]-->
 
 </head>
@@ -33,28 +33,16 @@
 <body>
 
     <!-- Navigation -->
-    <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
+    <a id="menu-toggle" href="javascript:void(0);" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
     <nav id="sidebar-wrapper">
         <ul class="sidebar-nav">
             <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
-            <li class="sidebar-brand">
-                <a href="#top" onclick=$("#menu-close").click();>Start Bootstrap</a>
-            </li>
-            <li>
-                <a href="#top" onclick=$("#menu-close").click();>Home</a>
-            </li>
-            <li>
-                <a href="#about" onclick=$("#menu-close").click();>About</a>
-            </li>
-            <li>
-                <a href="#services" onclick=$("#menu-close").click();>Services</a>
-            </li>
-            <li>
-                <a href="#portfolio" onclick=$("#menu-close").click();>Portfolio</a>
-            </li>
-            <li>
-                <a href="#contact" onclick=$("#menu-close").click();>Contact</a>
-            </li>
+            <li class="sidebar-brand"><a href="#top" >Start Bootstrap</a></li>
+            <li><a href="#top" >首页</a></li>
+            <li><a href="#about" >关于</a></li>
+            <li><a href="#services" >作品展示</a></li>
+            <li><a href="#portfolio" >Portfolio</a></li>
+            <li><a href="#contact" >联系方式</a></li>
         </ul>
     </nav>
 
@@ -64,7 +52,7 @@
             <h1>Start Bootstrap</h1>
             <h3>Free Bootstrap Themes &amp; Templates</h3>
             <br>
-            <a href="#about" class="btn btn-dark btn-lg">了解更多</a>
+            <a href="#about" class="btn btn-dark btn-lg"><i class="fa fa-arrow-down"></i> 了解更多</a>
         </div>
     </header>
 
@@ -110,7 +98,7 @@
                                     <iframe src="https://ghbtns.com/github-btn.html?user=TerryZ&repo=SelectPage&type=star&count=true" frameborder="0" scrolling="0" width="90px" height="20px"></iframe>
                                     <iframe src="https://ghbtns.com/github-btn.html?user=TerryZ&repo=SelectPage&type=fork&count=true" frameborder="0" scrolling="0" width="80px" height="20px"></iframe>
                                 </p>
-                                <a href="https://terryz.github.io/" class="btn btn-light">查看更多信息</a>
+                                <a href="https://terryz.github.io/" class="btn btn-light" target="_blank">查看更多信息</a>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
@@ -127,7 +115,7 @@
                                     <iframe src="https://ghbtns.com/github-btn.html?user=TerryZ&repo=bDialog&type=star&count=true" frameborder="0" scrolling="0" width="90px" height="20px"></iframe>
                                     <iframe src="https://ghbtns.com/github-btn.html?user=TerryZ&repo=bDialog&type=fork&count=true" frameborder="0" scrolling="0" width="80px" height="20px"></iframe>
                                 </p>
-                                <a href="https://terryz.github.io/bdialog/index.html" class="btn btn-light">查看更多信息</a>
+                                <a href="https://terryz.github.io/bdialog/index.html" class="btn btn-light" target="_blank">查看更多信息</a>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
@@ -144,7 +132,7 @@
                                     <iframe src="https://ghbtns.com/github-btn.html?user=TerryZ&repo=bPage&type=star&count=true" frameborder="0" scrolling="0" width="90px" height="20px"></iframe>
                                     <iframe src="https://ghbtns.com/github-btn.html?user=TerryZ&repo=bPage&type=fork&count=true" frameborder="0" scrolling="0" width="80px" height="20px"></iframe>
                                 </p>
-                                <a href="https://terryz.github.io/bpage/index.html" class="btn btn-light">查看更多信息</a>
+                                <a href="https://terryz.github.io/bpage/index.html" class="btn btn-light" target="_blank">查看更多信息</a>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
@@ -161,7 +149,7 @@
                                     <iframe src="https://ghbtns.com/github-btn.html?user=TerryZ&repo=bTabs&type=star&count=true" frameborder="0" scrolling="0" width="90px" height="20px"></iframe>
                                     <iframe src="https://ghbtns.com/github-btn.html?user=TerryZ&repo=bTabs&type=fork&count=true" frameborder="0" scrolling="0" width="80px" height="20px"></iframe>
                                 </p>
-                                <a href="https://terryz.github.io/btabs/index.html" class="btn btn-light">查看更多信息</a>
+                                <a href="https://terryz.github.io/btabs/index.html" class="btn btn-light" target="_blank">查看更多信息</a>
                             </div>
                         </div>
                     </div>
@@ -243,11 +231,8 @@
 
     <!-- Map -->
     <section id="contact" class="map">
-        <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
+        <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://ditu.amap.com/search?query=%E7%A6%8F%E5%B7%9E&city=350100&geoobj=119.223313%7C26.012607%7C119.397377%7C26.155992&zoom=13"></iframe>
         <br />
-        <small>
-            <a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a>
-        </small>
     </section>
 
     <!-- Footer -->
@@ -255,29 +240,33 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 text-center">
-                    <h4><strong>Start Bootstrap</strong>
+                    <h4><strong>Terry Zeng</strong>
                     </h4>
                     <p>3481 Melrose Place
                         <br>Beverly Hills, CA 90210</p>
                     <ul class="list-unstyled">
                         <li><i class="fa fa-phone fa-fw"></i> (123) 456-7890</li>
-                        <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:name@example.com">name@example.com</a>
+                        <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:TerryZ@foxmail.com">TerryZ@foxmail.com</a><br>
+                        <a href="mailto:terryzeng5@gmail.com" >terryzeng5@gmail.com</a>
                         </li>
                     </ul>
                     <br>
                     <ul class="list-inline">
                         <li>
-                            <a href="#"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
+                            <a href="https://www.facebook.com/terry.zeng.35762" target="_blank"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
+                            <a href="https://twitter.com/Terry_05" target="_blank"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-dribbble fa-fw fa-3x"></i></a>
+                            <a href="https://plus.google.com/+ZengTerry" target="_blank"><i class="fa fa-google-plus fa-fw fa-3x"></i></a>
+                        </li>
+                        <li>
+                            <a href="http://weibo.com/tz05" target="_blank"><i class="fa fa-weibo fa-fw fa-3x"></i></a>
                         </li>
                     </ul>
                     <hr class="small">
-                    <p class="text-muted">Copyright &copy; Your Website 2014</p>
+                    <p class="text-muted">Copyright &copy; Terry 2017</p>
                 </div>
             </div>
         </div>
@@ -318,7 +307,11 @@ $(function() {
         $("#sidebar-wrapper").toggleClass("active");
     });
     
-  //#to-top button appears after scrolling
+    $('a','#sidebar-wrapper').not('#menu-close').click(function(){
+    	$("#menu-close").click();
+    });
+    
+	//#to-top button appears after scrolling
     var fixed = false;
     $(document).scroll(function() {
         if ($(this).scrollTop() > 250) {
@@ -351,17 +344,17 @@ $(function() {
         that.on('click', onMapClickHandler);
         that.off('mouseleave', onMapMouseleaveHandler);
         that.find('iframe').css("pointer-events", "none");
-    }
+    };
     var onMapClickHandler = function(event) {
-            var that = $(this);
-            // Disable the click handler until the user leaves the map area
-            that.off('click', onMapClickHandler);
-            // Enable scrolling zoom
-            that.find('iframe').css("pointer-events", "auto");
-            // Handle the mouse leave event
-            that.on('mouseleave', onMapMouseleaveHandler);
-        }
-        // Enable map zooming with mouse scroll when the user clicks the map
+	    var that = $(this);
+	    // Disable the click handler until the user leaves the map area
+	    that.off('click', onMapClickHandler);
+	    // Enable scrolling zoom
+	    that.find('iframe').css("pointer-events", "auto");
+	    // Handle the mouse leave event
+	    that.on('mouseleave', onMapMouseleaveHandler);
+	};
+	// Enable map zooming with mouse scroll when the user clicks the map
     $('.map').on('click', onMapClickHandler);
 });
 
