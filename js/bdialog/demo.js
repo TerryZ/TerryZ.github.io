@@ -75,6 +75,7 @@ $(function(){
 			title : '窗口标题',
 			width : 500,
 			height : 450,
+			dialogMaxButton : false,
 			customClass : 'simple',
 			url : 'https://terryz.github.io/bdialog/opentext.html'
 		});
