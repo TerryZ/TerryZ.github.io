@@ -29,6 +29,30 @@ body {
     font-weight: 700;
 }
 
+
+.animated {
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both
+}
+
+.animated.infinite {
+	-webkit-animation-iteration-count: infinite;
+	animation-iteration-count: infinite
+}
+
+.animated.hinge {
+	-webkit-animation-duration: 2s;
+	animation-duration: 2s
+}
+
+.animated.bounceIn, .animated.bounceOut, .animated.flipOutX, .animated.flipOutY
+	{
+	-webkit-animation-duration: .75s;
+	animation-duration: .75s
+}
+
 /* Custom Button Styles */
 
 .btn-dark {
@@ -172,12 +196,48 @@ hr.small {
 
 .services {
     padding: 50px 0;
+    overflow: hidden;
+    position: relative;
 }
 
 .service-item {
     margin-bottom: 30px;
 }
-
+.works-area{
+	z-index: 1;
+}
+.linear {
+	animation-timing-function: linear
+}
+.bg-icon {
+    width: 6000px;
+    animation: 60s bgIconsShowcaseSlide infinite linear;
+    animation-fill-mode: both;
+    backface-visibility: hidden;
+    perspective: 1000;
+    z-index: 0;
+    position: absolute;
+	top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+	box-sizing: border-box;
+}
+.bg-icon:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-position: top;
+    border-radius: inherit;
+	opacity: .1;
+    background-image: url(../img/bg-image.svg);
+    background-repeat: repeat;
+}
+@keyframes bgIconsShowcaseSlide{0%{transform:translateZ(0);}to{transform:translate3d(-1200px,0,0);}}
 /* Callout */
 
 .callout {
