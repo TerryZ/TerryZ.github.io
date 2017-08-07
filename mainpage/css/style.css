@@ -25,7 +25,7 @@ body {
 .text-vertical-center h1 {
     margin: 0;
     padding: 0;
-    font-size: 4.5em;
+    font-size: 3.5em;
     font-weight: 700;
 }
 
@@ -87,6 +87,9 @@ hr.small {
     max-width: 100px;
 }
 
+.subTitle{
+	margin-left: 570px;
+}
 /* Side Menu */
 
 #sidebar-wrapper {
