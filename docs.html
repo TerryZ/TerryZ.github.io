@@ -66,6 +66,7 @@
 						<li><a href="#lang">lang</a></li>
 						<li><a href="#searchField">searchField</a></li>
 						<li><a href="#multiple">multiple</a></li>
+						<li><a href="#multipleControlbar">multipleControlbar</a></li>
 						<li><a href="#focusDropList">focusDropList</a></li>
 						<li><a href="#autoSelectFirst">autoSelectFirst</a></li>
 						<li><a href="#autoFillResult">autoFillResult</a></li>
@@ -74,6 +75,7 @@
 						<li><a href="#pageSize">pageSize</a></li>
 						<li><a href="#initField">initField</a></li>
 						<li><a href="#params">params</a></li>
+						<li><a href="#ajaxSuccess">ajaxSuccess</a></li>
 						<li><a href="#callback">callback</a></li>
 					</ul>
 					</div>
@@ -199,6 +201,18 @@
 							</li>
 						</ul>
 					</div>
+					<div class="row" id="multipleControlbar">
+						<h3>multipleControlbar <small>是否启用多选模式的控制按钮区域，仅multiple: true模式下可用</small></h3>
+						<ul>
+							<li><strong>类型：</strong><code>boolean</code></li>
+							<li><strong>默认值：</strong><code>true</code></li>
+							<li><strong>使用方式：</strong>
+								<div class="usageBox">
+								设置插件是否启用多选模式的控制按钮区域，仅multiple: true模式下可用
+								</div>
+							</li>
+						</ul>
+					</div>
 					<div class="row" id="focusDropList">
 						<h3>focusDropList <small>是否在输入框获得焦点时，展开下拉窗口</small></h3>
 						<ul>
@@ -290,6 +304,26 @@
 								<p>使用URL进行AJAX查询时，可传递查询参数</p>
 								<p>返回结果格式：<code>{'name':'aa','sex':1}</code></p>
 								<p>例如：<code>params : function(){return {'name':'aa','sex':1};}</code></p>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="row" id="ajaxSuccess">
+						<h3>ajaxSuccess <small>ajax请求模式，请求成功后的数据处理回调</small></h3>
+						<ul>
+							<li><strong>类型：</strong><code>function</code></li>
+							<li><strong>默认值：</strong><code>无</code></li>
+							<li><strong>使用方式：</strong>
+								<div class="usageBox">
+								参数：data：ajax服务端返回的json数据
+								<p><code>ajaxSuccess : function(data){ return data.pageinfo; }</code></p>
+								返回的数据格式：
+								<p><xmp>
+								{
+									list : [{name:'aa',sex:1},{name:'bb',sex:1}...],
+									totalRow : 100
+								}
+								</xmp></p>
 								</div>
 							</li>
 						</ul>
