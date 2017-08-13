@@ -67,6 +67,8 @@
 						<li><a href="#searchField">searchField</a></li>
 						<li><a href="#multiple">multiple</a></li>
 						<li><a href="#multipleControlbar">multipleControlbar</a></li>
+						<li><a href="#maxSelectLimit">maxSelectLimit</a></li>
+						<li><a href="#selectToCloseList">selectToCloseList</a></li>
 						<li><a href="#focusDropList">focusDropList</a></li>
 						<li><a href="#autoSelectFirst">autoSelectFirst</a></li>
 						<li><a href="#autoFillResult">autoFillResult</a></li>
@@ -75,8 +77,13 @@
 						<li><a href="#pageSize">pageSize</a></li>
 						<li><a href="#initField">initField</a></li>
 						<li><a href="#params">params</a></li>
-						<li><a href="#ajaxSuccess">ajaxSuccess</a></li>
-						<li><a href="#callback">callback</a></li>
+						<li><a href="#eAjaxSuccess">eAjaxSuccess</a></li>
+						<li><a href="#eSelect">eSelect</a></li>
+						<li><a href="#eTagRemove">eTagRemove</a></li>
+						<li><a href="#selectPageClear">$.fn.selectPageClear</a></li>
+						<li><a href="#selectPageRefresh">$.fn.selectPageRefresh</a></li>
+						<li><a href="#selectPageData">$.fn.selectPageData</a></li>
+						<li><a href="#selectPageText">$.fn.selectPageText</a></li>
 					</ul>
 					</div>
 				</div>
@@ -213,6 +220,30 @@
 							</li>
 						</ul>
 					</div>
+					<div class="row" id="maxSelectLimit">
+						<h3>maxSelectLimit <small>多选模式下最大选择个数，0为不限制</small></h3>
+						<ul>
+							<li><strong>类型：</strong><code>number</code></li>
+							<li><strong>默认值：</strong><code>0</code></li>
+							<li><strong>使用方式：</strong>
+								<div class="usageBox">
+								设置插件最多可以选择的项目，仅multiple: true模式下可用
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="row" id="selectToCloseList">
+						<h3>selectToCloseList <small>选中项目后关闭列表</small></h3>
+						<ul>
+							<li><strong>类型：</strong><code>boolean</code></li>
+							<li><strong>默认值：</strong><code>true</code></li>
+							<li><strong>使用方式：</strong>
+								<div class="usageBox">
+								设置在选中项目后，关闭列表，仅multiple: true模式下可用
+								</div>
+							</li>
+						</ul>
+					</div>
 					<div class="row" id="focusDropList">
 						<h3>focusDropList <small>是否在输入框获得焦点时，展开下拉窗口</small></h3>
 						<ul>
@@ -308,15 +339,15 @@
 							</li>
 						</ul>
 					</div>
-					<div class="row" id="ajaxSuccess">
-						<h3>ajaxSuccess <small>ajax请求模式，请求成功后的数据处理回调</small></h3>
+					<div class="row" id="eAjaxSuccess">
+						<h3>eAjaxSuccess <small>ajax请求模式，请求成功后的数据处理回调</small></h3>
 						<ul>
 							<li><strong>类型：</strong><code>function</code></li>
 							<li><strong>默认值：</strong><code>无</code></li>
 							<li><strong>使用方式：</strong>
 								<div class="usageBox">
 								参数：data：ajax服务端返回的json数据
-								<p><code>ajaxSuccess : function(data){ return data.pageinfo; }</code></p>
+								<p><code>eAjaxSuccess : function(data){ return data.pageinfo; }</code></p>
 								返回的数据格式：
 								<p><xmp>
 {
@@ -328,15 +359,84 @@
 							</li>
 						</ul>
 					</div>
-					<div class="row" id="callback">
-						<h3>callback <small>事件回调，响应项目被选中后的事件处理</small></h3>
+					<div class="row" id="eSelect">
+						<h3>eSelect <small>事件回调，响应项目被选中后的事件处理</small></h3>
 						<ul>
 							<li><strong>类型：</strong><code>function</code></li>
 							<li><strong>默认值：</strong><code>无</code></li>
 							<li><strong>使用方式：</strong>
 								<div class="usageBox">
 								参数：data：选中行的原始JSON数据
-								<p><code>callback : function(data){ $('xxx').val(data.name + data.sex); }</code></p>
+								<p><code>eSelect : function(data){ $('xxx').val(data.name + data.sex); }</code></p>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="row" id="eTagRemove">
+						<h3>eTagRemove <small>事件回调，多选模式下，关闭标签是的回调函数</small></h3>
+						<ul>
+							<li><strong>类型：</strong><code>function</code></li>
+							<li><strong>默认值：</strong><code>无</code></li>
+							<li><strong>使用方式：</strong>
+								<div class="usageBox">
+								参数：removeCount：被移除标签的个数
+								<p><code>eTagRemove : function(removeCount){}</code></p>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="row" id="selectPageClear">
+						<h3>$.fn.selectPageClear <small>清除所有模式下选择的项目</small></h3>
+						<ul>
+							<li><strong>类型：</strong><code>function</code></li>
+							<li><strong>默认值：</strong><code>无</code></li>
+							<li><strong>使用方式：</strong>
+								<div class="usageBox">
+								<p><code>$('#selectPage').selectPageClear();</code></p>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="row" id="selectPageRefresh">
+						<h3>$.fn.selectPageRefresh <small>刷新选中项目内容</small></h3>
+						<ul>
+							<li><strong>类型：</strong><code>function</code></li>
+							<li><strong>默认值：</strong><code>无</code></li>
+							<li><strong>使用方式：</strong>
+								<div class="usageBox">
+								使用场景：使用$().val('xxx')修改插件的选中项目ID，此时需要刷新插件在输入框中的显示文本
+								<p>
+								$('#selectPage').val('5');<br> 
+								$('#selectPage').selectPageRefresh();
+								</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="row" id="selectPageData">
+						<h3>$.fn.selectPageData <small>动态修改插件数据源</small></h3>
+						<ul>
+							<li><strong>类型：</strong><code>function</code></li>
+							<li><strong>默认值：</strong><code>无</code></li>
+							<li><strong>使用方式：</strong>
+								<div class="usageBox">
+								参数：data：新数据源
+								<p>
+								var data = [{name:'aa',sex:1},{name:'bb',sex:0},{...}];
+								$('#selectPage').selectPageData(data);
+								</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="row" id="selectPageText">
+						<h3>$.fn.selectPageText <small>获得选中项目的文本</small></h3>
+						<ul>
+							<li><strong>类型：</strong><code>function</code></li>
+							<li><strong>默认值：</strong><code>无</code></li>
+							<li><strong>使用方式：</strong>
+								<div class="usageBox">
+								<p><code>alert($('#selectPage').selectPageText());</code></p>
 								</div>
 							</li>
 						</ul>

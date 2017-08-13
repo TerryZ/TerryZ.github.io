@@ -57,6 +57,27 @@
 	<div class="container">
 		<h1 class="text-center">更新记录</h1>
 		<section>
+			<h3>2017.08.13</h3>
+			<p>代码重构</p>
+			<p>修改默认样式，使用更简洁的风格</p>
+			<p>增加maxSelectLimit参数，设置多选模式下最大选择个数限制</p>
+			<p>增加eTagRemove回调函数，在多选模式下，移除标签时触发的回调</p>
+			<p>优化错误信息展示的交互方式</p>
+			<p>增加初始化选中项目时（多选模式），允许设置多个内容，例如：data-init="1,2,3,4"</p>
+			<p>修复键盘操作分页部分情况下会失效的问题</p>
+			<p>增加selectToCloseList参数，用于设置在多选模式下，选择项目后不关闭列表</p>
+			<p>修复selectToCloseList:false状态下，键盘操作会失去焦点，操作不连贯的问题</p>
+			<p>增加$.fn.selectPageClear的API，用于清空控件所有已选中的项目</p>
+			<p>增加$.fn.selectPageText的API，用于获得已选择的项目文本内容</p>
+			<p>增加$.fn.selectPageData的API，用于动态修改插件数据源</p>
+			<p>增加$.fn.SelectedRefresh的API，用于在使用.val()的方式修改了插件的选中项目后，刷新显示在输入框中的文本内容</p>
+			<p>优化控件内部对象缓存机制</p>
+			<p>去除快速使用脚本b.selectpage.js</p>
+			<p>初始化入口从原来的$('').bSelectPage({})修改为$('').selectPage({})</p>
+			<p>重新调整参数名称</p>
+			<p>修正Bootstrap3下控件宽度、高度应用的BUG</p>
+		</section>
+		<section>
 			<h3>2017.08.08</h3>
 			<p>修复界面上排版内容较少时，列表会向上展示开的问题</p>
 			<p>增加多选模式下的控制按钮区域，功能：“全选本页”、“取消本页”、“清空全部”</p>

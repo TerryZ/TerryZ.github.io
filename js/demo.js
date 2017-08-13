@@ -31,37 +31,82 @@ $(function(){
 		{id:29,name:'New Orleans Pelicans',desc:'新奥尔良鹈鹕'},
 		{id:30,name:'San Antonio Spurs',desc:'圣安东尼奥马刺'}
 	];
-	$('#selectPage').bSelectPage({
+	$('#selectPage').selectPage({
 		showField : 'name',
 		keyField : 'id',
 		data : tag_data
 	});
-	$('#selectPage1').bSelectPage({
+	$('#selectPage1').selectPage({
 		showField : 'desc',
 		keyField : 'id',
 		data : tag_data
 	});
-	$('#selectPage2').bSelectPage({
+	$('#selectPage2').selectPage({
 		showField : 'name',
 		keyField : 'id',
+		pageSize : 5,
 		data : tag_data,
 		formatItem : function(data){
 			return data.desc + '(' + data.name + ')';
 		}
 	});
-	$('#selectPage3').bSelectPage({
+	$('#selectPage3').selectPage({
 		showField : 'name',
 		keyField : 'id',
 		data : tag_data,
 		multiple : true
 	});
-	$('#selectPage4').bSelectPage({
+	$('#selectPage4').selectPage({
 		showField : 'name',
 		keyField : 'id',
 		data : tag_data,
 		multiple : true,
-		callback : function(data){
+		maxSelectLimit : 3,
+		selectToCloseList : false
+	});
+	$('#selectPage5').selectPage({
+		showField : 'name',
+		keyField : 'id',
+		data : tag_data,
+		multiple : true,
+		eSelect : function(data){
 			$('#callbackLog').append(data.desc + '(' + data.name + ')<br/>');
 		}
+	});
+	$('#selectPage6').selectPage({
+		showField : 'name',
+		keyField : 'id',
+		data : $webroot + 'user/loadUserListDatatable',
+		eAjaxSuccess : function(d){
+			var result;
+			if(d) result = d.values.gridResult;
+			else result = undefined;
+			return result;
+		}
+	});
+	$('#selectPage7').selectPage({
+		showField : 'name',
+		keyField : 'id',
+		data : tag_data
+	});
+	$('#func1').click(function(){
+		alert($('#selectPage').selectPageText());
+	});
+	$('#func2').click(function(){
+		$('#selectPage').selectPageClear();
+	});
+	$('#func3').click(function(){
+		$('#selectPage').val('20');
+		$('#selectPage').selectPageRefresh();
+	});
+	$('#btnModifyDataSource').click(function(){
+		var data = [
+			{id:1 ,name:'北京'},{id:2 ,name:'上海'},
+			{id:3 ,name:'广州'},{id:4 ,name:'深圳'},
+			{id:5 ,name:'成都'},{id:6 ,name:'重庆'},
+			{id:7 ,name:'福州'},{id:8 ,name:'长沙'},
+			{id:9 ,name:'西安'},{id:10,name:'浙江'}
+		];
+		$('#selectPage7').selectPageData(data);
 	});
 });

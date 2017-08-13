@@ -63,12 +63,15 @@
 	<div class="container" >
 		<h1 class="heading">下拉分页控件 <small>支持下拉，分页，键盘操作等功能</small></h1>
 		<div class="row-fluid">
-			<h4 class="heading">基本初始化 <small></small></h4>
+			<h4 class="heading">1.基本初始化 <small></small></h4>
 			<input type="text" id="selectPage" class="" placeholder="请输入查询关键字" >
+			<input type="button" id="func1" class="btn btn-default" value="获得选中项目的文本内容">
+			<input type="button" id="func2" class="btn btn-default" value="清除所有选中的项目">
+			<input type="button" id="func3" class="btn btn-default" value="动态修改选中项目">
 <script type="syntaxhighlighter" class="brush:js">
 <![CDATA[
 //表单声明元素
-<input type="text" id="selectPage" class="input-block-level" >
+<input type="text" id="selectPage" >
 //定义数组，在服务端返回的数据也以该格式返回：Array[{Object},{...}]
 var tag_data = [
 	{id:1 ,name:'Chicago Bulls',desc:'芝加哥公牛'},
@@ -80,43 +83,66 @@ var tag_data = [
 //keyField：设置下拉列表项目中项目的KEY值，用于提交表单
 //data：数据源，可以是JSON数据格式，也可以是URL
 //callback：选中项目后的回调函数
-$('#selectPage').bSelectPage({
+$('#selectPage').selectPage({
 	showField : 'desc',
 	keyField : 'id',
 	data : tag_data
+});
+//获得选中项目的文本内容
+$('#func1').click(function(){
+	alert($('#selectPage').selectPageText());
+});
+//清除所有选中的项目
+$('#func2').click(function(){
+	$('#selectPage').selectPageClear();
+});
+//动态修改选中项目
+$('#func3').click(function(){
+	$('#selectPage').val('20');
+	$('#selectPage').selectPageRefresh();
 });
 ]]>
 </script>
 		</div>
 		<div class="row-fluid">
-			<h4 class="heading">设置初始化选中项目 <small>以及请求参数传递等……</small></h4>			
-			<div class="pull-right">
-				<input type="text" id="selectPage1" class="" data-init="4" >
+			<h4 class="heading">2.设置初始化选中项目 <small></small></h4>
+			<div class="row">
+				<div class="pull-right col-md-6">
+					<input type="text" id="selectPage1"  class="form-control" data-init="4" >
+				</div>
 			</div>
 <script type="syntaxhighlighter" class="brush:js">
 <![CDATA[
 //data-init：设置列表初始被选中的项目，传递值为keyField对应的内容
-<input type="text" id="selectPage1" data-init="4" >
-$('#selectPage').bSelectPage({
-	showField : 'desc',
-	keyField : 'id',
-	data : '/sys/userinfo',
-	params : function(){return {'name':'aa','sex':1};}
-});
+<div class="row">
+	<div class="pull-right col-md-6">
+		<input type="text" id="selectPage1" data-init="4" class="form-control" >
+	</div>
+</div>
 ]]>
 </script>
 		</div>
 			
 		<div class="row-fluid">
-			<h4 class="heading">项目显示文本自定义 <small>允许根据现有数据字段进行自由组合</small></h4>
-			<input type="text" id="selectPage2" class="input-xlarge" style="width:300px;" placeholder="请输入查询关键字" >
+			<h4 class="heading">3.项目显示文本自定义 <small>允许根据现有数据字段进行自由组合</small></h4>
+			<div class="row">
+				<div class="col-md-6">
+					<input type="text" id="selectPage2" class="form-control" placeholder="请输入查询关键字" >
+				</div>
+			</div>
 <script type="syntaxhighlighter" class="brush:js">
 <![CDATA[
-<input type="text" id="selectPage" style="width:300px;" >
-$('#selectPage').bSelectPage({
+<div class="row">
+	<div class="pull-right col-md-6">
+		<input type="text" id="selectPage" class="form-control" >
+	</div>
+</div>
+$('#selectPage').selectPage({
 	showField : 'desc',
 	keyField : 'id',
 	data : tag_data,
+	//设置每页显示记录数
+	pageSize : 5,
 	//格式化显示项目，提供源数据进行使用
 	formatItem : function(data){
 		return data.desc + '(' + data.name + ')';
@@ -126,12 +152,11 @@ $('#selectPage').bSelectPage({
 </script>
 		</div>
 		<div class="row-fluid">
-			<h4 class="heading">多项选择模式 <small></small></h4>
-			<input type="text" id="selectPage3" class="input-block-level" placeholder="请输入查询关键字" >
+			<h4 class="heading">4.多项选择模式 <small>以标签页模式展示多选效果</small></h4>
+			<input type="text" id="selectPage3" class="form-control" placeholder="请输入查询关键字" >
 <script type="syntaxhighlighter" class="brush:js">
 <![CDATA[
-<input type="text" id="selectPage" class="input-block-level" >
-$('#selectPage').bSelectPage({
+$('#selectPage').selectPage({
 	showField : 'desc',
 	keyField : 'id',
 	data : tag_data,
@@ -141,25 +166,109 @@ $('#selectPage').bSelectPage({
 ]]>
 </script>
 		</div>
+		
+		<div class="row-fluid">
+			<h4 class="heading">5.多项选择模式限制最大选中项目 <small></small></h4>
+			<input type="text" id="selectPage4" class="form-control" placeholder="请输入查询关键字" >
+<script type="syntaxhighlighter" class="brush:js">
+<![CDATA[
+$('#selectPage').selectPage({
+	showField : 'desc',
+	keyField : 'id',
+	data : tag_data,
+	//启用多选模式
+	multiple : true,
+	//限制最多选中三个项目
+	maxSelectLimit : 3,
+	//设置选中项目后不关闭列表
+	selectToCloseList : false
+});
+]]>
+</script>
+		</div>
 
 		<div class="row-fluid">
-			<h4 class="heading">事件回调处理 <small>项目选中后，触发的事件处理</small></h4>
-			<input type="text" id="selectPage4" class="input-block-level" placeholder="请输入查询关键字" >
+			<h4 class="heading">6.事件回调处理 <small>项目选中后，触发的事件处理</small></h4>
+			<input type="text" id="selectPage5" class="form-control" placeholder="请输入查询关键字" >
 			<div id="callbackLog" class="logBox"></div>
 <script type="syntaxhighlighter" class="brush:js">
 <![CDATA[
-<input type="text" id="selectPage" class="input-block-level" >
-$('#selectPage').bSelectPage({
+$('#selectPage').selectPage({
 	showField : 'desc',
 	keyField : 'id',
 	data : tag_data,
 	multiple : true,
 	//选中项目后的回调处理
 	//入参：data：选中行的原始数据对象
-	callback : function(data){
+	eSelect : function(data){
 		$('#callbackLog').append(data.desc + '(' + data.name + ')<br/>');
 	}
 });
+]]>
+</script>
+		</div>
+		
+		
+		<div class="row-fluid">
+			<h4 class="heading">7.Ajax请求服务端数据模式 <small>以及请求参数传递等……</small></h4>
+			<input type="text" id="selectPage6" class="form-control" placeholder="请输入查询关键字" >
+<script type="syntaxhighlighter" class="brush:js">
+<![CDATA[
+$('#selectPage5').selectPage({
+	showField : 'name',
+	keyField : 'id',
+	data : 'http://aaa.com/load',
+	params : function(){return {'name':'aa','sex':1};},
+	eAjaxSuccess : function(d){
+		var result;
+		if(d) result = d.values.gridResult;
+		else result = undefined;
+		return result;
+	}
+});
+]]>
+</script>
+<script type="syntaxhighlighter" class="brush:js">
+<![CDATA[
+//服务端返回的JSON数据
+{
+    "values": {
+        "gridResult": {
+            "pageSize": 10,
+            "pageNumber": 1,
+            "totalRow": 11,
+            "totalPage": 2,
+            "list": [
+                {"name": "计算机网络","id": "1"},
+                {"name": "计算机网络1","id": "2"},
+				{...}
+            ]
+        }
+    }
+}
+]]>
+</script>
+		</div>
+		
+		<div class="row-fluid">
+			<h4 class="heading">8.动态修改数据源 <small>仅支持json数据源模式，ajax模式不支持动态修改</small></h4>
+			<div class="row">
+				<div class="col-md-5">
+					<input type="text" id="selectPage7" class="form-control" placeholder="请输入查询关键字" >
+				</div>
+				<input type="button" class="btn btn-default" id="btnModifyDataSource" value="修改数据源">			
+			</div>
+
+<script type="syntaxhighlighter" class="brush:js">
+<![CDATA[
+var data = [
+	{id:1 ,name:'北京'},{id:2 ,name:'上海'},
+	{id:3 ,name:'广州'},{id:4 ,name:'深圳'},
+	{id:5 ,name:'成都'},{id:6 ,name:'重庆'},
+	{id:7 ,name:'福州'},{id:8 ,name:'长沙'},
+	{id:9 ,name:'西安'},{id:10,name:'浙江'}
+];
+$('#selectPage').selectPageData(data);
 ]]>
 </script>
 		</div>
@@ -186,7 +295,6 @@ $('#selectPage').bSelectPage({
 <script type="text/javascript" src="js/code.preview.js" ></script>
 
 <script type="text/javascript" src="lib/selectpage/selectpage.min.js" ></script>
-<script type="text/javascript" src="lib/selectpage/b.selectpage.js" ></script>
 
 <script type="text/javascript" src="js/demo.js" ></script>
 </body>
