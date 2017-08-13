@@ -73,6 +73,7 @@ $(function(){
 			$('#callbackLog').append(data.desc + '(' + data.name + ')<br/>');
 		}
 	});
+	/*
 	$('#selectPage6').selectPage({
 		showField : 'name',
 		keyField : 'id',
@@ -84,6 +85,7 @@ $(function(){
 			return result;
 		}
 	});
+	*/
 	$('#selectPage7').selectPage({
 		showField : 'name',
 		keyField : 'id',
