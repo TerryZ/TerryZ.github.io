@@ -141,6 +141,30 @@ $('#mainFrameTabs').bTabs({
 });
 ]]>
 </script>
+
+
+
+
+
+
+
+
+<div id="container"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: 'bTabs.Guide', // 可选。默认为 location.href
+  owner: 'TerryZ',
+  repo: 'bTabs',
+  oauth: {
+    client_id: 'c896a41443d7e83f9fa3',
+    client_secret: '3493482e79023549b3ececd4dd0ce58b925df8d4',
+  },
+})
+gitment.render('container')
+</script>
+
 	</div>
 	</div>
 
