@@ -4,7 +4,7 @@
 	background-color: white;
 }
 .content .container{
-	width: 800px;
+	width: 950px;
 	padding-bottom: 30px;
 }
 .content .jumbotron{
@@ -44,3 +44,5 @@
 	background-color: #EEEEEE;height: 100px;margin-top: 5px;border-radius: 4px;padding: 5px 10px;
 	overflow-y:auto; 
 }
+.ajaxDesc{}
+.ajaxDesc dd{margin-bottom: 10px;}

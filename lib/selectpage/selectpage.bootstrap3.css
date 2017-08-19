@@ -167,6 +167,9 @@ ul.sp_results > li.sp_selected {
     border: 0px;
     background-color: #E8E8E8;
 }
+.sp_control_box button:last-child{
+	width: 33.4%;
+}
 .sp_control_box button:hover{
 	background-color: #D8D8D8;
 }
@@ -203,7 +206,7 @@ input.sp_combo_input:focus {
 }
 ul.sp_element_box{
 	margin: 0px;
-	padding: 3px 0px 0px 5px;
+	padding: 3px 0px 0px 3px;
 	position: relative;
 	overflow: hidden;
 	clear: both;
@@ -217,7 +220,7 @@ ul.sp_element_box{
 ul.sp_element_box > li{
 	list-style: none;
 	padding: 0px 5px;
-	margin-right: 5px;
+	margin-right: 3px;
 	margin-bottom: 3px;
 	/* margin-bottom: 2px; */
 	float: left;

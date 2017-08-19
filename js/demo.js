@@ -39,7 +39,9 @@ $(function(){
 	$('#selectPage1').selectPage({
 		showField : 'desc',
 		keyField : 'id',
-		data : tag_data
+		data : tag_data,
+        andOr : 'OR',
+        orderBy : ['id desc']
 	});
 	$('#selectPage2').selectPage({
 		showField : 'name',

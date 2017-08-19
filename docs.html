@@ -74,8 +74,10 @@
 						<li><a href="#autoFillResult">autoFillResult</a></li>
 						<li><a href="#noResultClean">noResultClean</a></li>
 						<li><a href="#formatItem">formatItem</a></li>
+						<li><a href="#andOr">andOr</a></li>
+						<li><a href="#orderBy">orderBy</a></li>
 						<li><a href="#pageSize">pageSize</a></li>
-						<li><a href="#initField">initField</a></li>
+						<li><a href="#inputDelay">inputDelay</a></li>
 						<li><a href="#params">params</a></li>
 						<li><a href="#eAjaxSuccess">eAjaxSuccess</a></li>
 						<li><a href="#eSelect">eSelect</a></li>
@@ -305,6 +307,32 @@
 							</li>
 						</ul>
 					</div>
+					<div class="row" id="andOr">
+						<h3>andOr <small>查询方式 ('AND' or 'OR')</small></h3>
+						<ul>
+							<li><strong>类型：</strong><code>string</code></li>
+							<li><strong>默认值：</strong><code>'AND'</code></li>
+							<li><strong>使用方式：</strong>
+								<div class="usageBox">								
+								<p>andOr : 'OR'</p>
+								<p>参数指定了插件在使用多关键字过滤时，处理的逻辑，多关键字之间使用半角空格隔开</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="row" id="orderBy">
+						<h3>orderBy <small>数据排序方式</small></h3>
+						<ul>
+							<li><strong>类型：</strong><code>array</code></li>
+							<li><strong>默认值：</strong><code>使用showField指定的列进行升序排列</code></li>
+							<li><strong>使用方式：</strong>
+								<div class="usageBox">
+								<p>orderBy : ['id desc','name']</p>
+								<p>若只指定了列，而不指定排序方式，则默认使用Asc升序排列，列和排序方式之间使用半角空格隔开</p>
+								</div>
+							</li>
+						</ul>
+					</div>
 					<div class="row" id="pageSize">
 						<h3>pageSize <small>每页显示记录数</small></h3>
 						<ul>
@@ -312,15 +340,14 @@
 							<li><strong>默认值：</strong><code>10</code></li>
 						</ul>
 					</div>
-					<div class="row" id="initField">
-						<h3>initField <small>初始化数据列</small></h3>
+					<div class="row" id="inputDelay">
+						<h3>inputDelay <small>输入关键字查询延迟（仅ajax数据源模式下可用）</small></h3>
 						<ul>
-							<li><strong>类型：</strong><code>string</code></li>
-							<li><strong>默认值：</strong><code>'data-init'</code></li>
+							<li><strong>类型：</strong><code>number</code></li>
+							<li><strong>默认值：</strong><code>0.5</code></li>
 							<li><strong>使用方式：</strong>
 								<div class="usageBox">
-								<p>初始化数据列，默认设置为data-init属性，该属性设置了初始化插件时默认显示的内容</p>
-								<p>它必须设置在input标签内，例：<code>< input type="text" data-init="20" ></code></p>
+								<p>该参数指定了在ajax数据源模式下，延迟输入查询的时间，避免在单位时间内连续输入发起的连续ajax查询，单位：秒，默认值：0.5</p>
 								</div>
 							</li>
 						</ul>
