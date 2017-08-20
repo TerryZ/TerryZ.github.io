@@ -1,0 +1,9 @@
+@CHARSET "UTF-8";
+
+.content{
+	background-color: white;
+}
+.content .container{
+	width: 800px;
+	padding-bottom: 30px;
+}
