@@ -72,15 +72,23 @@
 						<li><a href="#backdrop">backdrop</a></li>
 						<li><a href="#dialogCloseButton">dialogCloseButton</a></li>
 						<li><a href="#dialogMaxButton">dialogMaxButton</a></li>
+						<li><a href="#language">language</a></li>
+						<li><a href="#dom">dom</a></li>
+						<li><a href="#animation">animation</a></li>
 						<li><a href="#scroll">scroll</a></li>
 						<li><a href="#drag">drag</a></li>
 						<li><a href="#fullWidth">fullWidth</a></li>
 						<li><a href="#customClass">customClass</a></li>
+						<li><a href="#messageType">messageType</a></li>
 						<li><a href="#onShow">onShow</a></li>
 						<li><a href="#onShowed">onShowed</a></li>
 						<li><a href="#onHide">onHide</a></li>
 						<li><a href="#onHidden">onHidden</a></li>
-						<li><a href="#closeCurrent">bDialog.closeCurrent</a></li>
+						<li><a href="#cancel">cancel</a></li>
+						<li><a href="#open">bDialog.open</a></li>
+						<li><a href="#alert">bDialog.alert</a></li>
+						<li><a href="#mask">bDialog.mask</a></li>
+						<li><a href="#close">bDialog.close</a></li>
 						<li><a href="#getDialog">bDialog.getDialog</a></li>
 						<li><a href="#getDialogParams">bDialog.getDialogParams</a></li>
 					</ul>
@@ -211,6 +219,45 @@ callback:function(data){
 							</li>
 						</ul>
 					</div>
+					<div class="row" id="language">
+						<h3>language <small>插件使用的语言，默认为中文</small></h3>
+						<ul>
+							<li><strong>类型：</strong><code>string</code></li>
+							<li><strong>默认值：</strong><code>'cn'</code></li>
+							<li><strong>使用方式：</strong>
+								<div class="usageBox">
+								目前已预设的语言有：'cn'中文（默认），'en'英文，'jp'日文
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="row" id="dom">
+						<h3>dom <small>需要在窗口里显示的HTML DOM内容</small></h3>
+						<ul>
+							<li><strong>类型：</strong><code>object</code></li>
+							<li><strong>默认值：</strong><code>无</code></li>
+							<li><strong>使用方式：</strong>
+								<div class="usageBox">
+									<p>将页面上预定义好的HTML内容，以模态窗口的形式展现</p>
+									<p>若参数中同时定义了dom和url则以dom内容为优先展示</p>
+									<p>例如：</p>
+									<p><code>dom : $('#content').html()</code></p>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="row" id="animation">
+						<h3>animation <small>窗口打开时的动画效果</small></h3>
+						<ul>
+							<li><strong>类型：</strong><code>boolean</code></li>
+							<li><strong>默认值：</strong><code>true</code></li>
+							<li><strong>使用方式：</strong>
+								<div class="usageBox">
+								窗口打开时会有弹跳的动画效果
+								</div>
+							</li>
+						</ul>
+					</div>
 					<div class="row" id="scroll">
 						<h3>scroll <small>窗口内部是否显示滚动条</small></h3>
 						<ul>
@@ -257,6 +304,25 @@ callback:function(data){
 								<div class="usageBox">
 								<p>页面中需要根据不同功能展示不同样式的弹出窗口时，可以使用该参数指定需要使用的样式名称</p>
 								<p><span class="label label-default">提示</span> 样式内容需要预先定义，插件本身并不带任何皮肤样式</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="row" id="messageType">
+						<h3>messageType <small>消息对话框类型，仅在bDialog.alert()模式下有效</small></h3>
+						<ul>
+							<li><strong>类型：</strong><code>string</code></li>
+							<li><strong>默认值：</strong><code>'info'</code></li>
+							<li><strong>使用方式：</strong>
+								<div class="usageBox">
+								<p>设置对话框模式的窗口类型，不同类型有不同的图标及按钮</p>
+								<p>可设置的类型有：</p>
+								<p>info(消息提示模式，默认)</p>
+								<p>warning(警告模式)</p>
+								<p>error(错误模式)</p>
+								<p>success(完成模式)</p>
+								<p>confirm(确认对话框模式，该模式下，会有'确认'和'取消'两个按钮)</p>
+								<p><span class="label label-default">提示</span> confirm类型下，可单独设置cancel回调函数以用于点击取消按钮后的专用回调</p>
 								</div>
 							</li>
 						</ul>
@@ -313,16 +379,90 @@ callback:function(data){
 							</li>
 						</ul>
 					</div>
-					<div class="row" id="closeCurrent">
-						<h3>bDialog.closeCurrent <small>关闭窗口API</small></h3>
+					<div class="row" id="cancel">
+						<h3>cancel <small>confirm模式下，取消按钮的执行回调</small></h3>
+						<ul>
+							<li><strong>类型：</strong><code>function</code></li>
+							<li><strong>默认值：</strong><code>无</code></li>
+							<li><strong>使用方式：</strong>
+								<div class="usageBox">
+								<p>该回调函数仅在bDialog.alert()模式，且messageType为'confirm'模式下有效</p>
+								<p>用于确认对话框中的取消按钮点击后的专用回调</p>
+								<p>例：<code>cancel : function(dialog){ $('#aa',$(dialog)).val(1); }</code></p>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="row" id="open">
+						<h3>bDialog.open <small>打开模态窗口</small></h3>
+						<ul>
+							<li><strong>类型：</strong><code>function</code></li>
+							<li><strong>默认值：</strong><code>无</code></li>
+							<li><strong>使用方式：</strong>
+								<div class="usageBox">
+								<p>以模态窗口的形式加载服务端页面或HTML片断内容</p>
+								<p>参数：以上的参数均为插件的配置参数</p>								
+								<p><code>var a = bDialog.open({...});</code></p>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="row" id="alert">
+						<h3>bDialog.alert <small>打开消息对话窗口</small></h3>
+						<ul>
+							<li><strong>类型：</strong><code>function</code></li>
+							<li><strong>默认值：</strong><code>无</code></li>
+							<li><strong>使用方式：</strong>
+								<div class="usageBox">
+								<p>以模态窗口的形式加载服务端页面或HTML片断内容</p>
+								<p>参数：</p>
+								<p>message：显示文本内容</p>
+								<p>callback：关闭对话框后的回调</p>
+								<p>param：其它配置参数</p>
+								<p>示例：</p>
+								<p><code>var a = bDialog.alert('我是一个消息对话框!');</code></p>
+								<p><code>var a = bDialog.alert('我是一个消息对话框!',function(){//对话框关闭后的回调});</code></p>
+								<p><code>var a = bDialog.alert('我是一个消息对话框!',function(){},{messageType:'error'});</code></p>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="row" id="mask">
+						<h3>bDialog.mask <small>打开遮罩层</small></h3>
+						<ul>
+							<li><strong>类型：</strong><code>function</code></li>
+							<li><strong>默认值：</strong><code>无</code></li>
+							<li><strong>使用方式：</strong>
+								<div class="usageBox">
+								<p>以模态窗口的形式加载服务端页面或HTML片断内容</p>
+								<p>参数：</p>
+								<p>message：显示的提示文本，非必传，不传递则显示默认文本</p>
+								<p>param：配置参数，非必传</p>
+								<p>示例：</p>
+								<p><code>var a = bDialog.mask();//显示遮罩，并使用默认提示文本</code></p>
+								<p><code>var a = bDialog.mask('数据加载中，请稍等……');//显示遮罩，使用自定义文本</code></p>
+								<p><code>bDialog.mask('数据加载中，请稍等……',{
+									callback : function(){...}
+								});//显示遮罩，使用自定义文本</code></p>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="row" id="close">
+						<h3>bDialog.close <small>关闭窗口API</small></h3>
 						<ul>
 							<li><strong>类型：</strong><code>function</code></li>
 							<li><strong>默认值：</strong><code>无</code></li>
 							<li><strong>使用方式：</strong>
 								<div class="usageBox">
 								<p>该函数可以关闭窗口，并可以在关闭窗口的时候，回传参数给父窗口</p>
-								<p>例：<br><code>bDialog.closeCurrent();</code>仅关闭窗口，不传递参数</p>
-								<p><code>bDialog.closeCurrent({name:'zhangsan',sex:1});</code>关闭窗口并传递参数</p>
+								<p>参数：</p>
+								<p>data：向调用者回传的数据，或是bDialog对象</p>
+								<p>dialog：bDialog对象，用于关闭指定窗口</p>
+								<p>例：<br><code>bDialog.close();</code>仅关闭窗口（最后一个弹出的窗口），不传递参数</p>
+								<p><code>bDialog.close({name:'zhangsan',sex:1});</code>关闭最后弹出的窗口并传递参数</p>
+								<p><code>var a = bDialog.open({...});bDialog.close({name:'zhangsan',sex:1},a);</code>关闭窗口并传递参数</p>
+								<p><code>var a = bDialog.open({...});bDialog.close(a);</code>关闭指定窗口不传递参数</p>
 								</div>
 							</li>
 						</ul>
