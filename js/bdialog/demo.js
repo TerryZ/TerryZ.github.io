@@ -4,7 +4,7 @@ $(function(){
 			title : '窗口标题',
 			width : 500,
 			height : 450,
-			url : $webroot + 'demo/manage/openWeb'
+			url : 'https://terryz.github.io/bdialog/opentext.html'
 		});
 	});
     $('#btnInfo').click(function(){
@@ -49,7 +49,7 @@ $(function(){
 			title : '窗口标题',
 			width : 500,
 			height : 450,
-			url : $webroot + 'demo/manage/openWeb',
+			url : 'https://terryz.github.io/bdialog/open.html',
 			params : {
 				'userName' : 'zhangsan'
 			},
@@ -70,7 +70,7 @@ $(function(){
 			width : 500,
 			height : 450,
 			dialogCloseButton : false,
-			url : $webroot + 'demo/manage/openWeb'
+			url : 'https://terryz.github.io/bdialog/opentext.html'
 		});
 	});
 	$('#btnDialog4').click(function(){
@@ -78,7 +78,7 @@ $(function(){
 			title : false,
 			width : 500,
 			height : 450,
-			url : $webroot + 'demo/manage/openWeb'
+			url : 'https://terryz.github.io/bdialog/opentext.html'
 		});
 	});
 	$('#btnDialog5').click(function(){
@@ -87,7 +87,7 @@ $(function(){
 			width : 500,
 			height : 450,
 			fullWidth : true,
-			url : $webroot + 'demo/manage/openWeb'
+			url : 'https://terryz.github.io/bdialog/opentext.html'
 		});
 	});
 	
@@ -97,7 +97,7 @@ $(function(){
 			width : 500,
 			height : 450,
 			customClass : 'original',
-			url : $webroot + 'demo/manage/openWeb'
+			url : 'https://terryz.github.io/bdialog/opentext.html'
 		});
 	});
 	$('#btnDialog7').click(function(){
@@ -106,7 +106,7 @@ $(function(){
 			width : 500,
 			height : 450,
 			customClass : 'blue',
-			url : $webroot + 'demo/manage/openWeb'
+			url : 'https://terryz.github.io/bdialog/opentext.html'
 		});
 	});
 	$('#btnDialog8').click(function(){
@@ -116,7 +116,7 @@ $(function(){
 			height : 450,
 			dialogMaxButton : false,
 			customClass : 'simple',
-			url : $webroot + 'demo/manage/openWeb'
+			url : 'https://terryz.github.io/bdialog/opentext.html'
 		});
 	});
 	$('#btnDialog9').click(function(){
