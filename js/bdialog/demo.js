@@ -23,7 +23,8 @@ $(function(){
     });
     $('#btnSuccess').click(function(){
         bDialog.alert('数据保存成功！大吉大利，晚上吃鸡！',null,{
-            messageType : 'success'
+            messageType : 'success',
+            language : 'en'
         });
     });
     $('#btnConfirm').click(function(){
