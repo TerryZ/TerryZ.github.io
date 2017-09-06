@@ -113,4 +113,12 @@ $(function(){
 		];
 		$('#selectPage7').selectPageData(data);
 	});
+	$('#selectPageSelectOnly').selectPage({
+        showField : 'name',
+        keyField : 'id',
+        data : tag_data,
+        selectOnly : true,
+        pagination : false,
+        multiple : true
+    });
 });

@@ -76,6 +76,8 @@
 						<li><a href="#lang">lang</a></li>
 						<li><a href="#searchField">searchField</a></li>
 						<li><a href="#multiple">multiple</a></li>
+						<li><a href="#pagination">pagination</a></li>
+						<li><a href="#listSize">listSize</a></li>
 						<li><a href="#multipleControlbar">multipleControlbar</a></li>
 						<li><a href="#maxSelectLimit">maxSelectLimit</a></li>
 						<li><a href="#selectToCloseList">selectToCloseList</a></li>
@@ -216,6 +218,31 @@
 							<li><strong>使用方式：</strong>
 								<div class="usageBox">
 								设置插件选择模式，默认为单选模式
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="row" id="pagination">
+						<h3>pagination <small>是否分页</small></h3>
+						<ul>
+							<li><strong>类型：</strong><code>boolean</code></li>
+							<li><strong>默认值：</strong><code>true</code></li>
+							<li><strong>使用方式：</strong>
+								<div class="usageBox">
+								<p>设置插件是否打开分页模式，默认打开分页模式</p>
+								<p>关闭分页后，将会在列表中显示所有数据，上限为200个项目，同时分页栏也不再显示</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="row" id="listSize">
+						<h3>listSize <small>关闭分页的状态下，列表显示的项目个数，其它的项目以滚动条滚动方式展现</small></h3>
+						<ul>
+							<li><strong>类型：</strong><code>number</code></li>
+							<li><strong>默认值：</strong><code>10</code></li>
+							<li><strong>使用方式：</strong>
+								<div class="usageBox">
+								<p>设置关闭分页模式时，列表的高度以显示多少个项目为准</p>								
 								</div>
 							</li>
 						</ul>
