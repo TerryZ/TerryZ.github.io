@@ -8,6 +8,7 @@ body{
 header{
 	background-color: #E76F3A;
 	color: #666666;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif;
 }
 .navbar-brand {
 	color: #eeeeee;
