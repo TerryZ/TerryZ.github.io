@@ -11,6 +11,7 @@
 .content .jumbotron h1 {
 	font-size: 50px;
 	font-weight: lighter;
+    margin-top: 0px;
 }
 .content .row h3{
 	text-align: center;
@@ -21,7 +22,7 @@
 .content .desc{
 	font-size: 15px;
 	color: #666666;
-	margin: 0px 50px 20px 50px;
+	margin: 0px 40px 20px 40px;
 }
 
 .pluginImg{
