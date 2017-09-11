@@ -8,16 +8,20 @@
 	background-color: #0866C6;
 }
 .headerArea .jumbotron {
-	margin-left: 330px;
+	margin-left: 150px;
 	background-color: #0866C6;
-	padding-left: 0px;
 	margin-bottom: 0px;
-	padding-bottom: 20px;
+    padding: 0px 0px 20px 0px;
+}
+.headerArea .jumbotron h1,h3 {
+    color: white;
 }
 .headerArea .jumbotron h1 {
 	font-size: 50px;
 	font-weight: lighter;
-	color: white;
+}
+.headerArea .jumbotron h3 small{
+    color: #DDDDDD;
 }
 .headerArea .jumbotron p {
 	color: white;
