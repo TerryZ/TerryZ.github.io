@@ -182,7 +182,7 @@ hr.small {
     position: relative;
     width: 100%;
     height: 100%;
-    background: url(../img/bg.jpg) no-repeat center center scroll;
+    background: url(../image/bg.jpg) no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -257,7 +257,7 @@ hr.small {
     background-position: top;
     border-radius: inherit;
 	opacity: .1;
-    background-image: url(../img/bg-image.svg);
+    background-image: url(../image/bg-image.svg);
     background-repeat: repeat;
 }
 @keyframes bgIconsShowcaseSlide{0%{transform:translateZ(0);}to{transform:translate3d(-1200px,0,0);}}
