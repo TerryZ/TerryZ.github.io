@@ -195,6 +195,21 @@ hr.small {
     padding: 50px 0;
 }
 
+/* Funny Box */
+.funnyBox{
+
+}
+.funnyBox i{
+    margin-right: 20px;
+    color: #777777;
+}
+.funnyBox span{
+    margin-right: 20px;
+    color: #777777;
+    font-size: 50px;
+    font-family: Consolas;
+    font-weight: bold;
+}
 /* Services */
 
 .services {
@@ -206,6 +221,11 @@ hr.small {
 .service-item {
     margin-bottom: 30px;
 }
+.service-item .item-icon {
+    padding: 25px 0px 0px 0px;
+}
+
+
 .works-area{
 	z-index: 1;
 }

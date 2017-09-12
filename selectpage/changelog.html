@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SelectPage更新记录</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="lib/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="lib/font-awesome-4/css/font-awesome.min.css" />
+    
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/changelog.css" />
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-4688926342467996",
+    enable_page_level_ads: true
+  });
+</script>
+</head>
+
+<body>
+    <header class="navbar navbar-static-top" id="top">
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="https://terryz.github.io/" class="navbar-brand">SelectPage</a>
+        </div>
+        <nav id="bs-navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="guide.html" >入门</a>
+                </li>
+                <li>
+                    <a href="demo.html" >实例</a>
+                </li>
+                <li>
+                    <a href="docs.html" >文档</a>
+                </li>
+                <li class="active">
+                    <a href="javascript:void(0);" >更新记录</a>
+                </li>
+                <li>
+                    <a href="message.html" >留言/反馈</a>
+                </li>
+                <li>
+                    <a href="https://terryz.github.io/bdialog/index.html" >bDialog</a>
+                </li>
+                <li>
+                    <a href="https://terryz.github.io/bpage/index.html" >bPage</a>
+                </li>
+                <li>
+                    <a href="https://terryz.github.io/btabs/index.html" >bTabs</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="https://github.com/TerryZ/SelectPage" target="_blank"><i class="fa fa-lg fa-github"></i> Fork on Github</a></li>
+            </ul>
+        </nav>
+    </div>
+    </header>
+
+	<div class="content">
+	<div class="container">
+		<h1 class="text-center">更新记录</h1>
+		<section>
+			<h3>2017.09.07 <small>v2.6</small></h3>
+			<p>修复单选模式下初始化项目的显示文本没有使用formatItem回调格式化的问题</p>
+			<p>修复单选模式存在初始化项目时，再打开下拉列表时，仅显示匹配的项目一条数据的问题</p>
+			<p>修复多选模式下，动态修改选中值selectPageRefresh功能无效</p>
+		</section>
+		<section>
+			<h3>2017.09.07 <small>v2.5</small></h3>
+			<p>修复多选模式下，初始化项目的显示文本没有使用formatItem回调进行格式化</p>
+			<p>修复ajax数据源模式下，输入查询关键字时，翻页始终为第一页的问题</p>
+		</section>
+		<section>
+			<h3>2017.08.26 <small>v2.4</small></h3>
+			<p>增加pagination参数，指定稿件是否使用分页加载数据，以及显示分页栏</p>
+			<p>增加listSize参数，指定了不使用分页的列表，显示的高度，单位为个（选项个数），默认显示10个项目的高度</p>
+			<p>设置selectOnly:true的情况下，输入框为只读模式，不允许输入查询过滤</p>
+			<p>修复多选模式下及设置了最大选中项目时，选中了项目再次点击“全选本页”按钮会在已选择的基础上增加最大选中项目个数的项目</p>
+			<p>调整下拉列表样式及位置</p>
+			<p>增加单选模式下，选中项目后，自动显示清空按钮</p>
+			<p>修复多选模式下，移除本页和清除所有两个按钮点击后，回调出错的问题</p>
+			<p>增加搜索无结果时显示提示信息</p>
+		</section>
+		<section>
+			<h3>2017.08.23 <small>v2.3</small></h3>
+			<p>修复在查询关键字状态下，分页数据没有被更新，导致分页按钮功能不正常问题</p>
+			<p>清理整理内部对象</p>
+			<p>修复多选模式下，若设置了最大选中项目个数，点击“全选本页”按钮时，仅选中指定的最大数量</p>
+			<p>增加selectpage.base.css兼容无UI框架的方案，但建议要至少使用normalize.css</p>
+		</section>
+		<section>
+			<h3>2017.08.19 <small>v2.2</small></h3>
+			<p>增加为原始输入框的value属性设置初始化值，以初始化插件选中项目</p>
+			<p>修复多选模式下关闭标签出错的问题</p>
+			<p>修复输入查询关键字后失去焦点，再次获得焦点时，插件没有根据已存在的关键进行过滤</p>
+			<p>增加inputDelay配置项目，设置ajax数据源模式下，延迟输入查询的时间，避免在单位时间内连续输入发起的连续ajax查询，单位：秒，默认值：0.5</p>
+			<p>修正对数字类型的列进行排序时，仍然以字符串的方式进行排序</p>
+		</section>
+		<section>
+			<h3>2017.08.14 <small>v2.1</small></h3>
+			<p>修复ajax模式下，部分情况下分页页码不正常的问题</p>
+		</section>
+		<section>
+			<h3>2017.08.13 <small>v2.0</small></h3>
+			<p>代码重构</p>
+			<p>修改默认样式，使用更简洁的风格</p>
+			<p>增加maxSelectLimit参数，设置多选模式下最大选择个数限制</p>
+			<p>增加eTagRemove回调函数，在多选模式下，移除标签时触发的回调</p>
+			<p>优化错误信息展示的交互方式</p>
+			<p>增加初始化选中项目时（多选模式），允许设置多个内容，例如：data-init="1,2,3,4"</p>
+			<p>修复键盘操作分页部分情况下会失效的问题</p>
+			<p>增加selectToCloseList参数，用于设置在多选模式下，选择项目后不关闭列表</p>
+			<p>修复selectToCloseList:false状态下，键盘操作会失去焦点，操作不连贯的问题</p>
+			<p>增加$.fn.selectPageClear的API，用于清空控件所有已选中的项目</p>
+			<p>增加$.fn.selectPageText的API，用于获得已选择的项目文本内容</p>
+			<p>增加$.fn.selectPageData的API，用于动态修改插件数据源</p>
+			<p>增加$.fn.SelectedRefresh的API，用于在使用.val()的方式修改了插件的选中项目后，刷新显示在输入框中的文本内容</p>
+			<p>优化控件内部对象缓存机制</p>
+			<p>去除快速使用脚本b.selectpage.js</p>
+			<p>初始化入口从原来的$('').bSelectPage({})修改为$('').selectPage({})</p>
+			<p>重新调整参数名称</p>
+			<p>修正Bootstrap3下控件宽度、高度应用的BUG</p>
+		</section>
+		<section>
+			<h3>2017.08.08</h3>
+			<p>修复界面上排版内容较少时，列表会向上展示开的问题</p>
+			<p>增加多选模式下的控制按钮区域，功能：“全选本页”、“取消本页”、“清空全部”</p>
+			<p>修复最大宽度下超出父容器的宽度问题</p>
+			<p>修复ajax模式报错的问题</p>
+			<p>增加ajax_success请求成功后的数据处理回调</p>
+		</section>
+		<section>
+			<h3>2017.06.24</h3>
+			<p>增加Bootstrap3样式支持</p>
+		</section>
+		
+		<h3>2017.06.13</h3>
+		<p>插件改名SelectPage</p>
+		<h3>2017.06</h3>
+		<p>修复部分样式BUG</p>
+		<h3>2017.05</h3>
+		<p>代码重构</p>
+		<p>增加多项选择东西，并以标签（Tag）的形式展现在输入框中</p>
+		<p>修正插件外框宽度问题</p>
+		<p>修改选中事件回调的入参从key,value改为选中行的原始数据对象，以便更灵活的数据处理</p>
+		<h3>2017.04.24</h3>
+		<p>解决控件在设置disabled="disabled"禁用状态时，点击向下的三角尖也可以打开列表的问题</p>
+		<p>增加控件在已有选中项目时，直接删除输入框中的内容，作为清空控件内容的功能</p>
+		<p>修改失去焦点的范围从document.body到document</p>
+		<p>优化键盘输入捕捉的方式</p>
+		<p>原列表有多页的情况下，再输入关键字，没有匹配到任何项目时，分页条的下一页，最后一页为可点击的样式，且分页信息的内容也不正确</p>
+		<h3>2017.04.21</h3>
+		<p>解决打开no_result_clean参数，没有匹配输入关键词的项目时，列表不隐藏的问题</p>
+		<h3>2017.03.24</h3>
+		<p>解决下拉分页插件向上浮动时位置不正确的问题</p>
+		<p>解决下拉分页插件在已有选中值时，再次点击输入框后，打开的列表分页栏翻页功能无效的问题</p>
+		<h3>2017.01.20</h3>
+		<p>增加下拉列表展示之前判断列表的面板是否会超出底部区域，若超出则将列表向上对齐展示</p>
+		<p>处理下拉列表显示一次操作显示多次的问题</p>
+		<p>增加控件已有选中值时，在显示下拉列表时，直接跳转到该项目所在的页</p>
+		<p>修复一些点击输入框出现下拉列表的Bug</p>
+		<h3>2017.01.19</h3>
+		<p>取消在输入状态时，判断到输入框里内容为空时，隐藏下拉列表的操作</p>
+		<p>在展示下拉列表时，判断默认与输入框左对齐的列表是否会超出屏幕边界，是则右对齐，否则默认左对齐</p>
+		<h3>2017.01.16</h3>
+		<p>解决输入关键进行搜索并有匹配结果时，失去焦点后，没有自动选中第一项</p>
+		<h3>2016.10</h3>
+		<p>增加光标进入输入框时，打开下拉列表的功能</p>
+		<h3>2016.08.12</h3>
+		<p>解决控件对于原始input设置的样式(bootstrap原生提供的宽度样式)，宽度显示不正常的问题</p>
+		<p>增加若设置了formatItem格式函数，则进行匹配的数据源从show_field改为formatItem后的结果进行匹配</p>
+		<h3>2016.08.10</h3>
+		<p>弹出下拉列表时，若有已选中的项目，则将已选中的项目进行高亮，否则对第一行进行高亮</p>
+		<p>下拉列表展开时，鼠标点击列表区域外，若当前列表已有选中项目，则直接隐藏列表；若当前列表没有默认选中项目，则使用当前高亮项目的内容进行设置</p>
+		<h3>2016.08.04</h3>
+		<p>修复因宽度变化导致下拉触发按钮位置在出现下拉列表后发生偏移，原因是原控件的触发按钮是在输入框外部扩展，现已移入输入框内部</p>
+		<h3>2016.06.29</h3>
+		<p>修复分页栏鼠标点击时跳转的页数不正常的问题</p>
+		<h3>2016.04.20</h3>
+		<p>增加参数auto_select_first(是否自动选择列表中的第一项内容)</p>
+		<p>解决下拉分页有初始化内容，并删除部分关键字时显示的结果集列表不足一页时，分页栏没有被生成的问题</p>
+		<p>增加参数auto_fill_result(是否自动填充内容)</p>
+		<p>增加参数no_result_clean(是否清空无匹配结果的输入关键字)</p>
+		<h3>2016.03</h3>
+		<p>插件初始开发</p>
+	</div>
+	</div>
+
+    <footer class="footer">
+        <div class="container">
+        Copyright © 2016-2017 Terry Zeng
+        </div>
+    </footer>
+<script type="text/javascript" src="js/count.js" ></script>
+</body>
+</html>
