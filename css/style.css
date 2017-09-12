@@ -210,6 +210,12 @@ hr.small {
     font-family: Consolas;
     font-weight: bold;
 }
+.funnyBox .rightInput{
+    color: limegreen;
+}
+.funnyBox .wrongInput{
+    color: red;
+}
 /* Services */
 
 .services {
