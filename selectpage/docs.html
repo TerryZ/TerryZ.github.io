@@ -88,6 +88,7 @@
 						<li><a href="#eAjaxSuccess">eAjaxSuccess</a></li>
 						<li><a href="#eSelect">eSelect</a></li>
 						<li><a href="#eTagRemove">eTagRemove</a></li>
+                        <li><a href="#eClear">eClear</a></li>
 						<li><a href="#selectPageClear">$.fn.selectPageClear</a></li>
 						<li><a href="#selectPageRefresh">$.fn.selectPageRefresh</a></li>
 						<li><a href="#selectPageData">$.fn.selectPageData</a></li>
@@ -430,19 +431,31 @@
 							</li>
 						</ul>
 					</div>
-					<div class="row" id="eTagRemove">
-						<h3>eTagRemove <small>事件回调，多选模式下，关闭标签是的回调函数</small></h3>
-						<ul>
-							<li><strong>类型：</strong><code>function</code></li>
-							<li><strong>默认值：</strong><code>无</code></li>
-							<li><strong>使用方式：</strong>
-								<div class="usageBox">
-								参数：removeCount：被移除标签的个数
-								<p><code>eTagRemove : function(removeCount){}</code></p>
-								</div>
-							</li>
-						</ul>
-					</div>
+                    <div class="row" id="eTagRemove">
+                        <h3>eTagRemove <small>事件回调，多选模式下，关闭标签是的回调函数</small></h3>
+                        <ul>
+                            <li><strong>类型：</strong><code>function</code></li>
+                            <li><strong>默认值：</strong><code>无</code></li>
+                            <li><strong>使用方式：</strong>
+                                <div class="usageBox">
+                                    参数：removeCount：被移除标签的个数
+                                    <p><code>eTagRemove : function(removeCount){}</code></p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="row" id="eClear">
+                        <h3>eClear <small>单选模式下，清除按钮的功能回调</small></h3>
+                        <ul>
+                            <li><strong>类型：</strong><code>function</code></li>
+                            <li><strong>默认值：</strong><code>无</code></li>
+                            <li><strong>使用方式：</strong>
+                                <div class="usageBox">
+                                    <p><code>eClear : function(){}</code></p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
 					<div class="row" id="selectPageClear">
 						<h3>$.fn.selectPageClear <small>清除所有模式下选择的项目</small></h3>
 						<ul>
