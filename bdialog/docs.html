@@ -81,6 +81,8 @@
 						<li><a href="#fullWidth">fullWidth</a></li>
 						<li><a href="#customClass">customClass</a></li>
 						<li><a href="#messageType">messageType</a></li>
+                        <li><a href="#position">position</a></li>
+                        <li><a href="#closeTime">closeTime</a></li>
 						<li><a href="#onShow">onShow</a></li>
 						<li><a href="#onShowed">onShowed</a></li>
 						<li><a href="#onHide">onHide</a></li>
@@ -310,7 +312,7 @@ callback:function(data){
 						</ul>
 					</div>
 					<div class="row" id="messageType">
-						<h3>messageType <small>消息对话框类型，仅在bDialog.alert()模式下有效</small></h3>
+						<h3>messageType <small>消息对话框类型，仅在bDialog.alert()、bDialog.toast()模式下有效</small></h3>
 						<ul>
 							<li><strong>类型：</strong><code>string</code></li>
 							<li><strong>默认值：</strong><code>'info'</code></li>
@@ -322,12 +324,44 @@ callback:function(data){
 								<p>warning(警告模式)</p>
 								<p>error(错误模式)</p>
 								<p>success(完成模式)</p>
-								<p>confirm(确认对话框模式，该模式下，会有'确认'和'取消'两个按钮)</p>
+								<p>confirm(确认对话框模式，该模式下，会有'确认'和'取消'两个按钮，仅alert模式下可用)</p>
 								<p><span class="label label-default">提示</span> confirm类型下，可单独设置cancel回调函数以用于点击取消按钮后的专用回调</p>
 								</div>
 							</li>
 						</ul>
 					</div>
+                    <div class="row" id="position">
+                        <h3>position <small>窗口显示位置，仅在bDialog.toast()模式下可用</small></h3>
+                        <ul>
+                            <li><strong>类型：</strong><code>string</code></li>
+                            <li><strong>默认值：</strong><code>'bottomRight'</code></li>
+                            <li><strong>使用方式：</strong>
+                                <div class="usageBox">
+                                    <p>设置窗口显示的边角位置</p>
+                                    <p>可设置的类型有：</p>
+                                    <p>topLeft(左上角)</p>
+                                    <p>topCenter(正上方)</p>
+                                    <p>topRight(右上角)</p>
+                                    <p>bottomLeft(左下角)</p>
+                                    <p>bottomCenter(正下方)</p>
+                                    <p>bottomRight(右下方)</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="row" id="closeTime">
+                        <h3>closeTime <small>自动关闭窗口的时间，单位：秒，仅在bDialog.toast()模式下可用</small></h3>
+                        <ul>
+                            <li><strong>类型：</strong><code>number</code></li>
+                            <li><strong>默认值：</strong><code>3</code></li>
+                            <li><strong>使用方式：</strong>
+                                <div class="usageBox">
+                                    <p>自动关闭窗口的时间，单位：秒，仅在type:toast模式下可用</p>
+                                    <p>设置0关闭自动关闭窗口功能</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
 					<div class="row" id="onShow">
 						<h3>onShow <small>显示对话框前执行的回调</small></h3>
 						<ul>

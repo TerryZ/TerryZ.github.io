@@ -3,22 +3,22 @@
 <head>
     <title>bDialog使用文档</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../../lib/bootstrap/3.3.7/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="../../lib/font-awesome-4/css/font-awesome.min.css" />
-    
-    <link rel="stylesheet" href="../../css/bdialog/header.css" />
-    <link rel="stylesheet" href="../../css/bdialog/docs.css" />
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-4688926342467996",
-    enable_page_level_ads: true
-  });
-</script>
+    <link rel="stylesheet" href="../lib/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../lib/font-awesome-4/css/font-awesome.min.css" />
+
+    <link rel="stylesheet" href="../css/bdialog/header.css" />
+    <link rel="stylesheet" href="../css/bdialog/docs.css" />
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-4688926342467996",
+            enable_page_level_ads: true
+        });
+    </script>
 </head>
 
 <body>
-    <header class="navbar navbar-static-top" id="top">
+<header class="navbar navbar-static-top" id="top">
     <div class="container">
         <div class="navbar-header">
             <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
@@ -47,7 +47,7 @@
                     <a href="message.html" >Feedback</a>
                 </li>
                 <li>
-                    <a href="https://terryz.github.io" >Home</a>
+                    <a href="https://terryz.github.io" >主页</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -55,106 +55,108 @@
             </ul>
         </nav>
     </div>
-    </header>
+</header>
 
 
-    <div class="content">
-        <div class="container">
-			<div class="row">
-				<div class="col-md-3">
-					<div class="navBox">
-					<ul class="nav" id="nav">
-						<li class="current"><a href="#url">* url</a></li>
-						<li><a href="#title">* title</a></li>
-						<li><a href="#width"> width</a></li>
-						<li><a href="#height">height</a></li>
-						<li><a href="#callback">callback</a></li>
-						<li><a href="#params">params</a></li>
-						<li><a href="#backdrop">backdrop</a></li>
-						<li><a href="#dialogCloseButton">dialogCloseButton</a></li>
-						<li><a href="#dialogMaxButton">dialogMaxButton</a></li>
-						<li><a href="#language">language</a></li>
-						<li><a href="#dom">dom</a></li>
-						<li><a href="#animation">animation</a></li>
-						<li><a href="#scroll">scroll</a></li>
-						<li><a href="#drag">drag</a></li>
-						<li><a href="#fullWidth">fullWidth</a></li>
-						<li><a href="#customClass">customClass</a></li>
-						<li><a href="#messageType">messageType</a></li>
-						<li><a href="#onShow">onShow</a></li>
-						<li><a href="#onShowed">onShowed</a></li>
-						<li><a href="#onHide">onHide</a></li>
-						<li><a href="#onHidden">onHidden</a></li>
-						<li><a href="#cancel">cancel</a></li>
-						<li><a href="#open">bDialog.open</a></li>
-						<li><a href="#alert">bDialog.alert</a></li>
-						<li><a href="#mask">bDialog.mask</a></li>
-						<li><a href="#close">bDialog.close</a></li>
-						<li><a href="#getDialog">bDialog.getDialog</a></li>
-						<li><a href="#getDialogParams">bDialog.getDialogParams</a></li>
-					</ul>
-					</div>
-				</div>
-				<div class="col-md-9 propertiesBox">
-					<div class="row" id="url">
-						<h3>url <small>窗口打开内容的目标位置</small></h3>
-						<ul>
-							<li><strong>类型：</strong><code>string</code></li>
-							<li><strong>默认值：</strong><code>无默认值，该参数为必填参数</code></li>
-							<li><strong>使用方式：</strong>
-								<div class="usageBox">
-									<code>http://xxx.com/load</code>
-									<p>部分参数也可以在url中直接添加，页面上可使用EL表达式之类的方式进行获取</p>
-									<p>例如：<code>http://xxx.com/load?aa=1&bb=2</code></p>
-								</div>
-							</li>
-						</ul>
-					</div>
-					<div class="row" id="title">
-						<h3>title <small>标题栏显示的标题文本</small></h3>
-						<ul>
-							<li><strong>类型：</strong><code>string | boolean</code></li>
-							<li><strong>默认值：</strong><code>'对话框'</code></li>
-							<li><strong>使用方式：</strong>
-								<div class="usageBox">
-								根据使用需要对标题内容进行设置，若需要关闭标题栏，则传递<code>false</code>值即可
-								</div>
-							</li>
-						</ul>
-					</div>
-					<div class="row" id="width">
-						<h3>width <small>窗口宽度</small></h3>
-						<ul>
-							<li><strong>类型：</strong><code>number</code></li>
-							<li><strong>默认值：</strong><code>700</code></li>
-							<li><strong>使用方式：</strong>
-								<div class="usageBox">
-								设置窗口宽度，若不传递该参数，则默认使用700的宽度
-								</div>
-							</li>
-						</ul>
-					</div>
-					<div class="row" id="height">
-						<h3>height <small>窗口高度</small></h3>
-						<ul>
-							<li><strong>类型：</strong><code>number</code></li>
-							<li><strong>默认值：</strong><code>400</code></li>
-							<li><strong>使用方式：</strong>
-								<div class="usageBox">
-								设置窗口高度，若不传递该参数，则默认使用400的高度
-								</div>
-							</li>
-						</ul>
-					</div>
-					<div class="row" id="callback">
-						<h3>callback <small>窗口关闭后的回调函数</small></h3>
-						<ul>
-							<li><strong>类型：</strong><code>function</code></li>
-							<li><strong>默认值：</strong><code>无</code></li>
-							<li><strong>使用方式：</strong>
-								<div class="usageBox">
-								<p>参数：data - 窗口关闭时回传的数据</p>
-<pre>
+<div class="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="navBox">
+                    <ul class="nav" id="nav">
+                        <li class="current"><a href="#url">* url</a></li>
+                        <li><a href="#title">* title</a></li>
+                        <li><a href="#width"> width</a></li>
+                        <li><a href="#height">height</a></li>
+                        <li><a href="#callback">callback</a></li>
+                        <li><a href="#params">params</a></li>
+                        <li><a href="#backdrop">backdrop</a></li>
+                        <li><a href="#dialogCloseButton">dialogCloseButton</a></li>
+                        <li><a href="#dialogMaxButton">dialogMaxButton</a></li>
+                        <li><a href="#language">language</a></li>
+                        <li><a href="#dom">dom</a></li>
+                        <li><a href="#animation">animation</a></li>
+                        <li><a href="#scroll">scroll</a></li>
+                        <li><a href="#drag">drag</a></li>
+                        <li><a href="#fullWidth">fullWidth</a></li>
+                        <li><a href="#customClass">customClass</a></li>
+                        <li><a href="#messageType">messageType</a></li>
+                        <li><a href="#position">position</a></li>
+                        <li><a href="#closeTime">closeTime</a></li>
+                        <li><a href="#onShow">onShow</a></li>
+                        <li><a href="#onShowed">onShowed</a></li>
+                        <li><a href="#onHide">onHide</a></li>
+                        <li><a href="#onHidden">onHidden</a></li>
+                        <li><a href="#cancel">cancel</a></li>
+                        <li><a href="#open">bDialog.open</a></li>
+                        <li><a href="#alert">bDialog.alert</a></li>
+                        <li><a href="#mask">bDialog.mask</a></li>
+                        <li><a href="#close">bDialog.close</a></li>
+                        <li><a href="#getDialog">bDialog.getDialog</a></li>
+                        <li><a href="#getDialogParams">bDialog.getDialogParams</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-9 propertiesBox">
+                <div class="row" id="url">
+                    <h3>url <small>窗口打开内容的目标位置</small></h3>
+                    <ul>
+                        <li><strong>类型：</strong><code>string</code></li>
+                        <li><strong>默认值：</strong><code>无默认值，该参数为必填参数</code></li>
+                        <li><strong>使用方式：</strong>
+                            <div class="usageBox">
+                                <code>http://xxx.com/load</code>
+                                <p>部分参数也可以在url中直接添加，页面上可使用EL表达式之类的方式进行获取</p>
+                                <p>例如：<code>http://xxx.com/load?aa=1&bb=2</code></p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row" id="title">
+                    <h3>title <small>标题栏显示的标题文本</small></h3>
+                    <ul>
+                        <li><strong>类型：</strong><code>string | boolean</code></li>
+                        <li><strong>默认值：</strong><code>'对话框'</code></li>
+                        <li><strong>使用方式：</strong>
+                            <div class="usageBox">
+                                根据使用需要对标题内容进行设置，若需要关闭标题栏，则传递<code>false</code>值即可
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row" id="width">
+                    <h3>width <small>窗口宽度</small></h3>
+                    <ul>
+                        <li><strong>类型：</strong><code>number</code></li>
+                        <li><strong>默认值：</strong><code>700</code></li>
+                        <li><strong>使用方式：</strong>
+                            <div class="usageBox">
+                                设置窗口宽度，若不传递该参数，则默认使用700的宽度
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row" id="height">
+                    <h3>height <small>窗口高度</small></h3>
+                    <ul>
+                        <li><strong>类型：</strong><code>number</code></li>
+                        <li><strong>默认值：</strong><code>400</code></li>
+                        <li><strong>使用方式：</strong>
+                            <div class="usageBox">
+                                设置窗口高度，若不传递该参数，则默认使用400的高度
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row" id="callback">
+                    <h3>callback <small>窗口关闭后的回调函数</small></h3>
+                    <ul>
+                        <li><strong>类型：</strong><code>function</code></li>
+                        <li><strong>默认值：</strong><code>无</code></li>
+                        <li><strong>使用方式：</strong>
+                            <div class="usageBox">
+                                <p>参数：data - 窗口关闭时回传的数据</p>
+                                <pre>
 callback:function(data){
   if(data && data.results && data.results.length > 0 ){
     alert('已完成弹出窗口操作！\\n接收到弹出窗口传回的 userName 参数，值为：\\n' + data.results[0].userName + '</b>');
@@ -163,355 +165,387 @@ callback:function(data){
   }
 }
 </pre>
-								</div>
-							</li>
-						</ul>
-					</div>
-					<div class="row" id="params">
-						<h3>params <small>传递参数</small></h3>
-						<ul>
-							<li><strong>类型：</strong><code>object</code></li>
-							<li><strong>默认值：</strong><code>无</code></li>
-							<li><strong>使用方式：</strong>
-								<div class="usageBox">
-								<p>父窗口打开窗口时需要传递给窗口的参数集</p>
-								<p>格式：<code>{'name':'aa','sex':1}</code></p>
-								<p>例如：<code>params : {'name':'aa','sex':1}</code></p>
-								</div>
-							</li>
-						</ul>
-					</div>
-					<div class="row" id="backdrop">
-						<h3>backdrop <small>背景遮罩</small></h3>
-						<ul>
-							<li><strong>类型：</strong><code>boolean | string</code></li>
-							<li><strong>默认值：</strong><code>'static'</code></li>
-							<li><strong>使用方式：</strong>
-								<div class="usageBox">
-								<p>窗口默认类型为模态窗口，打开后，不允许操作窗外以外的内容</p>
-								<p>设置<code>'static'</code>为背景遮罩打开，并不允许点击关闭</p>
-								<p>设置<code>false</code>为关闭遮罩，此时仅显示窗口本身</p>
-								<p>设置<code>true</code>为打开遮罩，但点击遮罩将自动关闭窗口</p>
-								</div>
-							</li>
-						</ul>
-					</div>
-					<div class="row" id="dialogCloseButton">
-						<h3>dialogCloseButton <small>窗口标题栏的关闭按钮是否启用</small></h3>
-						<ul>
-							<li><strong>类型：</strong><code>boolean</code></li>
-							<li><strong>默认值：</strong><code>true</code></li>
-							<li><strong>使用方式：</strong>
-								<div class="usageBox">
-								设置窗口右上角的关闭窗口按钮是否显示，默认为启用状态
-								</div>
-							</li>
-						</ul>
-					</div>
-					<div class="row" id="dialogMaxButton">
-						<h3>dialogMaxButton <small>窗口标题栏的最大化按钮是否启用</small></h3>
-						<ul>
-							<li><strong>类型：</strong><code>boolean</code></li>
-							<li><strong>默认值：</strong><code>true</code></li>
-							<li><strong>使用方式：</strong>
-								<div class="usageBox">
-								设置窗口右上角的最大化窗口按钮是否启用，默认为启用状态
-								</div>
-							</li>
-						</ul>
-					</div>
-					<div class="row" id="language">
-						<h3>language <small>插件使用的语言，默认为中文</small></h3>
-						<ul>
-							<li><strong>类型：</strong><code>string</code></li>
-							<li><strong>默认值：</strong><code>'cn'</code></li>
-							<li><strong>使用方式：</strong>
-								<div class="usageBox">
-								目前已预设的语言有：'cn'中文（默认），'en'英文，'jp'日文
-								</div>
-							</li>
-						</ul>
-					</div>
-					<div class="row" id="dom">
-						<h3>dom <small>需要在窗口里显示的HTML DOM内容</small></h3>
-						<ul>
-							<li><strong>类型：</strong><code>object</code></li>
-							<li><strong>默认值：</strong><code>无</code></li>
-							<li><strong>使用方式：</strong>
-								<div class="usageBox">
-									<p>将页面上预定义好的HTML内容，以模态窗口的形式展现</p>
-									<p>若参数中同时定义了dom和url则以dom内容为优先展示</p>
-									<p>例如：</p>
-									<p><code>dom : $('#content').html()</code></p>
-								</div>
-							</li>
-						</ul>
-					</div>
-					<div class="row" id="animation">
-						<h3>animation <small>窗口打开时的动画效果</small></h3>
-						<ul>
-							<li><strong>类型：</strong><code>boolean</code></li>
-							<li><strong>默认值：</strong><code>true</code></li>
-							<li><strong>使用方式：</strong>
-								<div class="usageBox">
-								窗口打开时会有弹跳的动画效果
-								</div>
-							</li>
-						</ul>
-					</div>
-					<div class="row" id="scroll">
-						<h3>scroll <small>窗口内部是否显示滚动条</small></h3>
-						<ul>
-							<li><strong>类型：</strong><code>boolean</code></li>
-							<li><strong>默认值：</strong><code>true</code></li>
-							<li><strong>使用方式：</strong>
-								<div class="usageBox">
-								根据需要设置窗口内容区域的滚动条，默认显示滚动条
-								</div>
-							</li>
-						</ul>
-					</div>
-					<div class="row" id="drag">
-						<h3>drag <small>是否允许窗口可拖拽</small></h3>
-						<ul>
-							<li><strong>类型：</strong><code>boolean</code></li>
-							<li><strong>默认值：</strong><code>true</code></li>
-							<li><strong>使用方式：</strong>
-								<div class="usageBox">
-								<p><span class="label label-default">提示</span> 使用拖拽功能需要导入jquery-ui脚本库</p>
-								根据需要设置窗口是否可被拖拽，默认允许拖拽
-								</div>
-							</li>
-						</ul>
-					</div>
-					<div class="row" id="fullWidth">
-						<h3>fullWidth <small>是否展示全宽度窗口</small></h3>
-						<ul>
-							<li><strong>类型：</strong><code>boolean</code></li>
-							<li><strong>默认值：</strong><code>false</code></li>
-							<li><strong>使用方式：</strong>
-								<div class="usageBox">
-								打开该参数，窗口将会占满浏览可视宽度区域，高度依然按照参数指定的数字进行设置
-								</div>
-							</li>
-						</ul>
-					</div>
-					<div class="row" id="customClass">
-						<h3>customClass <small>自定义样式，它会添加到弹出窗口的最外层DIV上</small></h3>
-						<ul>
-							<li><strong>类型：</strong><code>string</code></li>
-							<li><strong>默认值：</strong><code>无</code></li>
-							<li><strong>使用方式：</strong>
-								<div class="usageBox">
-								<p>页面中需要根据不同功能展示不同样式的弹出窗口时，可以使用该参数指定需要使用的样式名称</p>
-								<p><span class="label label-default">提示</span> 样式内容需要预先定义，插件本身并不带任何皮肤样式</p>
-								</div>
-							</li>
-						</ul>
-					</div>
-					<div class="row" id="messageType">
-						<h3>messageType <small>消息对话框类型，仅在bDialog.alert()模式下有效</small></h3>
-						<ul>
-							<li><strong>类型：</strong><code>string</code></li>
-							<li><strong>默认值：</strong><code>'info'</code></li>
-							<li><strong>使用方式：</strong>
-								<div class="usageBox">
-								<p>设置对话框模式的窗口类型，不同类型有不同的图标及按钮</p>
-								<p>可设置的类型有：</p>
-								<p>info(消息提示模式，默认)</p>
-								<p>warning(警告模式)</p>
-								<p>error(错误模式)</p>
-								<p>success(完成模式)</p>
-								<p>confirm(确认对话框模式，该模式下，会有'确认'和'取消'两个按钮)</p>
-								<p><span class="label label-default">提示</span> confirm类型下，可单独设置cancel回调函数以用于点击取消按钮后的专用回调</p>
-								</div>
-							</li>
-						</ul>
-					</div>
-					<div class="row" id="onShow">
-						<h3>onShow <small>显示对话框前执行的回调</small></h3>
-						<ul>
-							<li><strong>类型：</strong><code>function</code></li>
-							<li><strong>默认值：</strong><code>无</code></li>
-							<li><strong>使用方式：</strong>
-								<div class="usageBox">
-								<p>该回调函数可在窗口被显示之前做一些内容的预处理工作</p>
-								<p>例：<code>onShow : function(dialog){ $('#aa',$(dialog)).val(1); }</code></p>
-								</div>
-							</li>
-						</ul>
-					</div>
-					<div class="row" id="onShowed">
-						<h3>onShowed <small>窗口完全展示完成后执行的回调</small></h3>
-						<ul>
-							<li><strong>类型：</strong><code>function</code></li>
-							<li><strong>默认值：</strong><code>无</code></li>
-							<li><strong>使用方式：</strong>
-								<div class="usageBox">
-								<p>该回调函数可在窗口完全显示完成后做数据处理工作</p>
-								<p>例：<code>onShowed : function(dialog){ $('#bb',$(dialog)).focus(); }</code></p>
-								</div>
-							</li>
-						</ul>
-					</div>
-					<div class="row" id="onHide">
-						<h3>onHide <small>关闭/隐藏对话框前执行的回调</small></h3>
-						<ul>
-							<li><strong>类型：</strong><code>function</code></li>
-							<li><strong>默认值：</strong><code>无</code></li>
-							<li><strong>使用方式：</strong>
-								<div class="usageBox">
-								<p>该回调函数可在窗口被关闭前处理数据关系等操作</p>
-								<p>例：<br><code>onHide:function(dialog){$('#aa',$(dialog)).val($('#bb',$(dialog)).val());}</code></p>
-								</div>
-							</li>
-						</ul>
-					</div>
-					<div class="row" id="onHidden">
-						<h3>onHidden <small>关闭/隐藏对话框后执行的回调</small></h3>
-						<ul>
-							<li><strong>类型：</strong><code>function</code></li>
-							<li><strong>默认值：</strong><code>无</code></li>
-							<li><strong>使用方式：</strong>
-								<div class="usageBox">
-								<p>该回调函数可在窗口被关闭后被执行，若没有特殊应用，仅需要设置callback回调即可，不需要设置本回调</p>
-								<p>例：<code>onHidden : function(dialog){ $('#aa',$(dialog)).val(1); }</code></p>
-								</div>
-							</li>
-						</ul>
-					</div>
-					<div class="row" id="cancel">
-						<h3>cancel <small>confirm模式下，取消按钮的执行回调</small></h3>
-						<ul>
-							<li><strong>类型：</strong><code>function</code></li>
-							<li><strong>默认值：</strong><code>无</code></li>
-							<li><strong>使用方式：</strong>
-								<div class="usageBox">
-								<p>该回调函数仅在bDialog.alert()模式，且messageType为'confirm'模式下有效</p>
-								<p>用于确认对话框中的取消按钮点击后的专用回调</p>
-								<p>例：<code>cancel : function(dialog){ $('#aa',$(dialog)).val(1); }</code></p>
-								</div>
-							</li>
-						</ul>
-					</div>
-					<div class="row" id="open">
-						<h3>bDialog.open <small>打开模态窗口</small></h3>
-						<ul>
-							<li><strong>类型：</strong><code>function</code></li>
-							<li><strong>默认值：</strong><code>无</code></li>
-							<li><strong>使用方式：</strong>
-								<div class="usageBox">
-								<p>以模态窗口的形式加载服务端页面或HTML片断内容</p>
-								<p>参数：以上的参数均为插件的配置参数</p>								
-								<p><code>var a = bDialog.open({...});</code></p>
-								</div>
-							</li>
-						</ul>
-					</div>
-					<div class="row" id="alert">
-						<h3>bDialog.alert <small>打开消息对话窗口</small></h3>
-						<ul>
-							<li><strong>类型：</strong><code>function</code></li>
-							<li><strong>默认值：</strong><code>无</code></li>
-							<li><strong>使用方式：</strong>
-								<div class="usageBox">
-								<p>以模态窗口的形式加载服务端页面或HTML片断内容</p>
-								<p>参数：</p>
-								<p>message：显示文本内容</p>
-								<p>callback：关闭对话框后的回调</p>
-								<p>param：其它配置参数</p>
-								<p>示例：</p>
-								<p><code>var a = bDialog.alert('我是一个消息对话框!');</code></p>
-								<p><code>var a = bDialog.alert('我是一个消息对话框!',function(){//对话框关闭后的回调});</code></p>
-								<p><code>var a = bDialog.alert('我是一个消息对话框!',function(){},{messageType:'error'});</code></p>
-								</div>
-							</li>
-						</ul>
-					</div>
-					<div class="row" id="mask">
-						<h3>bDialog.mask <small>打开遮罩层</small></h3>
-						<ul>
-							<li><strong>类型：</strong><code>function</code></li>
-							<li><strong>默认值：</strong><code>无</code></li>
-							<li><strong>使用方式：</strong>
-								<div class="usageBox">
-								<p>以模态窗口的形式加载服务端页面或HTML片断内容</p>
-								<p>参数：</p>
-								<p>message：显示的提示文本，非必传，不传递则显示默认文本</p>
-								<p>param：配置参数，非必传</p>
-								<p>示例：</p>
-								<p><code>var a = bDialog.mask();//显示遮罩，并使用默认提示文本</code></p>
-								<p><code>var a = bDialog.mask('数据加载中，请稍等……');//显示遮罩，使用自定义文本</code></p>
-								<p><code>bDialog.mask('数据加载中，请稍等……',{
-									callback : function(){...}
-								});//显示遮罩，使用自定义文本</code></p>
-								</div>
-							</li>
-						</ul>
-					</div>
-					<div class="row" id="close">
-						<h3>bDialog.close <small>关闭窗口API</small></h3>
-						<ul>
-							<li><strong>类型：</strong><code>function</code></li>
-							<li><strong>默认值：</strong><code>无</code></li>
-							<li><strong>使用方式：</strong>
-								<div class="usageBox">
-								<p>该函数可以关闭窗口，并可以在关闭窗口的时候，回传参数给父窗口</p>
-								<p>参数：</p>
-								<p>data：向调用者回传的数据，或是bDialog对象</p>
-								<p>dialog：bDialog对象，用于关闭指定窗口</p>
-								<p>例：<br><code>bDialog.close();</code>仅关闭窗口（最后一个弹出的窗口），不传递参数</p>
-								<p><code>bDialog.close({name:'zhangsan',sex:1});</code>关闭最后弹出的窗口并传递参数</p>
-								<p><code>var a = bDialog.open({...});bDialog.close({name:'zhangsan',sex:1},a);</code>关闭窗口并传递参数</p>
-								<p><code>var a = bDialog.open({...});bDialog.close(a);</code>关闭指定窗口不传递参数</p>
-								</div>
-							</li>
-						</ul>
-					</div>
-					<div class="row" id="getDialog">
-						<h3>bDialog.getDialog <small>获得当前打开窗口对象</small></h3>
-						<ul>
-							<li><strong>类型：</strong><code>function</code></li>
-							<li><strong>默认值：</strong><code>无</code></li>
-							<li><strong>使用方式：</strong>
-								<div class="usageBox">
-								<p>该函数可获得当前被打开的窗口对象，如果打开了多个窗口，则获得最后被打开的窗口</p>
-								<p>例：<br><code>var dialog = bDialog.getDialog();</code></p>
-								</div>
-							</li>
-						</ul>
-					</div>
-					<div class="row" id="getDialogParams">
-						<h3>bDialog.getDialogParams <small>获得父窗口传递的参数(被打开的窗口使用)</small></h3>
-						<ul>
-							<li><strong>类型：</strong><code>function</code></li>
-							<li><strong>默认值：</strong><code>无</code></li>
-							<li><strong>使用方式：</strong>
-								<div class="usageBox">
-								<p>该函数可以获得父窗口打开窗口时传递的params参数的内容</p>
-								<p>例：<br><code>var params = bDialog.getDialogParams();</code></p>
-								</div>
-							</li>
-						</ul>
-					</div>
-					
-					
-					
-					
-				</div>
-			</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row" id="params">
+                    <h3>params <small>传递参数</small></h3>
+                    <ul>
+                        <li><strong>类型：</strong><code>object</code></li>
+                        <li><strong>默认值：</strong><code>无</code></li>
+                        <li><strong>使用方式：</strong>
+                            <div class="usageBox">
+                                <p>父窗口打开窗口时需要传递给窗口的参数集</p>
+                                <p>格式：<code>{'name':'aa','sex':1}</code></p>
+                                <p>例如：<code>params : {'name':'aa','sex':1}</code></p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row" id="backdrop">
+                    <h3>backdrop <small>背景遮罩</small></h3>
+                    <ul>
+                        <li><strong>类型：</strong><code>boolean | string</code></li>
+                        <li><strong>默认值：</strong><code>'static'</code></li>
+                        <li><strong>使用方式：</strong>
+                            <div class="usageBox">
+                                <p>窗口默认类型为模态窗口，打开后，不允许操作窗外以外的内容</p>
+                                <p>设置<code>'static'</code>为背景遮罩打开，并不允许点击关闭</p>
+                                <p>设置<code>false</code>为关闭遮罩，此时仅显示窗口本身</p>
+                                <p>设置<code>true</code>为打开遮罩，但点击遮罩将自动关闭窗口</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row" id="dialogCloseButton">
+                    <h3>dialogCloseButton <small>窗口标题栏的关闭按钮是否启用</small></h3>
+                    <ul>
+                        <li><strong>类型：</strong><code>boolean</code></li>
+                        <li><strong>默认值：</strong><code>true</code></li>
+                        <li><strong>使用方式：</strong>
+                            <div class="usageBox">
+                                设置窗口右上角的关闭窗口按钮是否显示，默认为启用状态
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row" id="dialogMaxButton">
+                    <h3>dialogMaxButton <small>窗口标题栏的最大化按钮是否启用</small></h3>
+                    <ul>
+                        <li><strong>类型：</strong><code>boolean</code></li>
+                        <li><strong>默认值：</strong><code>true</code></li>
+                        <li><strong>使用方式：</strong>
+                            <div class="usageBox">
+                                设置窗口右上角的最大化窗口按钮是否启用，默认为启用状态
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row" id="language">
+                    <h3>language <small>插件使用的语言，默认为中文</small></h3>
+                    <ul>
+                        <li><strong>类型：</strong><code>string</code></li>
+                        <li><strong>默认值：</strong><code>'cn'</code></li>
+                        <li><strong>使用方式：</strong>
+                            <div class="usageBox">
+                                目前已预设的语言有：'cn'中文（默认），'en'英文，'jp'日文
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row" id="dom">
+                    <h3>dom <small>需要在窗口里显示的HTML DOM内容</small></h3>
+                    <ul>
+                        <li><strong>类型：</strong><code>object</code></li>
+                        <li><strong>默认值：</strong><code>无</code></li>
+                        <li><strong>使用方式：</strong>
+                            <div class="usageBox">
+                                <p>将页面上预定义好的HTML内容，以模态窗口的形式展现</p>
+                                <p>若参数中同时定义了dom和url则以dom内容为优先展示</p>
+                                <p>例如：</p>
+                                <p><code>dom : $('#content').html()</code></p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row" id="animation">
+                    <h3>animation <small>窗口打开时的动画效果</small></h3>
+                    <ul>
+                        <li><strong>类型：</strong><code>boolean</code></li>
+                        <li><strong>默认值：</strong><code>true</code></li>
+                        <li><strong>使用方式：</strong>
+                            <div class="usageBox">
+                                窗口打开时会有弹跳的动画效果
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row" id="scroll">
+                    <h3>scroll <small>窗口内部是否显示滚动条</small></h3>
+                    <ul>
+                        <li><strong>类型：</strong><code>boolean</code></li>
+                        <li><strong>默认值：</strong><code>true</code></li>
+                        <li><strong>使用方式：</strong>
+                            <div class="usageBox">
+                                根据需要设置窗口内容区域的滚动条，默认显示滚动条
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row" id="drag">
+                    <h3>drag <small>是否允许窗口可拖拽</small></h3>
+                    <ul>
+                        <li><strong>类型：</strong><code>boolean</code></li>
+                        <li><strong>默认值：</strong><code>true</code></li>
+                        <li><strong>使用方式：</strong>
+                            <div class="usageBox">
+                                <p><span class="label label-default">提示</span> 使用拖拽功能需要导入jquery-ui脚本库</p>
+                                根据需要设置窗口是否可被拖拽，默认允许拖拽
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row" id="fullWidth">
+                    <h3>fullWidth <small>是否展示全宽度窗口</small></h3>
+                    <ul>
+                        <li><strong>类型：</strong><code>boolean</code></li>
+                        <li><strong>默认值：</strong><code>false</code></li>
+                        <li><strong>使用方式：</strong>
+                            <div class="usageBox">
+                                打开该参数，窗口将会占满浏览可视宽度区域，高度依然按照参数指定的数字进行设置
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row" id="customClass">
+                    <h3>customClass <small>自定义样式，它会添加到弹出窗口的最外层DIV上</small></h3>
+                    <ul>
+                        <li><strong>类型：</strong><code>string</code></li>
+                        <li><strong>默认值：</strong><code>无</code></li>
+                        <li><strong>使用方式：</strong>
+                            <div class="usageBox">
+                                <p>页面中需要根据不同功能展示不同样式的弹出窗口时，可以使用该参数指定需要使用的样式名称</p>
+                                <p><span class="label label-default">提示</span> 样式内容需要预先定义，插件本身并不带任何皮肤样式</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row" id="messageType">
+                    <h3>messageType <small>消息对话框类型，仅在bDialog.alert()、bDialog.toast()模式下有效</small></h3>
+                    <ul>
+                        <li><strong>类型：</strong><code>string</code></li>
+                        <li><strong>默认值：</strong><code>'info'</code></li>
+                        <li><strong>使用方式：</strong>
+                            <div class="usageBox">
+                                <p>设置对话框模式的窗口类型，不同类型有不同的图标及按钮</p>
+                                <p>可设置的类型有：</p>
+                                <p>info(消息提示模式，默认)</p>
+                                <p>warning(警告模式)</p>
+                                <p>error(错误模式)</p>
+                                <p>success(完成模式)</p>
+                                <p>confirm(确认对话框模式，该模式下，会有'确认'和'取消'两个按钮，仅alert模式下可用)</p>
+                                <p><span class="label label-default">提示</span> confirm类型下，可单独设置cancel回调函数以用于点击取消按钮后的专用回调</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row" id="position">
+                    <h3>position <small>窗口显示位置，仅在bDialog.toast()模式下可用</small></h3>
+                    <ul>
+                        <li><strong>类型：</strong><code>string</code></li>
+                        <li><strong>默认值：</strong><code>'bottomRight'</code></li>
+                        <li><strong>使用方式：</strong>
+                            <div class="usageBox">
+                                <p>设置窗口显示的边角位置</p>
+                                <p>可设置的类型有：</p>
+                                <p>topLeft(左上角)</p>
+                                <p>topCenter(正上方)</p>
+                                <p>topRight(右上角)</p>
+                                <p>bottomLeft(左下角)</p>
+                                <p>bottomCenter(正下方)</p>
+                                <p>bottomRight(右下方)</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row" id="closeTime">
+                    <h3>closeTime <small>自动关闭窗口的时间，单位：秒，仅在bDialog.toast()模式下可用</small></h3>
+                    <ul>
+                        <li><strong>类型：</strong><code>number</code></li>
+                        <li><strong>默认值：</strong><code>3</code></li>
+                        <li><strong>使用方式：</strong>
+                            <div class="usageBox">
+                                <p>自动关闭窗口的时间，单位：秒，仅在type:toast模式下可用</p>
+                                <p>设置0关闭自动关闭窗口功能</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row" id="onShow">
+                    <h3>onShow <small>显示对话框前执行的回调</small></h3>
+                    <ul>
+                        <li><strong>类型：</strong><code>function</code></li>
+                        <li><strong>默认值：</strong><code>无</code></li>
+                        <li><strong>使用方式：</strong>
+                            <div class="usageBox">
+                                <p>该回调函数可在窗口被显示之前做一些内容的预处理工作</p>
+                                <p>例：<code>onShow : function(dialog){ $('#aa',$(dialog)).val(1); }</code></p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row" id="onShowed">
+                    <h3>onShowed <small>窗口完全展示完成后执行的回调</small></h3>
+                    <ul>
+                        <li><strong>类型：</strong><code>function</code></li>
+                        <li><strong>默认值：</strong><code>无</code></li>
+                        <li><strong>使用方式：</strong>
+                            <div class="usageBox">
+                                <p>该回调函数可在窗口完全显示完成后做数据处理工作</p>
+                                <p>例：<code>onShowed : function(dialog){ $('#bb',$(dialog)).focus(); }</code></p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row" id="onHide">
+                    <h3>onHide <small>关闭/隐藏对话框前执行的回调</small></h3>
+                    <ul>
+                        <li><strong>类型：</strong><code>function</code></li>
+                        <li><strong>默认值：</strong><code>无</code></li>
+                        <li><strong>使用方式：</strong>
+                            <div class="usageBox">
+                                <p>该回调函数可在窗口被关闭前处理数据关系等操作</p>
+                                <p>例：<br><code>onHide:function(dialog){$('#aa',$(dialog)).val($('#bb',$(dialog)).val());}</code></p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row" id="onHidden">
+                    <h3>onHidden <small>关闭/隐藏对话框后执行的回调</small></h3>
+                    <ul>
+                        <li><strong>类型：</strong><code>function</code></li>
+                        <li><strong>默认值：</strong><code>无</code></li>
+                        <li><strong>使用方式：</strong>
+                            <div class="usageBox">
+                                <p>该回调函数可在窗口被关闭后被执行，若没有特殊应用，仅需要设置callback回调即可，不需要设置本回调</p>
+                                <p>例：<code>onHidden : function(dialog){ $('#aa',$(dialog)).val(1); }</code></p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row" id="cancel">
+                    <h3>cancel <small>confirm模式下，取消按钮的执行回调</small></h3>
+                    <ul>
+                        <li><strong>类型：</strong><code>function</code></li>
+                        <li><strong>默认值：</strong><code>无</code></li>
+                        <li><strong>使用方式：</strong>
+                            <div class="usageBox">
+                                <p>该回调函数仅在bDialog.alert()模式，且messageType为'confirm'模式下有效</p>
+                                <p>用于确认对话框中的取消按钮点击后的专用回调</p>
+                                <p>例：<code>cancel : function(dialog){ $('#aa',$(dialog)).val(1); }</code></p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row" id="open">
+                    <h3>bDialog.open <small>打开模态窗口</small></h3>
+                    <ul>
+                        <li><strong>类型：</strong><code>function</code></li>
+                        <li><strong>默认值：</strong><code>无</code></li>
+                        <li><strong>使用方式：</strong>
+                            <div class="usageBox">
+                                <p>以模态窗口的形式加载服务端页面或HTML片断内容</p>
+                                <p>参数：以上的参数均为插件的配置参数</p>
+                                <p><code>var a = bDialog.open({...});</code></p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row" id="alert">
+                    <h3>bDialog.alert <small>打开消息对话窗口</small></h3>
+                    <ul>
+                        <li><strong>类型：</strong><code>function</code></li>
+                        <li><strong>默认值：</strong><code>无</code></li>
+                        <li><strong>使用方式：</strong>
+                            <div class="usageBox">
+                                <p>以模态窗口的形式加载服务端页面或HTML片断内容</p>
+                                <p>参数：</p>
+                                <p>message：显示文本内容</p>
+                                <p>callback：关闭对话框后的回调</p>
+                                <p>param：其它配置参数</p>
+                                <p>示例：</p>
+                                <p><code>var a = bDialog.alert('我是一个消息对话框!');</code></p>
+                                <p><code>var a = bDialog.alert('我是一个消息对话框!',function(){//对话框关闭后的回调});</code></p>
+                                <p><code>var a = bDialog.alert('我是一个消息对话框!',function(){},{messageType:'error'});</code></p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row" id="mask">
+                    <h3>bDialog.mask <small>打开遮罩层</small></h3>
+                    <ul>
+                        <li><strong>类型：</strong><code>function</code></li>
+                        <li><strong>默认值：</strong><code>无</code></li>
+                        <li><strong>使用方式：</strong>
+                            <div class="usageBox">
+                                <p>以模态窗口的形式加载服务端页面或HTML片断内容</p>
+                                <p>参数：</p>
+                                <p>message：显示的提示文本，非必传，不传递则显示默认文本</p>
+                                <p>param：配置参数，非必传</p>
+                                <p>示例：</p>
+                                <p><code>var a = bDialog.mask();//显示遮罩，并使用默认提示文本</code></p>
+                                <p><code>var a = bDialog.mask('数据加载中，请稍等……');//显示遮罩，使用自定义文本</code></p>
+                                <p><code>bDialog.mask('数据加载中，请稍等……',{
+                                    callback : function(){...}
+                                    });//显示遮罩，使用自定义文本</code></p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row" id="close">
+                    <h3>bDialog.close <small>关闭窗口API</small></h3>
+                    <ul>
+                        <li><strong>类型：</strong><code>function</code></li>
+                        <li><strong>默认值：</strong><code>无</code></li>
+                        <li><strong>使用方式：</strong>
+                            <div class="usageBox">
+                                <p>该函数可以关闭窗口，并可以在关闭窗口的时候，回传参数给父窗口</p>
+                                <p>参数：</p>
+                                <p>data：向调用者回传的数据，或是bDialog对象</p>
+                                <p>dialog：bDialog对象，用于关闭指定窗口</p>
+                                <p>例：<br><code>bDialog.close();</code>仅关闭窗口（最后一个弹出的窗口），不传递参数</p>
+                                <p><code>bDialog.close({name:'zhangsan',sex:1});</code>关闭最后弹出的窗口并传递参数</p>
+                                <p><code>var a = bDialog.open({...});bDialog.close({name:'zhangsan',sex:1},a);</code>关闭窗口并传递参数</p>
+                                <p><code>var a = bDialog.open({...});bDialog.close(a);</code>关闭指定窗口不传递参数</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row" id="getDialog">
+                    <h3>bDialog.getDialog <small>获得当前打开窗口对象</small></h3>
+                    <ul>
+                        <li><strong>类型：</strong><code>function</code></li>
+                        <li><strong>默认值：</strong><code>无</code></li>
+                        <li><strong>使用方式：</strong>
+                            <div class="usageBox">
+                                <p>该函数可获得当前被打开的窗口对象，如果打开了多个窗口，则获得最后被打开的窗口</p>
+                                <p>例：<br><code>var dialog = bDialog.getDialog();</code></p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row" id="getDialogParams">
+                    <h3>bDialog.getDialogParams <small>获得父窗口传递的参数(被打开的窗口使用)</small></h3>
+                    <ul>
+                        <li><strong>类型：</strong><code>function</code></li>
+                        <li><strong>默认值：</strong><code>无</code></li>
+                        <li><strong>使用方式：</strong>
+                            <div class="usageBox">
+                                <p>该函数可以获得父窗口打开窗口时传递的params参数的内容</p>
+                                <p>例：<br><code>var params = bDialog.getDialogParams();</code></p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+
+
+
+            </div>
         </div>
     </div>
+</div>
 
 
 
 
 
 
-<script type="text/javascript" src="../../lib/jquery.min.js" ></script>
-<script type="text/javascript" src="../../lib/nav/jquery.nav.js" ></script>
-<script type="text/javascript" src="../../lib/stickUp/stickUp.min.js" ></script>
-<script type="text/javascript" src="../../js/docs.js" ></script>
-<script type="text/javascript" src="../../js/count.js" ></script>
+<script type="text/javascript" src="../lib/jquery.min.js" ></script>
+<script type="text/javascript" src="../lib/nav/jquery.nav.js" ></script>
+<script type="text/javascript" src="../lib/stickUp/stickUp.min.js" ></script>
+<script type="text/javascript" src="../js/docs.js" ></script>
+<script type="text/javascript" src="../js/count.js" ></script>
 </body>
 </html>

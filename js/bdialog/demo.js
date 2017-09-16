@@ -39,6 +39,79 @@ $(function(){
             }
         });
     });
+
+
+    $('#btnInputConfirm').click(function(){
+        bDialog.alert('请输入您的姓名：',function(data){
+            if(data.results && data.results.length > 0){
+                //alert(data);
+                bDialog.alert('您输入了：" ' + data.results[0] + ' "');
+            }
+        },{
+            messageType : 'inputConfirm',
+            cancel : function(dlg){
+                bDialog.alert('已取消！',null,{
+                    messageType : 'warning'
+                });
+            }
+        });
+    });
+
+    $('#btnToastInfo').click(function(){
+        bDialog.toast('我是一个Toast消息');
+    });
+    $('#btnToastWarning').click(function(){
+        bDialog.toast('我是一个Toast消息',{
+            messageType : 'warning',
+            position : 'topLeft',
+            dialogCloseButton : false
+        });
+    });
+    $('#btnToastError').click(function(){
+        bDialog.toast('我是一个Toast消息',{
+            messageType : 'error',
+            position : 'topRight',
+            closeTime : 0
+        });
+    });
+    $('#btnToastSuccess').click(function(){
+        bDialog.toast('我是一个Toast消息',{
+            messageType : 'success',
+            position : 'bottomLeft',
+        });
+    });
+
+    $('#btnToastBL').click(function(){
+        bDialog.toast('我是一个Toast消息',{
+            position : 'bottomLeft'
+        });
+    });
+    $('#btnToastBC').click(function(){
+        bDialog.toast('我是一个Toast消息',{
+            position : 'bottomCenter',
+            closeTime : 0
+        });
+    });
+    $('#btnToastBR').click(function(){
+        bDialog.toast('我是一个Toast消息',{});
+    });
+    $('#btnToastTL').click(function(){
+        bDialog.toast('我是一个Toast消息',{
+            position : 'topLeft'
+        });
+    });
+    $('#btnToastTC').click(function(){
+        bDialog.toast('我是一个Toast消息',{
+            position : 'topCenter',
+            closeTime : 0
+        });
+    });
+    $('#btnToastTR').click(function(){
+        bDialog.toast('我是一个Toast消息',{
+            position : 'topRight'
+        });
+    });
+
     $('#btnMask').click(function(){
         var a = bDialog.mask();
         setTimeout(function(){

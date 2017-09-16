@@ -78,10 +78,10 @@
 			</script>
 		</div>
 		<h1 class="heading">可多层嵌套高定制化的弹出窗口 <small>支持多层嵌套、高可定制化</small></h1>
-		<div class="row-fluid">
-			<h4 class="heading">1.基本初始化 <small></small></h4>
-			<button class="btn btn-default" type="button" id="btnDialog">打开窗口</button>
-<script type="syntaxhighlighter" class="brush:js">
+        <div class="row-fluid">
+            <h4 class="heading">1.基本初始化Modal <small></small></h4>
+            <button class="btn btn-default" type="button" id="btnDialog">打开窗口</button>
+            <script type="syntaxhighlighter" class="brush:js">
 <![CDATA[
 bDialog.open({
 	title : '窗口标题',
@@ -91,16 +91,17 @@ bDialog.open({
 });
 ]]>
 </script>
-		</div>
+        </div>
 
 
         <div class="row-fluid">
-            <h4 class="heading">2.消息提示框 <small>包含info、warning、error、success、confirm等类型</small></h4>
-            <button class="btn btn-default" type="button" id="btnInfo">提示</button>
-            <button class="btn btn-default" type="button" id="btnWarning">警告</button>
-            <button class="btn btn-default" type="button" id="btnError">错误</button>
-            <button class="btn btn-default" type="button" id="btnSuccess">成功</button>
-            <button class="btn btn-default" type="button" id="btnConfirm">确认</button>
+            <h4 class="heading">2.消息提示框Alert <small>包含info、warning、error、success、confirm、inputConfirm等类型</small></h4>
+            <button class="btn btn-default" type="button" id="btnInfo"><i class="fa fa-info-circle"></i> 提示(info)</button>
+            <button class="btn btn-default" type="button" id="btnWarning"><i class="fa fa-exclamation-triangle"></i> 警告(warning)</button>
+            <button class="btn btn-default" type="button" id="btnError"><i class="fa fa-ban"></i> 错误(error)</button>
+            <button class="btn btn-default" type="button" id="btnSuccess"><i class="fa fa-check-circle-o"></i> 成功(success)</button>
+            <button class="btn btn-default" type="button" id="btnConfirm"><i class="fa fa-question-circle-o"></i> 确认(confirm)</button>
+            <button class="btn btn-default" type="button" id="btnInputConfirm"><i class="fa fa-question-circle-o"></i> 带输入框的确认(inputConfirm)</button>
             <script type="syntaxhighlighter" class="brush:js">
 <![CDATA[
 bDialog.alert('这是一个最简单的消息提示');
@@ -121,8 +122,42 @@ bDialog.alert('这是一个确认对话框！！',function(data){
 </script>
         </div>
 
+
         <div class="row-fluid">
-            <h4 class="heading">3.遮罩 <small></small></h4>
+            <h4 class="heading">3.边角消息提示框Toast <small>包含info、warning、error、success等类型</small></h4>
+            <p>
+                <button class="btn btn-default" type="button" id="btnToastInfo"><i class="fa fa-info-circle"></i> 提示(info)</button>
+                <button class="btn btn-default" type="button" id="btnToastWarning"><i class="fa fa-exclamation-triangle"></i> 警告(warning)</button>
+                <button class="btn btn-default" type="button" id="btnToastError"><i class="fa fa-ban"></i> 错误(error)</button>
+                <button class="btn btn-default" type="button" id="btnToastSuccess"><i class="fa fa-check-circle-o"></i> 成功(success)</button>
+            </p>
+            <button class="btn btn-default" type="button" id="btnToastBL">左下角</button>
+            <button class="btn btn-default" type="button" id="btnToastBC">正下方</button>
+            <button class="btn btn-default" type="button" id="btnToastBR">右下角</button>
+            <button class="btn btn-default" type="button" id="btnToastTL">左上角</button>
+            <button class="btn btn-default" type="button" id="btnToastTC">正上方</button>
+            <button class="btn btn-default" type="button" id="btnToastTR">右上角</button>
+            <script type="syntaxhighlighter" class="brush:js">
+<![CDATA[
+bDialog.toast('我是一个Toast消息');
+//在左上角显示的警告窗口
+bDialog.toast('我是一个Toast消息',{
+    //窗口类型
+    messageType : 'warning',
+    //在左上角显示，不设置则默认右下角
+    position : 'topLeft',
+    //不显示关闭窗口按钮
+    dialogCloseButton : false,
+    //关闭自动关闭窗口功能，默认3秒自动关闭
+    closeTime : 0
+});
+]]>
+</script>
+        </div>
+
+
+        <div class="row-fluid">
+            <h4 class="heading">4.遮罩Mask <small></small></h4>
             <button class="btn btn-default" type="button" id="btnMask">全屏遮罩</button>
             <script type="syntaxhighlighter" class="brush:js">
 <![CDATA[
@@ -142,10 +177,10 @@ $.ajax({
         </div>
 
 
-		<div class="row-fluid">
-			<h4 class="heading">4.参数的传递与回传 <small>父窗口与打开窗口之间的数据交互</small></h4>
-			<button class="btn btn-default" type="button" id="btnDialog1">打开窗口</button>
-<script type="syntaxhighlighter" class="brush:js">
+        <div class="row-fluid">
+            <h4 class="heading">5.参数的传递与回传 <small>父窗口与打开窗口之间的数据交互</small></h4>
+            <button class="btn btn-default" type="button" id="btnDialog1">打开窗口</button>
+            <script type="syntaxhighlighter" class="brush:js">
 <![CDATA[
 bDialog.open({
 	title : '窗口标题',
@@ -174,19 +209,19 @@ var param = bDialog.getDialogParams();
 $('#userName').val(param.userName);
 ]]>
 </script>
-		</div>
-			
-		<div class="row-fluid">
-			<h4 class="heading">5.多层嵌套打开窗口 <small>打开窗口，在该窗口的基础上再打开新窗口</small></h4>
+        </div>
+
+        <div class="row-fluid">
+            <h4 class="heading">6.多层嵌套打开窗口 <small>打开窗口，在该窗口的基础上再打开新窗口</small></h4>
             <button class="btn btn-default" type="button" id="btnDialog2">打开窗口</button>
             <p><span class="label label-default">操作提示</span> 打开窗口后，再次点击“打开窗口”、“打开颜色窗口”、“打开简洁样式窗口”等任意按钮，进行再次打开窗口操作</p>
-		</div>
-		<div class="row-fluid">
-			<h4 class="heading">6.界面定制化 <small>通过参数打开关闭部分内容</small></h4>
-			<button class="btn btn-default" type="button" id="btnDialog3">无关闭按钮窗口</button>
-			<button class="btn btn-default" type="button" id="btnDialog4">无标题栏窗口</button>
-			<button class="btn btn-default" type="button" id="btnDialog5">全宽度窗口</button>
-<script type="syntaxhighlighter" class="brush:js">
+        </div>
+        <div class="row-fluid">
+            <h4 class="heading">7.界面定制化 <small>通过参数打开关闭部分内容</small></h4>
+            <button class="btn btn-default" type="button" id="btnDialog3">无关闭按钮窗口</button>
+            <button class="btn btn-default" type="button" id="btnDialog4">无标题栏窗口</button>
+            <button class="btn btn-default" type="button" id="btnDialog5">全宽度窗口</button>
+            <script type="syntaxhighlighter" class="brush:js">
 <![CDATA[
 bDialog.open({
 	//title属性设置为false，则关闭标题栏
@@ -201,15 +236,15 @@ bDialog.open({
 });
 ]]>
 </script>
-		</div>
+        </div>
 
-		<div class="row-fluid">
-			<h4 class="heading">7.窗口皮肤使用 <small>仅指定不同样式名称即可完全改变窗口的外观</small></h4>
-			<button class="btn btn-default" type="button" id="btnDialog6">默认样式窗口(original)</button>
-			<button class="btn btn-default" type="button" id="btnDialog7">颜色标题窗口(blue)</button>
-			<button class="btn btn-default" type="button" id="btnDialog8">简洁内容窗口(simple)</button>
-			<p>样式定义：</p>
-<script type="syntaxhighlighter" class="brush:css">
+        <div class="row-fluid">
+            <h4 class="heading">8.窗口皮肤使用 <small>仅指定不同样式名称即可完全改变窗口的外观</small></h4>
+            <button class="btn btn-default" type="button" id="btnDialog6">默认样式窗口(original)</button>
+            <button class="btn btn-default" type="button" id="btnDialog7">颜色标题窗口(blue)</button>
+            <button class="btn btn-default" type="button" id="btnDialog8">简洁内容窗口(simple)</button>
+            <p>样式定义：</p>
+            <script type="syntaxhighlighter" class="brush:css">
 <![CDATA[
 div.original{
 	-webkit-border-radius: 8px;-moz-border-radius: 8px;border-radius: 8px;
@@ -251,8 +286,8 @@ div.simple div.modal-header button.close {
 }
 ]]>
 </script>
-			<p>脚本代码：</p>
-<script type="syntaxhighlighter" class="brush:js">
+            <p>脚本代码：</p>
+            <script type="syntaxhighlighter" class="brush:js">
 <![CDATA[
 bDialog.open({
 	title : '窗口标题',
@@ -263,22 +298,22 @@ bDialog.open({
 });
 ]]>
 </script>
-		</div>
-		
-		
-		<div class="row-fluid">
-			<h4 class="heading">8.打开页面片段 <small>将页面中已经定义好的HTML内容，放在弹出窗口中展示</small></h4>
-			<div id="innerContent" class="hide">
-				<div>
-					<h1 id="support" class="page-header">浏览器和设备的支持情况</h1>
-					<p class="lead">Bootstrap 的目标是在最新的桌面和移动浏览器上有最佳的表现，也就是说，在较老旧的浏览器上可能会导致某些组件表现出的样式有些不同，但是功能是完整的。</p>
-					
-					<h2 id="support-browsers">被支持的浏览器</h2>
-					<p>特别注意，我们坚决支持这些浏览器的<strong>最新版本</strong>。</p>
-				</div>
-			</div>
-			<button class="btn btn-default" type="button" id="btnDialog9">打开窗口</button>
-<script type="syntaxhighlighter" class="brush:html">
+        </div>
+
+
+        <div class="row-fluid">
+            <h4 class="heading">9.打开页面片段 <small>将页面中已经定义好的HTML内容，放在弹出窗口中展示</small></h4>
+            <div id="innerContent" class="hide">
+                <div>
+                    <h1 id="support" class="page-header">浏览器和设备的支持情况</h1>
+                    <p class="lead">Bootstrap 的目标是在最新的桌面和移动浏览器上有最佳的表现，也就是说，在较老旧的浏览器上可能会导致某些组件表现出的样式有些不同，但是功能是完整的。</p>
+
+                    <h2 id="support-browsers">被支持的浏览器</h2>
+                    <p>特别注意，我们坚决支持这些浏览器的<strong>最新版本</strong>。</p>
+                </div>
+            </div>
+            <button class="btn btn-default" type="button" id="btnDialog9">打开窗口</button>
+            <script type="syntaxhighlighter" class="brush:html">
 <![CDATA[
 <!-- HTML部分 -->
 <div id="innerContent" class="hide">
@@ -292,7 +327,7 @@ bDialog.open({
 </div>
 ]]>
 </script>
-<script type="syntaxhighlighter" class="brush:js">
+            <script type="syntaxhighlighter" class="brush:js">
 <![CDATA[
 //参数1为插件初始化参数，参数2为页面片段模式传递的页面内容
 bDialog.open({
@@ -303,7 +338,7 @@ bDialog.open({
 });
 ]]>
 </script>
-		</div>
+        </div>
 		
 		
 		
