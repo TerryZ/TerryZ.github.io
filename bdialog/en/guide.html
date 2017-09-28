@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>bDialog入门指南</title>
+    <title>bDialog - guide</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../../lib/bootstrap/3.3.7/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../../lib/font-awesome-4/css/font-awesome.min.css" />
@@ -62,31 +62,30 @@
 
 	<div class="content">
 	<div class="container">
-		<h1 class="text-center">入门指南</h1>
+		<h1 class="text-center">Guide</h1>
 
-		<h3>资源导入 <small>在网页上引用css样式、js脚本等文件</small></h3>
+		<h3>Files including <small>include css, js files in page</small></h3>
 <script type="syntaxhighlighter" class="brush:html">
 <![CDATA[
-<!-- 插件使用的样式表文件，分bootstrap2和bootstrap3两个环境使用，根据使用环境引用 -->
-<!-- bootstrap2环境使用 -->
+<!-- Include the following lines of code in the <head> section of your HTML. -->
+<!-- used in bootstrap v2 framework  -->
 <link rel="stylesheet" href="b.dialog.css" type="text/css">
-<!-- bootstrap3环境使用 -->
+<!-- used in bootstrap v3 framework -->
 <link rel="stylesheet" href="b.dialog.bootstrap3.css" type="text/css">
 
 
-<!-- 拖拽功能库 -->
+<!-- jquey-ui library to achieve bDialog draggable function -->
 <script type="text/javascript" src="jquery-ui.min.js" >< /script>
-<!-- 插件核心脚本 -->
+<!-- bDialog core js file -->
 <script type="text/javascript" src="b.dialog.js" >< /script>
 ]]>
 </script>
 
-		<h3>Javascript初始化插件代码</h3>
+		<h3>Javascript initialize bDialog</h3>
 <script type="syntaxhighlighter" class="brush:js">
 <![CDATA[
-//初始化插件
 bDialog.open({
-	title : '窗口标题',
+	title : 'This is title, support html style code',
 	width : 500,
 	height : 450,
 	url : 'http://aa.com/load',
@@ -95,9 +94,9 @@ bDialog.open({
 	},
 	callback:function(data){
 		if(data && data.results && data.results.length > 0 ){
-			eDialog.alert('已完成弹出窗口操作！<br>接收到弹出窗口传回的 userName 参数，值为：<b>' + data.results[0].userName + '</b>');
+			bDialog.alert('Dialog is been closed！<br>Received return 'userName' data，value is ：<b>' + data.results[0].userName + '</b>');
 		}else{
-			eDialog.alert('弹出窗口未回传参数',$.noop,'error');
+			bDialog.alert('no data return!',$.noop,'error');
 		}
 	}
 });
