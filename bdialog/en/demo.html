@@ -14,6 +14,7 @@
 
     <link rel="stylesheet" href="../../css/bdialog/header.css" />
     <link rel="stylesheet" href="../../css/bdialog/demo.css" />
+    <!--
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script>
         (adsbygoogle = window.adsbygoogle || []).push({
@@ -21,6 +22,7 @@
             enable_page_level_ads: true
         });
     </script>
+    -->
 </head>
 
 <body>
@@ -65,9 +67,10 @@
 
 <div class="content">
     <div class="container" >
+        <!--
         <div class="row-fluid">
             <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <!-- 置顶栏广告 -->
+            < !-- 置顶栏广告 - ->
             <ins class="adsbygoogle"
                  style="display:block"
                  data-ad-client="ca-pub-4688926342467996"
@@ -77,14 +80,15 @@
                 (adsbygoogle = window.adsbygoogle || []).push({});
             </script>
         </div>
+        -->
         <h1 class="heading">可多层嵌套高定制化的弹出窗口 <small>支持多层嵌套、高可定制化</small></h1>
         <div class="row-fluid">
-            <h4 class="heading">1.基本初始化Modal <small></small></h4>
+            <h4 class="heading">1.a basic Modal dialog <small></small></h4>
             <button class="btn btn-default" type="button" id="btnDialog">Open Modal</button>
             <script type="syntaxhighlighter" class="brush:js">
 <![CDATA[
 bDialog.open({
-	title : '窗口标题',
+	title : 'Title text',
 	width : 500,
 	height : 450,
 	url : 'http://aa.com/load'
@@ -95,7 +99,7 @@ bDialog.open({
 
 
         <div class="row-fluid">
-            <h4 class="heading">2.消息提示框Alert <small>包含info、warning、error、success、confirm、inputConfirm等类型</small></h4>
+            <h4 class="heading">2.Alert Dialog <small>including info、warning、error、success、confirm、inputConfirm types alert dialog</small></h4>
             <button class="btn btn-default" type="button" id="btnInfo"><i class="fa fa-info-circle"></i> Alert (info)</button>
             <button class="btn btn-default" type="button" id="btnWarning"><i class="fa fa-exclamation-triangle"></i> Alert (warning)</button>
             <button class="btn btn-default" type="button" id="btnError"><i class="fa fa-ban"></i> Alert (error)</button>
@@ -104,17 +108,17 @@ bDialog.open({
             <button class="btn btn-default" type="button" id="btnInputConfirm"><i class="fa fa-question-circle-o"></i> Alert with a input(inputConfirm)</button>
             <script type="syntaxhighlighter" class="brush:js">
 <![CDATA[
-bDialog.alert('这是一个最简单的消息提示');
-//带有关闭后回调的消息提示窗口
-bDialog.alert('这是一个设置了回调函数的消息提示',function(data){
+bDialog.alert('this is a alert message');
+//a alert with callback function
+bDialog.alert('this is a alert message',function(data){
     //do something
 });
-//带有回调，且有窗口设置参数的提示窗口
-bDialog.alert('这是一个确认对话框！！',function(data){
+//alert with callback function and dialog setting options
+bDialog.alert('i am a confirm alert dialog',function(data){
     //do something
 },{
-    messageType : 'confirm'//设置窗口类型为确认对话框窗口
-    cancel : function(dlg){//设置对话框在点击取消后，执行的回调
+    messageType : 'confirm'//set alert type to confirm
+    cancel : function(dlg){//setup cancel function when cancel button click
         //do something
     }
 });
@@ -158,13 +162,14 @@ bDialog.toast('我是一个Toast消息',{
 
         <div class="row-fluid">
             <h4 class="heading">4.Mask <small></small></h4>
-            <button class="btn btn-default" type="button" id="btnMask">全屏遮罩</button>
+            <button class="btn btn-default" type="button" id="btnMask">Open Mask</button>
             <script type="syntaxhighlighter" class="brush:js">
 <![CDATA[
-bDialog.mask('这是一个最简单的消息提示');
+bDialog.mask();//use default notice
+bDialog.mask('your custom notice text');
 
-//一个简单的应用实例：
-//打开遮罩，进行Ajax数据读取，读取完成后，关闭遮罩
+//a classic use case
+//open mask，loading data by Ajax，when load success，close the mask.
 var mask = bDialog.mask();
 $.ajax({
     url : 'xxx.com/load',
@@ -286,11 +291,11 @@ div.simple div.modal-header button.close {
 }
 ]]>
 </script>
-            <p>脚本代码：</p>
+            <p>javascript code：</p>
             <script type="syntaxhighlighter" class="brush:js">
 <![CDATA[
 bDialog.open({
-	title : '窗口标题',
+	title : 'Title text',
 	width : 500,
 	height : 450,
 	customClass : 'simple',
