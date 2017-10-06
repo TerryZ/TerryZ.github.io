@@ -14,11 +14,11 @@ $(function(){
 
 
     var menuData = [
-        {content:'主页',header: true},
+        {content:'Main site',header: true},
         {content:'<i class="fa fa-fw fa-home"></i> HomePage',url : 'https://terryz.github.io'},
         {content:'<i class="fa fa-fw fa-github"></i> Github',url : 'https://github.com/TerryZ'},
         {content:'sm_divider'},
-        {content:'开源项目',header: true},
+        {content:'other projects',header: true},
         {content:'<i class="fa fa-fw fa-list-alt"></i> SelectPage',url : 'https://terryz.github.io/selectpage/index.html'},
         {content:'<i class="fa fa-fw fa-bars"></i> SelectMenu',url : 'https://terryz.github.io/selectpage/index.html'},
         {content:'<i class="fa fa-fw fa-window-restore"></i> bDialog',url : 'https://terryz.github.io/bdialog/index.html'},
@@ -27,7 +27,7 @@ $(function(){
     ];
     $('#lnkMyProjects').click(function(){
         $(this).selectMenu({
-            title : '其他个人原创项目',
+            title : 'Other site',
             regular : true,
             position : 'right',
             data : menuData
