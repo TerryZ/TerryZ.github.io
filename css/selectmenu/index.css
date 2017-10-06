@@ -1,0 +1,33 @@
+@CHARSET "UTF-8";
+
+.content{
+	background-color: white;
+}
+.content .jumbotron{
+	background-color: white;
+	padding-left: 0px;
+	margin-bottom: 10px;
+}
+.content .jumbotron h1 {
+	font-size: 50px;
+	font-weight: lighter;
+    margin-top: 0px;
+}
+.content .row h3{
+	text-align: center;
+	color: #337AB7;
+}
+.content .row h3 i{
+}
+.content .desc{
+	font-size: 15px;
+	color: #666666;
+	margin: 0px 40px 20px 40px;
+}
+
+.pluginImg{
+	text-align: right;
+}
+.pluginImg img{
+	margin-top: 50px;
+}

@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SelectMenu - Demo</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../lib/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../lib/font-awesome-4/css/font-awesome.min.css" />
+    
+	<link rel="stylesheet" href="../lib/syntaxhighlighter/styles/shCore.css" type="text/css">
+	<link rel="stylesheet" href="../lib/syntaxhighlighter/styles/shThemeDefault.css" type="text/css">
+	
+	<link rel="stylesheet" href="../lib/selectmenu/selectmenu.css" type="text/css">
+    <link rel="stylesheet" href="../lib/bdialog/b.dialog.bootstrap3.css" type="text/css">
+    
+	<link rel="stylesheet" href="../css/selectmenu/header.css" />
+	<link rel="stylesheet" href="../css/selectmenu/demo.css" />
+</head>
+
+<body>
+	<div class="content">
+	<div class="container" >
+
+
+        <h1 class="page-header">SelectMenu <small>including regular, advanced, right click and embedded and so on types menu features</small></h1>
+        <div class="row-fluid">
+            <h2 class="page-header">1.Classic usage <small></small></h2>
+            <div class="col-md-12">
+                <div class="col-md-6">
+                    <p><strong>A</strong>. Select your favorite NBA team:
+                        <button type="button" class="btn btn-default" id="demoSingle">Select Team</button>
+                    </p>
+                    <div class="thumbnail">
+                        <img id="nbaTeamLogo">
+                        <div class="caption">
+                            <p id="nabTeamName"></p>
+                        </div>
+                    </div>
+                    <p>The NBA team logo images copyright comes form <a href="http://china.nba.com" target="_blank">china.nba.com</a></p>
+                </div>
+                <div class="col-md-6">
+                    <p><strong>B</strong>. Choose teams to follow team news:
+                        <button type="button" class="btn btn-default" id="demoMultiple">Select Teams</button>
+                    </p>
+                    <div class="panel panel-default">
+                        <div class="panel-body" id="nbaTeamLists"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row-fluid">
+            <div class="col-md-12">
+                <div class="col-md-6">
+                    <p><strong>C</strong>. Which site you want to visit ?</p>
+                    <p><button type="button" class="btn btn-default" id="demoBaseMenu">Select Teams <i class="fa fa-caret-down"></i></button></p>
+                </div>
+                <div class="col-md-6">
+                    <p><strong>D</strong>. Menu embedded to page</p>
+                    <div id="demoEmbedded"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row-fluid">
+            <div class="col-md-12">
+                <div class="col-md-12">
+                    <strong>E</strong>. your mouse right click to call menu
+                    <div class="jumbotron" id="demoRightClick">
+                        <h2 class="text-center"><i class="fa fa-mouse-pointer"></i> Mouse right click this area</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="row-fluid">
+            <h2 class="page-header">2.1 Regular menu <small></small></h2>
+            <script type="syntaxhighlighter" class="brush:js">
+<![CDATA[
+//regular menu data item format
+/**
+ * content  [string]   : Menu item display content, support html format（Set the content to "sm_divider" to generate a divider bar）
+ * header   [boolean]  : whether menu header item
+ * url      [string]   : visit page url
+ * callback [function] : The callback function when menu item selected
+ * disabled [boolean]  : whether disabled current menu item
+ */
+var menuData = [
+    {content:'News Site',header: true},//menu header item
+    {content:'163 NetEase',url : 'http://www.163.com'},//Link type menu item
+    {content:'sm_divider'},//the menu divider
+    //Use HTML format to display menu item content, and set menu item disabled
+    {content:'<i class="fa fa-fw fa-facebook"></i> Facebook',url : 'https://www.facebook.com',disabled : true},
+    //Click the menu item to perform the callback
+    {content:'Click this menu item to trigger your callback',callback : function(){
+        bDialog.alert('you can do anything in callback!');
+    }}
+];
+]]>
+</script>
+            <button type="button" class="btn btn-default" id="baseMenu"><i class="fa fa-bars"></i> Select Menu</button>
+
+
+            <script type="syntaxhighlighter" class="brush:js">
+<![CDATA[
+//Menu caller html element
+<button type="button" id="btnMenu" >Select Team</button>
+
+//javascript init
+$('#btnMenu').click(function(){
+    $(this).selectMenu({
+        //set menu type to regular menu mode
+        regular : true,
+        data : menuData
+    });
+});
+]]>
+            </script>
+            <div class="alert alert-info" role="alert">
+                In the demo, the alert dialog called by callback type menu item use <a href="https://terryz.github.io/bdialog/index.html" target="_blank"><strong>bDialog</strong></a> plugin
+            </div>
+        </div>
+
+        <div class="row-fluid">
+            <h4 class="heading">2.2 Menu with title bar <small></small></h4>
+            <button type="button" class="btn btn-default" id="baseMenuHeader"><i class="fa fa-header"></i> Select Menu</button>
+            <script type="syntaxhighlighter" class="brush:js">
+<![CDATA[
+$('#btnMenu').click(function(){
+    $(this).selectMenu({
+        title : '<i class="fa fa-fw fa-thumbs-o-up"></i> I can have a title bar',
+        regular : true,
+        data : menuData
+    });
+});
+]]>
+            </script>
+        </div>
+
+        <div class="row-fluid">
+            <h4 class="heading">2.3 Menu item with header type <small></small></h4>
+            <button type="button" class="btn btn-default" id="baseMenuSubHeader"><i class="fa fa-list-ul"></i> Select Menu</button>
+            <script type="syntaxhighlighter" class="brush:js">
+<![CDATA[
+//set menu item data with 'header : true'，can set menu item as a header type
+var menuData = [
+    {content:'News Site',header: true}
+];
+//javascript init
+$('#btnMenu').click(function(){
+    $(this).selectMenu({
+        regular : true,
+        data : menuData
+    });
+});
+]]>
+            </script>
+        </div>
+
+        <div class="row-fluid">
+            <h4 class="heading">2.4 Menu with arrow, like a bubble <small></small></h4>
+            <button type="button" class="btn btn-default" id="baseMenuArrow"><i class="fa fa-arrow-up"></i> Menu with arrow</button>
+            <button type="button" class="btn btn-default" id="baseMenuRight"><i class="fa fa-arrow-right"></i> Align right</button>
+            <button type="button" class="btn btn-default" id="baseMenuCenter"><i class="fa fa-arrow-down"></i> Align center</button>
+            <script type="syntaxhighlighter" class="brush:js">
+<![CDATA[
+$('#btnMenu').click(function(){
+    $(this).selectMenu({
+        //open menu arrow, default false
+        arrow : true,
+        //menu align direction
+        //options : 'left'(default),'center','right'
+        position : 'right',
+        regular : true,
+        data : menuData
+    });
+});
+]]>
+            </script>
+        </div>
+
+
+        <div class="row-fluid">
+            <h2 class="page-header">3.1 Advanced menu <small></small></h2>
+            <script type="syntaxhighlighter" class="brush:js">
+<![CDATA[
+//Advanced menu data example (non-group)
+//The data format different with regular, the menu item data format can be custom completely
+//you can used 'keyField'、'showField' and 'searchField' parameters to bind
+var selectMenuData = [
+    {id:1 ,name:'Chicago Bulls',desc:'芝加哥公牛',abbr:'CHI'},
+    {id:2 ,name:'Cleveland Cavaliers',desc:'克里夫兰骑士',abbr:'CLE'},
+    {id:3 ,name:'Detroit Pistons',desc:'底特律活塞',abbr:'DET'},
+    {id:4 ,name:'Indiana Pacers',desc:'印第安纳步行者',abbr:'IND'},
+    {id:5 ,name:'Milwaukee Bucks',desc:'密尔沃基雄鹿',abbr:'MIL'}
+];
+]]>
+            </script>
+            <button type="button" class="btn btn-default" id="selectMenuBase"><i class="fa fa-server"></i> Select Menu</button>
+            <script type="syntaxhighlighter" class="brush:js">
+<![CDATA[
+//the caller HTML element
+<button type="button" id="btnMenu" >Select Team</button>
+//javascript init
+$('#btnMenu').click(function(){
+    $(this).selectMenu({
+        showField : 'name',//set display content field in data row
+        keyField : 'id',//set key value field in data row
+        data : selectMenuData
+    });
+});
+]]>
+</script>
+        </div>
+
+        <div class="row-fluid">
+            <h4 class="heading">3.2 close quick search bar <small></small></h4>
+            <button type="button" class="btn btn-default" id="selectMenuNoSearch"><i class="fa fa-server"></i> Select Menu</button>
+            <script type="syntaxhighlighter" class="brush:js">
+<![CDATA[
+$('#btnMenu').click(function(){
+    $(this).selectMenu({
+        showField : 'name',
+        keyField : 'id',
+        search : false,//close quick search bar
+        data : selectMenuData
+    });
+});
+]]>
+</script>
+        </div>
+
+        <div class="row-fluid">
+            <h4 class="heading">3.3 set menu size <small>show menu item size</small></h4>
+            <button type="button" class="btn btn-default" id="selectMenuListSize"><i class="fa fa-server"></i> Select Menu</button>
+            <script type="syntaxhighlighter" class="brush:js">
+<![CDATA[
+$('#btnMenu').click(function(){
+    $(this).selectMenu({
+        showField : 'name',
+        keyField : 'id',
+        search : false,//close quick search bar
+        title : false,//close title bar
+        listSize : 5,//set menu size（menu results list height = item height * size）
+        data : selectMenuData
+    });
+});
+]]>
+</script>
+        </div>
+
+        <div class="row-fluid">
+            <h4 class="heading">3.4 Multiple group data menu (tabs), multiple select mode <small></small></h4>
+            <script type="syntaxhighlighter" class="brush:js">
+<![CDATA[
+//multiple group type data source format
+//Requirement The data structure must be set in the following format
+//but 'list' node data format, like the non-grouped data format
+var selectMenuGroupData = [{
+    title : 'East',
+    list :[
+        {id:1 ,name:'Chicago Bulls',desc:'芝加哥公牛',abbr:'CHI'},
+        {id:2 ,name:'Cleveland Cavaliers',desc:'克里夫兰骑士',abbr:'CLE'}
+    ]
+},{
+    title : 'West',
+    list : [
+        {id:16,name:'Denver Nuggets',desc:'丹佛掘金',abbr:'DEN'},
+        {id:17,name:'Minnesota Timberwolves',desc:'明尼苏达森林狼',abbr:'MIN'}
+    ]}
+];
+]]>
+            </script>
+            <button type="button" class="btn btn-default" id="selectMenuGroup"><i class="fa fa-server"></i> Select Menu</button>
+            <script type="syntaxhighlighter" class="brush:js">
+<![CDATA[
+$('#btnMenu').click(function(){
+    $(this).selectMenu({
+        showField : 'name',
+        keyField : 'id',
+        multiple : true,//enabled multiple select mode
+        data : selectMenuGroupData
+    });
+});
+]]>
+</script>
+        </div>
+
+        <div class="row-fluid">
+            <h4 class="heading">3.5 Set item selected when menu init complete <small></small></h4>
+            <button type="button" class="btn btn-default" id="selectMenuInit"><i class="fa fa-server"></i> Select Menu</button>
+            <script type="syntaxhighlighter" class="brush:js">
+<![CDATA[
+$('#btnMenu').click(function(){
+    $(this).selectMenu({
+        showField : 'name',
+        keyField : 'id',
+        //enable menu arrow
+        arrow : true,
+        //selected item when init complete
+        initSelected : 1,
+        data : selectMenuData
+    });
+});
+]]>
+</script>
+        </div>
+
+        <div class="row-fluid">
+            <h4 class="heading">3.6 Custom menu item template <small></small></h4>
+            <button type="button" class="btn btn-default" id="selectMenuFormat"><i class="fa fa-server"></i> Select Menu</button>
+            <script type="syntaxhighlighter" class="brush:js">
+<![CDATA[
+$('#btnMenu').click(function(){
+    $(this).selectMenu({
+        showField : 'name',
+        keyField : 'id',
+        //set menu item template
+        formatItem : function(row){
+            var html = '<div class=""><div class="col-md-3">';
+            html += '<img src="image.jpg" width="64" height="64">';
+            html += '</div>';
+            html += '<div class="col-md-7">';
+            html += row.name + '<br>' + row.desc;
+            html += '</div></div>';
+            return html;
+        },
+        data : selectMenuData
+    });
+});
+]]>
+</script>
+        </div>
+
+
+        <div class="row-fluid">
+            <h2 class="page-header">4.1 Mouse right button click to call menu <small>only mouse right button click can show the menu</small></h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <p>Mouse right click to call regular menu</p>
+                    <div class="jumbotron" id="selectMenuRightClickBase">
+                        <h3 class="text-center"><i class="fa fa-mouse-pointer"></i> Mouse right click this area</h3>
+                    </div>
+                    <script type="syntaxhighlighter" class="brush:js">
+<![CDATA[
+//html element
+<div class="jumbotron" id="selectMenuRightClickBase">
+    <h3 class="text-center">
+        <i class="fa fa-mouse-pointer"></i>
+        Mouse right click this area
+    </h3>
+</div>
+//javascript init
+$('#selectMenuRightClickBase').selectMenu({
+    title : 'Regular menu',
+    //regular menu mode
+    regular : true,
+    //enable right click call mode
+    rightClick : true,
+    data : baseMenuHeaderData
+});
+]]>
+                    </script>
+                </div>
+                <div class="col-md-6">
+                    <p>Mouse right click to call advanced menu</p>
+                    <div class="jumbotron" id="selectMenuRightClickAdv">
+                        <h3 class="text-center"><i class="fa fa-mouse-pointer"></i> Mouse right click this area</h3>
+                    </div>
+                    <script type="syntaxhighlighter" class="brush:js">
+<![CDATA[
+//html element
+<div class="jumbotron" id="selectMenuRightClickAdv">
+    <h3 class="text-center">
+        <i class="fa fa-mouse-pointer"></i>
+        Mouse right click this area
+    </h3>
+</div>
+//javascript init
+$('#selectMenuRightClickAdv').selectMenu({
+    title : 'Advanced menu',
+    showField : 'name',
+    keyField : 'id',
+    //enable right click call mode
+    rightClick : true,
+    data : selectMenuData
+});
+]]>
+                    </script>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row-fluid">
+            <h2 class="page-header">5.1 Menu with dynamic data <small></small></h2>
+            <p>
+                <button type="button" class="btn btn-default" id="btnAddRow">Add row</button>
+                <button type="button" class="btn btn-default" id="selectMenuDynamic"><i class="fa fa-server"></i> Select Menu</button>
+            </p>
+            <div class="row-fluid">
+                <ul class="list-group col-md-3" id="ulDynamicMenu">
+                    <li class="list-group-item">SelectPage</li>
+                    <li class="list-group-item">SelectMenu</li>
+                    <li class="list-group-item">bDialog</li>
+                    <li class="list-group-item">bPage</li>
+                    <li class="list-group-item">bTabs</li>
+                </ul>
+            </div>
+
+            <script type="syntaxhighlighter" class="brush:js">
+<![CDATA[
+$(this).selectMenu({
+    title : 'Dynamic data menu',
+    regular : true,
+    //set data source to function
+    data : function(){
+        var d = new Array();
+        $('#ulDynamicMenu li').each(function(i,row){
+            var rd = { content : $(row).text(), url : 'https://aaa.com' };
+            d.push(rd);
+        });
+        return d;
+    }
+});
+]]>
+</script>
+        </div>
+
+
+        <div class="row-fluid">
+            <h2 class="page-header">6.1 Menu embedded to page <small>not in the form of pop show</small></h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <p>Regular menu embedded to page</p>
+                    <div id="selectMenuEmbedBase"></div>
+                </div>
+                <div class="col-md-6">
+                    <p>Advanced menu embedded to page</p>
+                    <div id="selectMenuEmbedAdv"></div>
+                </div>
+            </div>
+
+            <script type="syntaxhighlighter" class="brush:js">
+<![CDATA[
+//html element set
+//Attention, the embedded container must be DIV element
+<div id="selectMenuEmbedBase"></div>
+//javascript init
+$('#selectMenuEmbedBase').selectMenu({
+    showField : 'name',
+    keyField : 'id',
+    //set to enable embedded to page
+    embed : true,
+    data : selectMenuGroupData
+});
+]]>
+            </script>
+
+        </div>
+		
+		
+		
+		
+		
+
+		
+		
+	</div>
+	</div>
+
+
+    
+
+
+    <script type="text/javascript" src="../lib/jquery.min.js" ></script>
+    <script type="text/javascript" src="../lib/syntaxhighlighter/scripts/shCore.js" ></script>
+    <script type="text/javascript" src="../lib/syntaxhighlighter/scripts/shBrushXml.js" ></script>
+    <script type="text/javascript" src="../lib/syntaxhighlighter/scripts/shBrushCss.js" ></script>
+    <script type="text/javascript" src="../lib/syntaxhighlighter/scripts/shBrushJava.js" ></script>
+    <script type="text/javascript" src="../lib/syntaxhighlighter/scripts/shBrushJScript.js" ></script>
+    <script type="text/javascript" src="../lib/selectmenu/selectmenu.min.js" ></script>
+    <script type="text/javascript" src="../lib/bdialog/b.dialog.min.js" ></script>
+    <script type="text/javascript" src="../js/selectmenu/demo.js" ></script>
+    <script type="text/javascript" src="../js/selectmenu/common.js" ></script>
+    <script type="text/javascript" src="../js/common.js" ></script>
+    <script type="text/javascript">
+    $(function(){
+        SyntaxHighlighter.all();
+        setActive('mnuDemo');
+    });
+    </script>
+
+
+
+
+</body>
+</html>

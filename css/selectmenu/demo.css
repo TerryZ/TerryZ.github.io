@@ -1,0 +1,17 @@
+@CHARSET "UTF-8";
+
+.content{
+	background-color: white;
+}
+.content .container{
+	width: 1170px;
+	padding-bottom: 30px;
+}
+
+.logBox{
+	background-color: #EEEEEE;height: 100px;margin-top: 5px;border-radius: 4px;padding: 5px 10px;
+	overflow-y:auto; 
+}
+button.btn {
+    outline: none !important;
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SelectMenu - Guide</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../lib/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../lib/font-awesome-4/css/font-awesome.min.css" />
+    
+    <link rel="stylesheet" href="../lib/syntaxhighlighter/styles/shCore.css" type="text/css">
+	<link rel="stylesheet" href="../lib/syntaxhighlighter/styles/shThemeDefault.css" type="text/css">
+
+    <link rel="stylesheet" href="../lib/selectmenu/selectmenu.css" type="text/css">
+
+    <link rel="stylesheet" href="../css/selectmenu/header.css" />
+    <link rel="stylesheet" href="../css/guide.css" />
+</head>
+
+<body>
+	<div class="content">
+	<div class="container">
+		<h1 class="text-center">Guide</h1>
+
+		<h3>Including files <small>include css, js files in page</small></h3>
+<script type="syntaxhighlighter" class="brush:html">
+<![CDATA[
+<!-- Basic environment reference -->
+<!-- jQuery library include -->
+<script type="text/javascript" src="jquery.min.js" >< /script>
+
+<!-- SelectMenu style sheet -->
+<link rel="stylesheet" href="selectmenu.css" type="text/css">
+
+<!-- SelectMenu plugin js file include -->
+<script type="text/javascript" src="selectmenu.js" >< /script>
+]]>
+</script>
+
+
+		<h3>HTML Element</h3>
+<script type="syntaxhighlighter" class="brush:html">
+<![CDATA[
+<!--
+Set the trigger menu to open the object, where
+only the most commonly used button as an example
+-->
+<button type="button" id="btnDemo">Select Menu</button>
+]]>
+</script>
+
+		<h3>Javascript initialize</h3>
+<script type="syntaxhighlighter" class="brush:js">
+<![CDATA[
+//defined data source
+//data format：Array[{Object},{...}]
+var data = [
+	{id:1 ,name:'Chicago Bulls',desc:'芝加哥公牛'},
+	{id:2 ,name:'Cleveland Cavaliers',desc:'克里夫兰骑士'},
+	{id:3 ,name:'Detroit Pistons',desc:'底特律活塞'},
+	{id:4 ,name:'Indiana Pacers',desc:'印第安纳步行者'}
+];
+//initialize selectmenu
+$('#btnDemo').selectMenu({
+	showField : 'desc',
+	keyField : 'id',
+	data : data
+});
+]]>
+</script>
+
+
+
+
+
+
+
+
+
+
+	</div>
+	</div>
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="../lib/jquery.min.js" ></script>
+<script type="text/javascript" src="../lib/syntaxhighlighter/scripts/shCore.js" ></script>
+<script type="text/javascript" src="../lib/syntaxhighlighter/scripts/shBrushXml.js" ></script>
+<script type="text/javascript" src="../lib/syntaxhighlighter/scripts/shBrushCss.js" ></script>
+<script type="text/javascript" src="../lib/syntaxhighlighter/scripts/shBrushJScript.js" ></script>
+<script type="text/javascript" src="../lib/selectmenu/selectmenu.min.js" ></script>
+<script type="text/javascript" src="../js/selectmenu/common.js" ></script>
+<script type="text/javascript" src="../js/common.js" ></script>
+<script type="text/javascript" >
+$(function(){
+    setActive('mnuGuide');
+    SyntaxHighlighter.all();
+});
+</script>
+</body>
+</html>

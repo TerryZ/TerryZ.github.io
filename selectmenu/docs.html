@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SelectMenu - Documentation</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="../lib/bootstrap/3.3.7/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="../lib/font-awesome-4/css/font-awesome.min.css" />
+
+    <link rel="stylesheet" href="../lib/syntaxhighlighter/styles/shCore.css" type="text/css">
+    <link rel="stylesheet" href="../lib/syntaxhighlighter/styles/shThemeDefault.css" type="text/css">
+
+    <link rel="stylesheet" href="../lib/selectmenu/selectmenu.css" type="text/css">
+    
+	<link rel="stylesheet" href="../css/selectmenu/header.css" />
+	<link rel="stylesheet" href="../css/selectmenu/docs.css" />
+
+</head>
+
+<body>
+    <div class="content">
+        <div class="container">
+			<div class="row">
+				<div class="col-md-3">
+					<div class="navBox">
+					<ul class="nav" id="nav">
+						<li class="current"><a href="#data">* data</a></li>
+						<li><a href="#showField">* showField</a></li>
+						<li><a href="#keyField">* keyField</a></li>
+						<li><a href="#lang">lang</a></li>
+						<li><a href="#searchField">searchField</a></li>
+                        <li><a href="#search">search</a></li>
+                        <li><a href="#title">title</a></li>
+                        <li><a href="#regular">regular</a></li>
+                        <li><a href="#rightClick">rightClick</a></li>
+                        <li><a href="#arrow">arrow</a></li>
+                        <li><a href="#position">position</a></li>
+                        <li><a href="#embed">embed</a></li>
+                        <li><a href="#initSelected">initSelected</a></li>
+						<li><a href="#multiple">multiple</a></li>
+						<li><a href="#listSize">listSize</a></li>
+						<li><a href="#selectToCloseList">selectToCloseList</a></li>
+						<li><a href="#formatItem">formatItem</a></li>
+						<li><a href="#andOr">andOr</a></li>
+						<li><a href="#orderBy">orderBy</a></li>
+						<li><a href="#eSelect">eSelect</a></li>
+					</ul>
+					</div>
+				</div>
+				<div class="col-md-9 propertiesBox">
+					<div class="row" id="data">
+						<h3>data <small>menu data source</small></h3>
+						<ul>
+							<li><strong>type: </strong><code>array | function</code></li>
+							<li><strong>default: </strong><code>no default</code></li>
+							<li><strong>usage: </strong>
+								<div class="usageBox">
+									<p>the SelectMenu data source have 3 types: regular menu type，advanced menu type（single group and multiple group）</p>
+                                    <p>Regular menu data format</p>
+                                    <pre class="brush: js">
+//regular menu data item format
+/**
+ * content  [string]   : Menu item display content, support html format（Set the content to "sm_divider" to generate a divider bar）
+ * header   [boolean]  : whether menu header item
+ * url      [string]   : visit page url
+ * callback [function] : The callback function when menu item selected
+ * disabled [boolean]  : whether disabled current menu item
+ */
+var menuData = [
+    {content:'News Site',header: true},//menu header item
+    {content:'163 NetEase',url : 'http://www.163.com'},//Link type menu item
+    {content:'sm_divider'},//the menu divider
+    //Use HTML format to display menu item content, and set menu item disabled
+    {content:'<i class="fa fa-fw fa-facebook"></i> Facebook',url : 'https://www.facebook.com',disabled : true},
+    //Click the menu item to perform the callback
+    {content:'Click this menu item to trigger your callback',callback : function(){
+        bDialog.alert('you can do anything in callback!');
+    }}
+];
+                                    </pre>
+                                    <p>Advanced menu data format (single group)</p>
+                                    <pre class="brush: js">
+//Advanced menu data example (non-group)
+//The data format different with regular, the menu item data format can be custom completely
+//you can used 'keyField'、'showField' and 'searchField' parameters to bind
+var selectMenuData = [
+    {id:1 ,name:'Chicago Bulls',desc:'芝加哥公牛',abbr:'CHI'},
+    {id:2 ,name:'Cleveland Cavaliers',desc:'克里夫兰骑士',abbr:'CLE'},
+    {id:3 ,name:'Detroit Pistons',desc:'底特律活塞',abbr:'DET'},
+    {id:4 ,name:'Indiana Pacers',desc:'印第安纳步行者',abbr:'IND'},
+    {id:5 ,name:'Milwaukee Bucks',desc:'密尔沃基雄鹿',abbr:'MIL'}
+];
+                                    </pre>
+                                    <p>Advanced menu data format (multiple group)</p>
+                                    <pre class="brush: js">
+//multiple group type data source format
+//Requirement The data structure must be set in the following format
+//but 'list' node data format, like the non-grouped data format
+var selectMenuGroupData = [{
+    title : 'East',
+    list :[
+        {id:1 ,name:'Chicago Bulls',desc:'芝加哥公牛',abbr:'CHI'},
+        {id:2 ,name:'Cleveland Cavaliers',desc:'克里夫兰骑士',abbr:'CLE'}
+    ]
+},{
+    title : 'West',
+    list : [
+        {id:16,name:'Denver Nuggets',desc:'丹佛掘金',abbr:'DEN'},
+        {id:17,name:'Minnesota Timberwolves',desc:'明尼苏达森林狼',abbr:'MIN'}
+    ]}
+];
+                                    </pre>
+
+                                    <p>when data set to function, the data source can be dynamic acquisition</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="row" id="showField">
+						<h3>showField <small>menu item display content data field, available on advanced menu mode</small></h3>
+						<ul>
+							<li><strong>type: </strong><code>string</code></li>
+							<li><strong>default: </strong><code>'name'</code></li>
+							<li><strong>usage: </strong>
+								<div class="usageBox">
+								set the data field to show menu item display content
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="row" id="keyField">
+						<h3>keyField <small>menu key field in data, available on advanced menu mode</small></h3>
+						<ul>
+							<li><strong>type: </strong><code>string</code></li>
+							<li><strong>default: </strong><code>'id'</code></li>
+							<li><strong>usage: </strong>
+								<div class="usageBox">
+								set to get the key value from data field
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="row" id="lang">
+						<h3>lang <small>menu using language</small></h3>
+						<ul>
+							<li><strong>type: </strong><code>string</code></li>
+							<li><strong>default: </strong><code>'cn'</code></li>
+							<li><strong>usage: </strong>
+								<div class="usageBox">
+								available option
+								<table class="table table-bordered" style="background-color: white;">
+									<thead>
+										<tr>
+											<th>code</th>
+											<th>language</th>
+										</tr>
+									</thead>
+									<tbody>
+                                        <tr>
+                                            <td>cn</td>
+                                            <td>Chinese</td>
+                                        </tr>
+                                        <tr>
+                                            <td>en</td>
+                                            <td>English</td>
+                                        </tr>
+										<tr>
+											<td>de</td>
+											<td>German</td>
+										</tr>
+										<tr>
+											<td>es</td>
+											<td>Spanish</td>
+										</tr>
+										<tr>
+											<td>pt-br</td>
+											<td>Brazilian Portuguese</td>
+										</tr>
+										<tr>
+											<td>ja</td>
+											<td>Japanese</td>
+										</tr>
+									</tbody>
+								</table>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="row" id="searchField">
+						<h3>searchField <small>search results data field</small></h3>
+						<ul>
+							<li><strong>type: </strong><code>string</code></li>
+							<li><strong>default: </strong><code>option.showField</code></li>
+							<li><strong>usage: </strong>
+								<div class="usageBox">
+                                    set search results in data field, if non-set then using '<code>showField</code>' appoint data field
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="row" id="multiple">
+						<h3>multiple <small>menu item multiple select</small></h3>
+						<ul>
+							<li><strong>type: </strong><code>boolean</code></li>
+							<li><strong>default: </strong><code>false</code></li>
+							<li><strong>usage: </strong>
+								<div class="usageBox">
+                                    setting SelectMenu selection mode, default is single selection mode
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="row" id="search">
+						<h3>search <small>whether show quick search bar</small></h3>
+						<ul>
+							<li><strong>type: </strong><code>boolean</code></li>
+							<li><strong>default: </strong><code>true</code></li>
+							<li><strong>usage: </strong>
+								<div class="usageBox">
+								<p>setting menu is show quick search bar or not (autocomplete)</p>
+								<p>only work on advanced menu mode</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+                    <div class="row" id="title">
+                        <h3>title <small>whether show title bar</small></h3>
+                        <ul>
+                            <li><strong>type: </strong><code>string | boolean</code></li>
+                            <li><strong>default: </strong><code>'SelectMenu'</code></li>
+                            <li><strong>usage: </strong>
+                                <div class="usageBox">
+                                    <p>setting title bar display content, if set to <code>false</code>, will close the title bar</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="row" id="regular">
+                        <h3>regular <small>set menu mode to regular menu mode</small></h3>
+                        <ul>
+                            <li><strong>type: </strong><code>boolean</code></li>
+                            <li><strong>default: </strong><code>false</code></li>
+                            <li><strong>usage: </strong>
+                                <div class="usageBox">
+                                    <p>set menu mode to regular mode, in this mode, menu item just can link jump or execute callback function</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="row" id="rightClick">
+                        <h3>rightClick <small>mouse right button click to call menu</small></h3>
+                        <ul>
+                            <li><strong>type: </strong><code>boolean</code></li>
+                            <li><strong>default: </strong><code>false</code></li>
+                            <li><strong>usage: </strong>
+                                <div class="usageBox">
+                                    <p>Set menu open mode in the specified area, click the right mouse button to call menu, the default open mode for the button or link and other objects click after the trigger</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="row" id="arrow">
+                        <h3>arrow <small>whether show menu arrow, when menu show type is pop up type (not embedded mode, not mouse right click mode)</small></h3>
+                        <ul>
+                            <li><strong>type: </strong><code>boolean</code></li>
+                            <li><strong>default: </strong><code>false</code></li>
+                            <li><strong>usage: </strong>
+                                <div class="usageBox">
+                                    <p>setting menu show arrow, and point to caller</p>
+                                    <p>not working on embedded menu mode <code>embed: true</code> and mouse right click mode <code>rightClick: true</code></p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="row" id="position">
+                        <h3>position <small>menu align the caller direction</small></h3>
+                        <ul>
+                            <li><strong>type: </strong><code>string</code></li>
+                            <li><strong>default: </strong><code>'left'</code></li>
+                            <li><strong>usage: </strong>
+                                <div class="usageBox">
+                                    <p>Set menu align the caller direction</p>
+                                    <p>
+                                        <ul>
+                                            <li><code>'left'</code>（default）</li>
+                                            <li><code>'center'</code></li>
+                                            <li><code>'right'</code></li>
+                                        </ul>
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="row" id="embed">
+                        <h3>embed <small>menu embedded to page, non pop up</small></h3>
+                        <ul>
+                            <li><strong>type: </strong><code>boolean</code></li>
+                            <li><strong>default: </strong><code>false</code></li>
+                            <li><strong>usage: </strong>
+                                <div class="usageBox">
+                                    <p>whether embedded menu in to page</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="row" id="initSelected">
+                        <h3>initSelected <small>selected menu item when menu init complete </small></h3>
+                        <ul>
+                            <li><strong>type: </strong><code>any</code></li>
+                            <li><strong>default: </strong><code>undefined</code></li>
+                            <li><strong>usage: </strong>
+                                <div class="usageBox">
+                                    <p>Set selected menu item when menu init complete, which matches the <code>option.keyField</code> field, and if it matches, it is automatically selected and highlighted</p>
+                                    <p>the setting only work on advanced menu mode (<code>regular: false</code>)</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+					<div class="row" id="listSize">
+						<h3>listSize <small>menu result list display size</small></h3>
+						<ul>
+							<li><strong>type: </strong><code>number</code></li>
+							<li><strong>default: </strong><code>10</code></li>
+							<li><strong>usage: </strong>
+								<div class="usageBox">
+								<p>The height of the menu is based on how many items are displayed</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="row" id="selectToCloseList">
+						<h3>selectToCloseList <small>select the menu item and close the menu</small></h3>
+						<ul>
+							<li><strong>type: </strong><code>boolean</code></li>
+							<li><strong>default: </strong><code>true</code></li>
+							<li><strong>usage: </strong>
+								<div class="usageBox">
+								set whether select the menu item and close menu, only work on advanced menu mode and 'multiple' set to true
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="row" id="formatItem">
+						<h3>formatItem <small>custom menu item display template</small></h3>
+						<ul>
+							<li><strong>type: </strong><code>function</code></li>
+							<li><strong>default: </strong><code>undefined</code></li>
+							<li><strong>usage: </strong>
+								<div class="usageBox">
+								param1：data，menu item data (single item)
+								return：string (support html type)
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="row" id="andOr">
+						<h3>andOr <small>the way to query data ('AND' or 'OR')</small></h3>
+						<ul>
+							<li><strong>type: </strong><code>string</code></li>
+							<li><strong>default: </strong><code>'AND'</code></li>
+							<li><strong>usage: </strong>
+								<div class="usageBox">								
+								    <p>andOr : 'OR'</p>
+								    <p>setting that using multiple keywords into the query, the menu's processing logic</p>
+                                    <p>the multiple keywords use space to Separate</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="row" id="orderBy">
+						<h3>orderBy <small>data sort type</small></h3>
+						<ul>
+							<li><strong>type: </strong><code>array</code></li>
+							<li><strong>default: </strong><code>used 'showField' The specified columns are sorted in ascending order</code></li>
+							<li><strong>usage: </strong>
+								<div class="usageBox">
+								    <p>orderBy : ['id desc','name']</p>
+								    <p>If only columns are specified and no sorting is specified, the default Ascending order is used</p>
+                                    <p>the multiple keywords use space to Separate</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="row" id="eSelect">
+						<h3>eSelect <small>Respond to the event processing when menu item selected</small></h3>
+						<ul>
+							<li><strong>type: </strong><code>function</code></li>
+							<li><strong>default: </strong><code>undefined</code></li>
+							<li><strong>usage: </strong>
+								<div class="usageBox">
+                                    <p><strong>parameter</strong></p>
+                                    <p>data：the menu items data (json) for selected menu item</p>
+                                    <p><strong>example</strong></p>
+								    <p><code>eSelect : function(data){ $('xxx').val(data.name + data.sex); }</code></p>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="../lib/jquery.min.js" ></script>
+    <script type="text/javascript" src="../lib/syntaxhighlighter/scripts/shCore.js" ></script>
+    <script type="text/javascript" src="../lib/syntaxhighlighter/scripts/shBrushXml.js" ></script>
+    <script type="text/javascript" src="../lib/syntaxhighlighter/scripts/shBrushCss.js" ></script>
+    <script type="text/javascript" src="../lib/syntaxhighlighter/scripts/shBrushJava.js" ></script>
+    <script type="text/javascript" src="../lib/syntaxhighlighter/scripts/shBrushJScript.js" ></script>
+
+    <script type="text/javascript" src="../lib/nav/jquery.nav.js" ></script>
+    <script type="text/javascript" src="../lib/stickUp/stickUp.min.js" ></script>
+
+    <script type="text/javascript" src="../lib/selectmenu/selectmenu.min.js" ></script>
+    <script type="text/javascript" src="../js/docs.js" ></script>
+    <script type="text/javascript" src="../js/selectmenu/common.js" ></script>
+    <script type="text/javascript" src="../js/common.js" ></script>
+    <script type="text/javascript">
+        $(function(){
+            SyntaxHighlighter.all();
+            setActive('mnuDocs');
+        });
+    </script>
+
+</body>
+</html>

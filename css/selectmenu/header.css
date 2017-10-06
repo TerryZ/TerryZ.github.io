@@ -1,0 +1,38 @@
+@CHARSET "UTF-8";
+
+body{
+	background-color: #727f80;
+}
+.navbar{
+	margin-bottom: 0px;
+}
+header{
+	background-color: white;
+	color: #666666;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif;
+}
+.navbar-nav > li > a {
+	color: #337ab7;
+}
+.navbar-nav > li > a:hover, 
+.navbar-nav > li > a:focus {
+	color: #23527c;
+	background-color: transparent;
+}
+.navbar-nav > .active > a,
+.navbar-nav > .active > a:hover,
+.navbar-nav > .active > a:focus {
+	color: #555;
+	background-color: #e7e7e7;
+}
+
+.footer div.container{
+	color: #F0F0F0;
+	text-align: center;
+	padding: 50px 0px;
+	font-family: consolas;
+}
+.footer div.container a{
+	color:white;
+	text-decoration:none;
+}
