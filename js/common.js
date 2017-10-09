@@ -18,7 +18,7 @@ $(function(){
         {content:'<i class="fa fa-fw fa-home"></i> HomePage',url : 'https://terryz.github.io'},
         {content:'<i class="fa fa-fw fa-github"></i> Github',url : 'https://github.com/TerryZ'},
         {content:'sm_divider'},
-        {content:'Other projects',header: true},
+        {content:'Products',header: true},
         {content:'<i class="fa fa-fw fa-list-alt"></i> SelectPage',url : 'https://terryz.github.io/selectpage/index.html'},
         {content:'<i class="fa fa-fw fa-bars"></i> SelectMenu',url : 'https://terryz.github.io/selectpage/index.html'},
         {content:'<i class="fa fa-fw fa-window-restore"></i> bDialog',url : 'https://terryz.github.io/bdialog/index.html'},
