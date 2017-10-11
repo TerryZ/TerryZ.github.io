@@ -28,9 +28,9 @@ $(function(){
     ];
     $('#lnkMyProjects').click(function(){
         $(this).selectMenu({
-            title : 'Other site',
             regular : true,
             position : 'right',
+            arrow : true,
             data : menuData
         });
     });
