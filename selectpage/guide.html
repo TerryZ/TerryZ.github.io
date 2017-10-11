@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>SelectPage入门指南</title>
+    <title>SelectPage Guide</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../lib/bootstrap/3.3.7/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../lib/font-awesome-4/css/font-awesome.min.css" />
@@ -62,55 +62,51 @@
 
 	<div class="content">
 	<div class="container">
-		<h1 class="text-center">入门指南</h1>
+		<h1 class="text-center">Guide</h1>
 
-		<h3>资源导入 <small>在网页上引用css样式、js脚本等文件</small></h3>
+		<h3>Including files <small>include css, js files in page</small></h3>
 <script type="syntaxhighlighter" class="brush:html">
 <![CDATA[
-<!-- 基础环境引用说明 -->
-<!-- Bootstrap的UI框架基础样式 -->
-<link rel="stylesheet" href="bootstrap.min.css" type="text/css">
-<!-- 插件使用了部分font-awesome的图标，所以需要引入该样式 -->
+<!-- SelectPage depend on font-awesome icon -->
 <link rel="stylesheet" href="font-awesome.min.css" type="text/css">
-<!-- jQuery，Bootstrap的基础脚本引用 -->
-<script type="text/javascript" src="bootstrap.min.js" >< /script>
+<!-- jQuery Library include 1.10+, untest on jquery2,3 -->
 <script type="text/javascript" src="jquery.min.js" >< /script>
 
 
-<!-- 插件使用的样式表文件，根据使用环境的Bootstrap版本进行引用 -->
-<!-- Bootstrap2使用 -->
+<!-- include Bootstrap v2 style sheet file-->
 <link rel="stylesheet" href="selectpage.css" type="text/css">
-<!-- Bootstrap3使用 -->
+<!-- include Bootstrap v3 style sheet file -->
 <link rel="stylesheet" href="selectpage.bootstrap3.css" type="text/css">
-<!-- 非Bootstrap生态下引用该样式 -->
+<!-- include for no css framework -->
 <link rel="stylesheet" href="selectpage.base.css" type="text/css">
-<!-- 以上的样式文件根据实际使用的环境进行引用，引用其中一项即可 -->
+<!-- Above the css file under your css framework choose one of them to include -->
 
-<!-- 插件核心脚本 -->
+<!-- SelectPage plugin js -->
 <script type="text/javascript" src="selectpage.js" >< /script>
 ]]>
 </script>
 
 
-		<h3>HTML代码</h3>
+		<h3>HTML Element</h3>
 <script type="syntaxhighlighter" class="brush:html">
 <![CDATA[
-<!-- 设置文本框为插件基本元素 -->
+<!-- Set input element for init -->
 <input type="text" id="selectPage" >
 ]]>
 </script>
 
-		<h3>Javascript初始化插件代码</h3>
+		<h3>Javascript init</h3>
 <script type="syntaxhighlighter" class="brush:js">
 <![CDATA[
-//定义数组，在服务端返回的数据也以该格式返回：Array[{Object},{...}]
+//defined a array, the data returned at the server side is also used that format
+//Array[{Object},{...}]
 var tag_data = [
 	{id:1 ,name:'Chicago Bulls',desc:'芝加哥公牛'},
 	{id:2 ,name:'Cleveland Cavaliers',desc:'克里夫兰骑士'},
 	{id:3 ,name:'Detroit Pistons',desc:'底特律活塞'},
 	{id:4 ,name:'Indiana Pacers',desc:'印第安纳步行者'}
 ];
-//初始化插件
+//init SelectPage
 $('#selectPage').selectPage({
 	showField : 'desc',
 	keyField : 'id',
@@ -176,7 +172,6 @@ s.setAttribute('data-timestamp', +new Date());
 
 	<footer class="footer">
 		<div class="container">
-		<p>使用交流QQ群：136153290</p>
 		Copyright © 2016-2017 Terry Zeng
 		</div>
 	</footer>
