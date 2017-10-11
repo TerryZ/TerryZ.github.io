@@ -14,13 +14,14 @@ $(function(){
 
 
     var menuData = [
-        {content:'Main site',header: true},
-        {content:'<i class="fa fa-fw fa-home"></i> HomePage',url : 'https://terryz.github.io'},
+        {content:'Sites',header: true},
+        {content:'<i class="fa fa-fw fa-home"></i> English official site',url : 'https://terryz.github.io', disabled : true},
+        {content:'<i class="fa fa-fw fa-home"></i> 中文官网',url : 'https://terryz.oschina.io'},
         {content:'<i class="fa fa-fw fa-github"></i> Github',url : 'https://github.com/TerryZ'},
         {content:'sm_divider'},
         {content:'Products',header: true},
         {content:'<i class="fa fa-fw fa-list-alt"></i> SelectPage',url : 'https://terryz.github.io/selectpage/index.html'},
-        {content:'<i class="fa fa-fw fa-bars"></i> SelectMenu',url : 'https://terryz.github.io/selectpage/index.html'},
+        {content:'<i class="fa fa-fw fa-bars"></i> SelectMenu',url : 'https://terryz.github.io/selectmenu/index.html'},
         {content:'<i class="fa fa-fw fa-window-restore"></i> bDialog',url : 'https://terryz.github.io/bdialog/index.html'},
         {content:'<i class="fa fa-fw fa-caret-square-o-right"></i> bPage',url : 'https://terryz.github.io/bpage/index.html'},
         {content:'<i class="fa fa-fw fa-folder-o"></i> bTabs',url : 'https://terryz.github.io/btabs/index.html'}
