@@ -1,54 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>SelectPage反馈 / 留言</title>
+    <title>SelectPage - Feedback</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../lib/bootstrap/3.3.7/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../lib/font-awesome-4/css/font-awesome.min.css" />
+
+    <link rel="stylesheet" href="../lib/selectmenu/selectmenu.css" type="text/css">
     
     <link rel="stylesheet" href="../css/header.css" />
     <link rel="stylesheet" href="../css/message.css" />
 </head>
 
 <body>
-    <header class="navbar navbar-static-top" id="top">
-    <div class="container">
-        <div class="navbar-header">
-            <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a href="https://terryz.github.io/selectpage/index.html" class="navbar-brand">SelectPage</a>
-        </div>
-        <nav id="bs-navbar" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li>
-                    <a href="guide.html" >Guide</a>
-                </li>
-                <li>
-                    <a href="demo.html" >Demo</a>
-                </li>
-                <li>
-                    <a href="docs.html" >Documentation</a>
-                </li>
-                <li>
-                    <a href="changelog.html" >ChangeLog</a>
-                </li>
-                <li class="active">
-                    <a href="javascript:void(0);" >Feedback</a>
-                </li>
-                <li>
-                    <a href="https://terryz.github.io" >Home</a>
-                </li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="https://github.com/TerryZ/SelectPage" target="_blank"><i class="fa fa-lg fa-github"></i> Fork on Github</a></li>
-            </ul>
-        </nav>
-    </div>
-    </header>
+
 
 	<div class="content">
 	<div class="container">
@@ -84,11 +49,14 @@ s.setAttribute('data-timestamp', +new Date());
 	</div>
 	</div>
 
-    <footer class="footer">
-        <div class="container">
-        Copyright © 2016-2017 Terry Zeng
-        </div>
-    </footer>
-<script type="text/javascript" src="../js/count.js" ></script>
+
+    <script type="text/javascript" src="../lib/jquery.min.js" ></script>
+    <script type="text/javascript" src="../lib/selectmenu/selectmenu.min.js" ></script>
+    <script type="text/javascript" src="../js/common.js" ></script>
+    <script type="text/javascript" >
+        $(function(){
+            setActive('mnuFeedback');
+        });
+    </script>
 </body>
 </html>

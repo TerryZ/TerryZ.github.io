@@ -6,9 +6,26 @@ function setActive(id){
 }
 var _hmt = _hmt || [];
 $(function(){
+    $.ajax({
+        url : 'header.html',
+        async : false,
+        dataType : 'html',
+        success : function(html){
+            $(document.body).prepend(html);
+        }
+    });
+    $.ajax({
+        url : 'footer.html',
+        async : false,
+        dataType : 'html',
+        success : function(html){
+            $(document.body).append(html);
+        }
+    });
+
     //visit count
 	var hm = document.createElement("script");
-	hm.src = "https://hm.baidu.com/hm.js?355958f7f11ee0996a38a2f61f67844e";
+	hm.src = "https://hm.baidu.com/hm.js?2c195274cd3511a4924527cd6dd883a2";
 	var s = document.getElementsByTagName("script")[0]; 
 	s.parentNode.insertBefore(hm, s);
 
