@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>SelectPage更新记录</title>
+    <title>SelectPage - Changelog</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../lib/bootstrap/3.3.7/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../lib/font-awesome-4/css/font-awesome.min.css" />
@@ -17,7 +17,19 @@
 
 	<div class="content">
 	<div class="container">
-		<h1 class="text-center">更新记录</h1>
+		<h1 class="text-center">Changelog</h1>
+        <section>
+            <h3>2017.10.10 <small>v2.9</small></h3>
+            <p>Limit input minimum width</p>
+            <p>When initialization plugin the input box is hidden, plugin width abnormal and element dislocation</p>
+            <p>To solve the problem of using the API to clear selected item in single select mode, the clear button still visible</p>
+            <p>When the list shows the prompt message, the list disappear problem</p>
+            <p>The icon used in plugin no longer depends on Font-Awesome icon library, instead of the integrated IconFont, Is no longer needs to including Font-Awesome icon library</p>
+            <p>Resolved in the single select mode, when disabled status the clear button is still valid</p>
+            <p>Add $.fn.selectPageDisabled API to get plugin disabled status or set plugin disabled / enabled status</p>
+            <p>Optimize the list of embedded areas, to solve some of the cases, the list is blocked</p>
+            <p>When the list is opened, the screen scrolls over, and if the list is out of the screen area, reposition (up or down)</p>
+        </section>
         <section>
             <h3>2017.09.23 <small>v2.8</small></h3>
             <p>调整部分样式</p>
