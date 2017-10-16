@@ -103,6 +103,12 @@ $(function(){
 		$('#selectPage').val('20');
 		$('#selectPage').selectPageRefresh();
 	});
+    $('#funcDisabled').click(function(){
+        if($('#selectPage').selectPageDisabled())
+            $('#selectPage').selectPageDisabled(false);
+        else
+            $('#selectPage').selectPageDisabled(true);
+    });
 	$('#btnModifyDataSource').click(function(){
 		var data = [
 			{id:1 ,name:'北京'},{id:2 ,name:'上海'},
