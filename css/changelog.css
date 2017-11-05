@@ -34,6 +34,6 @@
 .content p{
 	margin: 0px 0px 5px 60px;
 	font-size: 16px;
-    display: list-item;
-    list-style: disc;
+	display: list-item;
+	list-style: disc;
 }
