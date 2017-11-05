@@ -48,6 +48,7 @@ $(function(){
 		keyField : 'id',
 		pageSize : 5,
 		data : tag_data,
+        dropButton : false,
 		formatItem : function(data){
 			return data.desc + '(' + data.name + ')';
 		}
@@ -56,7 +57,8 @@ $(function(){
 		showField : 'name',
 		keyField : 'id',
 		data : tag_data,
-		multiple : true
+		multiple : true,
+        noResultClean : true
 	});
 	$('#selectPage4').selectPage({
 		showField : 'name',
@@ -79,7 +81,12 @@ $(function(){
 	$('#selectPage6').selectPage({
 		showField : 'name',
 		keyField : 'id',
+        multiple : true,
+		searchField : 'userName',
 		data : $webroot + 'user/loadUserListDatatable',
+        formatItem : function(data){
+		    return data.name + '(' + data.id + ')';
+        },
 		eAjaxSuccess : function(d){
 			var result;
 			if(d) result = d.values.gridResult;
@@ -103,7 +110,7 @@ $(function(){
 		$('#selectPage').val('20');
 		$('#selectPage').selectPageRefresh();
 	});
-    $('#funcDisabled').click(function(){
+	$('#funcDisabled').click(function(){
         if($('#selectPage').selectPageDisabled())
             $('#selectPage').selectPageDisabled(false);
         else
@@ -123,6 +130,7 @@ $(function(){
         showField : 'name',
         keyField : 'id',
         data : tag_data,
+        listSize : 15,
         selectOnly : true,
         pagination : false,
         multiple : true
