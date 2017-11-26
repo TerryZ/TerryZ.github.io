@@ -28,14 +28,14 @@
 						<li><a href="#keyField">* keyField</a></li>
 						<li><a href="#lang">lang</a></li>
 						<li><a href="#searchField">searchField</a></li>
-                        <li><a href="#search">search</a></li>
-                        <li><a href="#title">title</a></li>
-                        <li><a href="#regular">regular</a></li>
-                        <li><a href="#rightClick">rightClick</a></li>
-                        <li><a href="#arrow">arrow</a></li>
-                        <li><a href="#position">position</a></li>
-                        <li><a href="#embed">embed</a></li>
-                        <li><a href="#initSelected">initSelected</a></li>
+						<li><a href="#search">search</a></li>
+						<li><a href="#title">title</a></li>
+						<li><a href="#regular">regular</a></li>
+						<li><a href="#rightClick">rightClick</a></li>
+						<li><a href="#arrow">arrow</a></li>
+						<li><a href="#position">position</a></li>
+						<li><a href="#embed">embed</a></li>
+						<li><a href="#initSelected">initSelected</a></li>
 						<li><a href="#multiple">multiple</a></li>
 						<li><a href="#listSize">listSize</a></li>
 						<li><a href="#selectToCloseList">selectToCloseList</a></li>
@@ -43,6 +43,9 @@
 						<li><a href="#andOr">andOr</a></li>
 						<li><a href="#orderBy">orderBy</a></li>
 						<li><a href="#eSelect">eSelect</a></li>
+						<li><a href="#eTabSwitch">eTabSwitch</a></li>
+						<li><a href="#selectMenuHide">$.fn.selectMenuHide</a></li>
+						<li><a href="#selectMenuClear">$.fn.selectMenuClear</a></li>
 					</ul>
 					</div>
 				</div>
@@ -331,7 +334,7 @@ var selectMenuGroupData = [{
 						<h3>selectToCloseList <small>select the menu item and close the menu</small></h3>
 						<ul>
 							<li><strong>type: </strong><code>boolean</code></li>
-							<li><strong>default: </strong><code>true</code></li>
+							<li><strong>default: </strong><code>false</code></li>
 							<li><strong>usage: </strong>
 								<div class="usageBox">
 								set whether select the menu item and close menu, only work on advanced menu mode and 'multiple' set to true
@@ -391,6 +394,45 @@ var selectMenuGroupData = [{
                                     <p>data：the menu items data (json) for selected menu item</p>
                                     <p><strong>example</strong></p>
 								    <p><code>eSelect : function(data){ $('xxx').val(data.name + data.sex); }</code></p>
+								</div>
+							</li>
+						</ul>
+					</div>					
+					<div class="row" id="eTabSwitch">
+						<h3>eTabSwitch <small>Respond to menu group switch in multiple group data mode</small></h3>
+						<ul>
+							<li><strong>type：</strong><code>function</code></li>
+							<li><strong>default：</strong><code>none</code></li>
+							<li><strong>usage：</strong>
+								<div class="usageBox">
+								parameters：
+								<p>index: group index，start from 0</p>
+								<p>tab: group data，not included 'list' data</p>
+								<p><code>eTabSwitch : function(index, tab){ do something... }</code></p>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="row" id="selectMenuHide">
+						<h3>$.fn.selectMenuHide <small>close menu</small></h3>
+						<ul>
+							<li><strong>type：</strong><code>function</code></li>
+							<li><strong>default：</strong><code>none</code></li>
+							<li><strong>usage：</strong>
+								<div class="usageBox">
+								<p><code>$('#someone').selectMenuHide();</code></p>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="row" id="selectMenuClear">
+						<h3>$.fn.selectMenuClear <small>clean selected menu items（in advanced menu mode）</small></h3>
+						<ul>
+							<li><strong>type：</strong><code>function</code></li>
+							<li><strong>default：</strong><code>none</code></li>
+							<li><strong>usage：</strong>
+								<div class="usageBox">
+								<p><code>$('#someone').selectMenuClear();</code></p>
 								</div>
 							</li>
 						</ul>

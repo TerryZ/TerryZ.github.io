@@ -179,7 +179,50 @@ $('#btnMenu').click(function(){
 ]]>
             </script>
         </div>
-
+        <div class="row-fluid">
+            <h4 class="heading">2.5 Multiple level menu <small></small></h4>
+            <script type="syntaxhighlighter" class="brush:js">
+<![CDATA[
+//Multiple level menu data format
+var menuData = [
+    {content:'Sports',menus: [
+        {content:'Fivb',url : 'http://www.fivb.com/'},
+        {content:'Fifa',url : 'http://www.fifa.com/'},
+        {content:'NBA',menus: [
+            {content:'NBA official site',url : 'http://www.nba.com'},
+            {content:'Chicago Bulls',url : 'http://www.nba.com/bulls/'},
+            {content:'Los Angeles Lakers',url : 'www.nba.com/lakers/'}
+        ]}
+    ]},
+    {content:'News',menus: [
+        {content:'BBC',url : 'http://www.bbc.com/news'},
+        {content:'CNN',url : 'http://www.cnn.com'},
+        {content:'Xinhua',url : 'http://www.xinhuanet.com'}
+    ]},
+    {content:'Technology',menus: [
+        {content:'Github',url : 'https://github.com'},
+        {content:'StackOverflow',url : 'https://stackoverflow.com/'},
+        {content:'Reddit',url : 'https://www.reddit.com'}
+    ]},
+    {content:'Social',menus: [
+        {content:'Facebook',url : 'https://www.facebook.com'},
+        {content:'Twitter',url : 'https://twitter.com'}
+    ]}
+];
+]]>
+            </script>
+            <button type="button" class="btn btn-default" id="baseMenuMultiLevel"><i class="fa fa-flag"></i> Multiple level menu</button>
+            <script type="syntaxhighlighter" class="brush:js">
+<![CDATA[
+$('#btnMenu').click(function(){
+    $(this).selectMenu({
+        regular : true,
+        data : baseMultiLevelMenuData
+    });
+});
+]]>
+            </script>
+        </div>
 
         <div class="row-fluid">
             <h2 class="page-header">3.1 Advanced menu <small></small></h2>
@@ -204,11 +247,12 @@ var selectMenuData = [
 <button type="button" id="btnMenu" >Select Team</button>
 //javascript init
 $('#btnMenu').click(function(){
-    $(this).selectMenu({
-        showField : 'name',//set display content field in data row
-        keyField : 'id',//set key value field in data row
-        data : selectMenuData
-    });
+	$(this).selectMenu({
+		showField : 'name',//set display content field in data row
+		keyField : 'id',//set key value field in data row
+		searchField : 'abbr',//specify the actual search field
+		data : selectMenuData
+	});
 });
 ]]>
 </script>
@@ -331,11 +375,54 @@ $('#btnMenu').click(function(){
 });
 ]]>
 </script>
+		</div>
+		
+		<div class="row-fluid">
+            <h4 class="heading">3.7 Callback <small></small></h4>
+            <div class="row">
+                <div class="col-md-6">
+                    <button type="button" class="btn btn-default" id="selectMenuCallback"><i class="fa fa-server"></i> Select Menu</button>
+                </div>
+                <div class="col-md-6">
+                    <div class="panel panel-default">
+                        <div class="panel-body" id="panelCallbackDemo"></div>
+                    </div>
+                </div>
+            </div>
+
+            <script type="syntaxhighlighter" class="brush:js">
+<![CDATA[
+$('#btnMenu').click(function(){
+    var $box = $('#panelCallbackDemo');
+    $(this).selectMenu({
+        showField : 'name',
+        keyField : 'id',
+        multiple : true,
+        data : selectMenuGroupData,
+        //Menu item select
+        eSelect : function(data){
+            $box.empty();
+            if(data && data.length){
+                $.each(data, function(i, row){
+                    $box.append('<p>Selected '+row.name+' ( '+row.desc+' )</p>');
+                });
+            }
+        },
+        //Multiple group switch callback
+        //index: group index，start from 0
+        //tab: group data，not included 'list' data
+        eTabSwitch: function(index, tab){
+            $box.empty();
+            $box.append('<p>You switch to the Tab with index <strong>'+index+'</strong>, Tab name is <strong>'+tab.title+'</strong></p>');
+        }
+    });
+});
+]]>
+</script>
         </div>
 
-
         <div class="row-fluid">
-            <h2 class="page-header">4.1 Mouse right button click to call menu <small>only mouse right button click can show the menu</small></h2>
+            <h2 class="page-header">4.1 Mouse operation menu mode <small>use mouse right button click or mouse move</small></h2>
             <div class="row">
                 <div class="col-md-6">
                     <p>Mouse right click to call regular menu</p>
@@ -385,6 +472,34 @@ $('#selectMenuRightClickAdv').selectMenu({
     //enable right click call mode
     rightClick : true,
     data : selectMenuData
+});
+]]>
+                    </script>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <p>mouse enter area to open menu, leave area to close menu</p>
+                    <div class="jumbotron" id="selectMenuMoveOpen">
+                        <h3 class="text-center"><i class="fa fa-mouse-pointer"></i> Mouse enter this area to open menu, leave to hide menu</h3>
+                    </div>
+                    <script type="syntaxhighlighter" class="brush:js">
+<![CDATA[
+//html
+<div class="jumbotron" id="selectMenuMoveOpen">
+    <h3 class="text-center">
+        <i class="fa fa-mouse-pointer"></i>
+        Mouse enter this area to open menu, leave to hide menu
+    </h3>
+</div>
+//javascript
+$('#selectMenuMoveOpen').hover(function(){
+    $(this).selectMenu({
+        regular : true,
+        data : selectMenuData
+    });
+},function(){
+    $(this).selectMenuHide();
 });
 ]]>
                     </script>
