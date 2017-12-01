@@ -34,8 +34,8 @@
 						<li><a href="#maxSelectLimit">maxSelectLimit</a></li>
 						<li><a href="#selectToCloseList">selectToCloseList</a></li>
 						<li><a href="#focusDropList">focusDropList</a></li>
-						<li><a href="#autoSelectFirst">autoSelectFirst</a></li>
 						<li><a href="#autoFillResult">autoFillResult</a></li>
+						<li><a href="#autoSelectFirst">autoSelectFirst</a></li>						
 						<li><a href="#noResultClean">noResultClean</a></li>
 						<li><a href="#formatItem">formatItem</a></li>
 						<li><a href="#andOr">andOr</a></li>
@@ -241,7 +241,7 @@
 						<h3>selectToCloseList <small>选中项目后关闭列表</small></h3>
 						<ul>
 							<li><strong>类型：</strong><code>boolean</code></li>
-							<li><strong>默认值：</strong><code>true</code></li>
+							<li><strong>默认值：</strong><code>false</code></li>
 							<li><strong>使用方式：</strong>
 								<div class="usageBox">
 								设置在选中项目后，关闭列表，仅multiple: true模式下可用
@@ -261,26 +261,29 @@
 							</li>
 						</ul>
 					</div>
-					<div class="row" id="autoSelectFirst">
-						<h3>autoSelectFirst <small>是否自动选择列表中的第一项内容</small></h3>
-						<ul>
-							<li><strong>类型：</strong><code>boolean</code></li>
-							<li><strong>默认值：</strong><code>true</code></li>
-							<li><strong>使用方式：</strong>
-								<div class="usageBox">
-								是否自动选择列表中的第一项内容(输入关键字查询模式，直接使用鼠标下拉并不触发)
-								</div>
-							</li>
-						</ul>
-					</div>
 					<div class="row" id="autoFillResult">
 						<h3>autoFillResult <small>是否自动填充内容</small></h3>
 						<ul>
 							<li><strong>类型：</strong><code>boolean</code></li>
-							<li><strong>默认值：</strong><code>true</code></li>
+							<li><strong>默认值：</strong><code>false</code></li>
 							<li><strong>使用方式：</strong>
 								<div class="usageBox">
 								若有列表项目被高亮显示，在焦点离开控件后，自动设置该项为选中内容
+								<p>在多选模式下，该参数会被强制关闭</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="row" id="autoSelectFirst">
+						<h3>autoSelectFirst <small>是否自动选择列表中的第一项内容</small></h3>
+						<ul>
+							<li><strong>类型：</strong><code>boolean</code></li>
+							<li><strong>默认值：</strong><code>false</code></li>
+							<li><strong>使用方式：</strong>
+								<div class="usageBox">
+								是否自动选择列表中的第一项内容(输入关键字查询模式，直接使用鼠标下拉并不触发)
+								<p>该参数生效需依赖 autoFillResult 设置为 true</p>
+								<p>在多选模式下，该参数会被强制关闭</p>
 								</div>
 							</li>
 						</ul>
