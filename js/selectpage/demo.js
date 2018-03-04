@@ -31,6 +31,22 @@ $(function(){
 		{id:29,name:'New Orleans Pelicans',desc:'新奥尔良鹈鹕'},
 		{id:30,name:'San Antonio Spurs',desc:'圣安东尼奥马刺'}
 	];
+	var province = [
+	    {id:'001',name:'East'},
+        {id:'002',name:'West'}
+    ];
+	var city = [
+        {id:'001',pId:'001',name:'Chicago Bulls'},
+        {id:'002',pId:'001',name:'Boston Celtics'},
+        {id:'003',pId:'001',name:'New York Knicks'},
+        {id:'004',pId:'001',name:'Philadelphia 76ers'},
+        {id:'005',pId:'001',name:'Brooklyn Nets'},
+        {id:'006',pId:'002',name:'Los Angeles Lakers'},
+        {id:'007',pId:'002',name:'Houston Rockets'},
+        {id:'008',pId:'002',name:'New Orleans Pelicans'},
+        {id:'009',pId:'002',name:'San Antonio Spurs'},
+        {id:'010',pId:'002',name:'Oklahoma City Thunder'}
+    ];
 	$('#selectPage').selectPage({
 		showField : 'name',
 		keyField : 'id',
@@ -134,5 +150,60 @@ $(function(){
         selectOnly : true,
         pagination : false,
         multiple : true
+    });
+	
+	$('#selectPageProvince').selectPage({
+        showField: 'name',
+        keyField: 'id',
+        data: province,
+        eSelect: function (data) {
+            if(data){
+                var arr = new Array();
+                $.each(city, function(i,row){
+                    if(row.pId === data.id) arr.push(row);
+                });
+                if(arr.length) $('#selectPageCity').selectPageData(arr);
+            }
+        },
+        eClear: function(){
+            $('#selectPageCity').selectPageClear();
+            $('#selectPageCity').selectPageData([]);
+        }
+    });
+    $('#selectPageCity').selectPage({
+        showField: 'name',
+        keyField: 'id',
+        data: []
+    });
+
+    $('#selectPageProvince1').selectPage({
+        showField: 'name',
+        keyField: 'id',
+        data: province,
+        eClear: function(){
+            $('#selectMenuCity').selectMenuClear();
+        }
+    });
+    $('#selectMenuCity').click(function(){
+        var pv = $('#selectPageProvince1');
+        if(!pv.val()){
+            bDialog.alert('请选择一个省份！');
+        }else{
+            $(this).selectMenu({
+                showField : 'name',//指定显示文本的字段
+                keyField : 'id',//指定id的字段
+                data : function(){
+                    var arr = new Array();
+                    $.each(city, function(i,row){
+                        if(row.pId === pv.val()) arr.push(row);
+                    });
+                    return arr;
+                },
+                eSelect: function(data){
+                    if(data.length)
+                        bDialog.alert('You choice <b>'+pv.selectPageText()+'</b> Conference <b>'+data[0].name+'</b> ！');
+                }
+            });
+        }
     });
 });

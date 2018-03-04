@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>SelectPage使用实例</title>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="../lib/bootstrap/3.3.7/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="../lib/font-awesome-4/css/font-awesome.min.css" />
+	<title>SelectPage使用实例</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="../lib/bootstrap/3.3.7/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="../lib/font-awesome-4/css/font-awesome.min.css" />
     
 	<link rel="stylesheet" href="../lib/syntaxhighlighter/styles/shCore.css" type="text/css">
 	<link rel="stylesheet" href="../lib/syntaxhighlighter/styles/shThemeDefault.css" type="text/css">
 
-    <link rel="stylesheet" href="../lib/selectmenu/selectmenu.css" type="text/css">
+	<link rel="stylesheet" href="../lib/selectmenu/selectmenu.css" type="text/css">
+	<link rel="stylesheet" href="../lib/bdialog/b.dialog.bootstrap3.css" type="text/css">
 	
-	<link rel="stylesheet" href="../lib/selectpage/selectpage.bootstrap3.css" type="text/css">
+	<link rel="stylesheet" href="../lib/selectpage/selectpage.css" type="text/css">
     
 	<link rel="stylesheet" href="../css/header.css" />
 	<link rel="stylesheet" href="../css/demo.css" />
@@ -398,6 +399,185 @@ $('#selectPage').selectPageData(data);
 		
 		
 		
+        <div class="row-fluid">
+            <h4 class="heading">10.数据联动 <small>多功能同时使用案例</small></h4>
+            <div class="row">
+                <div class="col-md-3">
+                    <input type="text" id="selectPageProvince" class="form-control" placeholder="Select Area" >
+                </div>
+                <div class="col-md-3">
+                    <input type="text" id="selectPageCity" class="form-control" placeholder="Select Team" >
+                </div>
+            </div>
+
+
+            <script type="syntaxhighlighter" class="brush:js">
+<![CDATA[
+//定义省和城市的数据，仅作演示
+var province = [
+    {id:'001',name:'广东'},
+    {id:'002',name:'福建'},
+    {id:'003',name:'河北'},
+    {id:'004',name:'江苏'},
+    {id:'005',name:'浙江'}
+];
+var city = [
+    {id:'001',pId:'001',name:'广州'},
+    {id:'002',pId:'001',name:'深圳'},
+    {id:'003',pId:'002',name:'福州'},
+    {id:'004',pId:'002',name:'厦门'},
+    {id:'005',pId:'003',name:'石家庄'},
+    {id:'006',pId:'003',name:'保定'},
+    {id:'007',pId:'004',name:'南京'},
+    {id:'008',pId:'004',name:'无锡'},
+    {id:'009',pId:'005',name:'杭州'},
+    {id:'010',pId:'005',name:'温州'}
+];
+//省份选择器初始化
+$('#selectPageProvince').selectPage({
+    showField: 'name',
+    keyField: 'id',
+    data: province,
+    eSelect: function (data) {
+        if(data){
+            var arr = new Array();
+            $.each(city, function(i,row){
+                if(row.pId === data.id) arr.push(row);
+            });
+            //从城市数据中过滤省份是选择的省，并刷新城市的选择器数据
+            if(arr.length) $('#selectPageCity').selectPageData(arr);
+        }
+    },
+    eClear: function(){//清空时，同时清空城市内容
+        $('#selectPageCity').selectPageClear();
+        $('#selectPageCity').selectPageData([]);
+    }
+});
+//城市选择器的初始化，使用空数据进行初始化
+$('#selectPageCity').selectPage({
+    showField: 'name',
+    keyField: 'id',
+    data: []
+});
+]]>
+            </script>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h4>服务端数据模式的联动</h4>
+                    <ul>
+                        <li>服务端模式的 SelectPage 进行联动与静态模式的区在于数据过滤处理在服务端处理</li>
+                        <li>初始化城市选择器时，需要处理请求数据，返回空列表</li>
+                        <li>需要在选择省份后，在回调里清空城市选择器中已选中的项目</li>
+                    </ul>
+                </div>
+            </div>
+
+            <script type="syntaxhighlighter" class="brush:js">
+<![CDATA[
+var lastProvince = '';
+//省份选择器初始化
+$('#selectPageProvince').selectPage({
+    showField: 'name',
+    keyField: 'id',
+    data: 'http://aaa.com/loadProvince',
+    //选择省份时，清空城市列表已选中的项目
+    eSelect: function (data) {
+        if(data && lastProvince !== data.id){
+            $('#selectPageCity').selectPageClear();
+        }
+    }
+});
+//城市选择器的初始化，使用空数据进行初始化
+$('#selectPageCity').selectPage({
+    showField: 'name',
+    keyField: 'id',
+    data: 'http://aaa.com/loadCity',
+    //向服务端提交的参数中，增加已选中的
+    //设置返回-1，意为通知服务端返回空列表，初始化时使用
+    params: function(){
+        var pv = $('#selectPageProvince').val();
+        return {'province': pv?pv:'-1'};
+    }
+});
+]]>
+            </script>
+
+
+
+            <h4 class="heading">与其它插件的联动 <small>SelectMenu、bDialog等</small></h4>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h4><a href="https://github.com/TerryZ/SelectMenu" target="_blank">SelectMenu</a></h4>
+                    <p>简洁、易用、多样的菜单解决方案</p>
+                    <h4><a href="https://github.com/TerryZ/bDialog" target="_blank">bDialog</a></h4>
+                    <p>可多层嵌套、高定制化的模态窗口，包含有多种使用形式
+                        <ul>
+                            <li>Modal <small class="text-muted">模态弹出窗口，可以拥有独立上下文的窗口</small></li>
+                            <li>Alert <small class="text-muted">消息提示对话框</small></li>
+                            <li>Mask <small class="text-muted">显示一个全屏遮罩</small></li>
+                            <li>Toast <small class="text-muted">边角信息提示对话框，可以在屏幕的8个边角显示对话框</small></li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <input type="text" id="selectPageProvince1" class="form-control" placeholder="Select Conference" >
+                </div>
+                <div class="col-md-3">
+                    <button type="button" class="btn btn-default" id="selectMenuCity">Select Team <i class="fa fa-caret-down"></i></button>
+                </div>
+            </div>
+            <script type="syntaxhighlighter" class="brush:js">
+<![CDATA[
+//html
+<div class="row">
+    <div class="col-md-3">
+        <input type="text" id="selectPageProvince1" class="form-control" placeholder="Select Area" >
+    </div>
+    <div class="col-md-3">
+        <button type="button" class="btn btn-default" id="selectMenuCity">Select Team <i class="fa fa-caret-down"></i></button>
+    </div>
+</div>
+//javascript
+//SelectPage初始化
+$('#selectPageProvince1').selectPage({
+    showField: 'name',
+    keyField: 'id',
+    data: province,
+    eClear: function(){
+        $('#selectMenuCity').selectMenuClear();
+    }
+});
+//SelectMenu的初始化，以及使用动态数据源
+$('#selectMenuCity').click(function(){
+    var pv = $('#selectPageProvince1');
+    if(!pv.val()){
+        bDialog.alert('请选择一个省份！');
+    }else{
+        $(this).selectMenu({
+            showField : 'name',//指定显示文本的字段
+            keyField : 'id',//指定id的字段
+            data : function(){
+                var arr = new Array();
+                $.each(city, function(i,row){
+                    if(row.pId === pv.val()) arr.push(row);
+                });
+                return arr;
+            },
+            eSelect: function(data){
+                if(data.length)
+                    bDialog.alert('您选择了 <b>'+pv.selectPageText()+'</b> 省 <b>'+data[0].name+'</b> 市！');
+            }
+        });
+    }
+});
+]]>
+            </script>
+        </div>
+		
+		
+		
 		
 		
 		
@@ -438,23 +618,24 @@ s.setAttribute('data-timestamp', +new Date());
     
 
 
-    <script type="text/javascript" src="../lib/jquery.min.js" ></script>
-    <script type="text/javascript" src="../lib/selectmenu/selectmenu.min.js" ></script>
-    <script type="text/javascript" src="../js/common.js" ></script>
-    <script type="text/javascript" src="../lib/syntaxhighlighter/scripts/shCore.js" ></script>
-    <script type="text/javascript" src="../lib/syntaxhighlighter/scripts/shBrushXml.js" ></script>
-    <script type="text/javascript" src="../lib/syntaxhighlighter/scripts/shBrushCss.js" ></script>
-    <script type="text/javascript" src="../lib/syntaxhighlighter/scripts/shBrushJava.js" ></script>
-    <script type="text/javascript" src="../lib/syntaxhighlighter/scripts/shBrushJScript.js" ></script>
-    <script type="text/javascript">
+	<script type="text/javascript" src="../lib/jquery.min.js" ></script>
+	<script type="text/javascript" src="../lib/selectmenu/selectmenu.min.js" ></script>
+	<script type="text/javascript" src="../js/common.js" ></script>
+	<script type="text/javascript" src="../lib/syntaxhighlighter/scripts/shCore.js" ></script>
+	<script type="text/javascript" src="../lib/syntaxhighlighter/scripts/shBrushXml.js" ></script>
+	<script type="text/javascript" src="../lib/syntaxhighlighter/scripts/shBrushCss.js" ></script>
+	<script type="text/javascript" src="../lib/syntaxhighlighter/scripts/shBrushJava.js" ></script>
+	<script type="text/javascript" src="../lib/syntaxhighlighter/scripts/shBrushJScript.js" ></script>
+	<script type="text/javascript">
     $(function(){
         setActive('mnuDemo');
         SyntaxHighlighter.all();
     });
     </script>
 
-    <script type="text/javascript" src="../lib/selectpage/selectpage.min.js" ></script>
+	<script type="text/javascript" src="../lib/selectpage/selectpage.min.js" ></script>
+	<script type="text/javascript" src="../lib/bdialog/b.dialog.js" ></script>
 
-    <script type="text/javascript" src="../js/selectpage/demo.js" ></script>
+	<script type="text/javascript" src="../js/selectpage/demo.js" ></script>
 </body>
 </html>
