@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>SelectPage使用实例</title>
+	<title>SelectPage Example</title>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="../lib/bootstrap/3.3.7/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="../lib/font-awesome-4/css/font-awesome.min.css" />
@@ -26,13 +26,13 @@
 	<div class="container" >
 		<h1 class="heading">下拉分页控件 <small>支持下拉，分页，键盘操作等功能</small></h1>
 		<div class="row-fluid">
-			<h4 class="heading">1.基本初始化 <small>获得选中文本，清除选中，修改选中，禁用/启用</small></h4>
+			<h4 class="heading">1.Base initialization <small>获得选中文本，清除选中，修改选中，禁用/启用</small></h4>
 			<div id="testRow" style="">
-                <input type="text" id="selectPage" class="" placeholder="请输入查询关键字" >
+                <input type="text" id="selectPage" class="" placeholder="input to search" >
                 <button type="button" class="btn btn-default" id="func1"><i class="fa fa-file-text-o"></i> 获得选中项目的文本内容</button>
                 <button type="button" class="btn btn-default" id="func2"><i class="fa fa-ban"></i> 清除所有选中的项目</button>
-                <button type="button" class="btn btn-default" id="func3"><i class="fa fa-check-square-o "></i> 动态修改选中项目</button>
-                <button type="button" class="btn btn-default" id="funcDisabled"><i class="fa fa-hand-paper-o "></i> 禁用/启用插件</button>
+                <button type="button" class="btn btn-default" id="func3"><i class="fa fa-check-square-o "></i> Change Selected item</button>
+                <button type="button" class="btn btn-default" id="funcDisabled"><i class="fa fa-hand-paper-o "></i> Enable/Disabled</button>
             </div>
 <script type="syntaxhighlighter" class="brush:js">
 <![CDATA[
@@ -78,7 +78,7 @@ $('#funcDisabled').click(function(){
 		</div>
 
         <div class="row-fluid">
-            <h4 class="heading">2.仅选择模式 <small>只读（不允许输入），关闭分页，列表高度</small></h4>
+            <h4 class="heading">2.Select only mode <small>readonly（不允许输入），close page bar，列表高度</small></h4>
             <input type="text" id="selectPageSelectOnly" class="form-control" placeholder="请输入查询关键字" >
             <script type="syntaxhighlighter" class="brush:js">
 <![CDATA[
@@ -100,7 +100,7 @@ $('#selectPageSelectOnly').selectPage({
         </div>
 
 		<div class="row-fluid">
-			<h4 class="heading">3.设置初始化选中项目 <small>初始选中，多查询条件，多排序</small></h4>
+			<h4 class="heading">3.Init selected item <small>初始选中，多查询条件，多排序</small></h4>
 			<div class="row">
 				<div class="pull-right col-md-6">
 					<input type="text" id="selectPage1" class="form-control" data-init="4" >
