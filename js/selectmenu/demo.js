@@ -124,6 +124,30 @@ $(function(){
             bDialog.alert('you can do anything in callback!');
         }}
     ];
+    var province = [
+        {id:'001',name:'Guangdong'},
+        {id:'002',name:'Fujian'},
+        {id:'003',name:'Hebei'},
+        {id:'004',name:'Jiangsu'},
+        {id:'005',name:'Zhejiang'}
+    ];
+    var city = [
+        {id:'001',pId:'001',name:'Guangzhou'},
+        {id:'002',pId:'001',name:'Shenzhen'},
+        {id:'003',pId:'002',name:'Fuzhou'},
+        {id:'004',pId:'002',name:'Xiamen'},
+        {id:'005',pId:'003',name:'Shijiazhuang'},
+        {id:'006',pId:'003',name:'Baoding'},
+        {id:'007',pId:'004',name:'Nanjing'},
+        {id:'008',pId:'004',name:'Wuxi'},
+        {id:'009',pId:'005',name:'hangzhou'},
+        {id:'010',pId:'005',name:'Wenzhou'}
+    ];
+
+
+
+
+
 	$('#selectMenuBase').click(function(){
         $(this).selectMenu({
             showField : 'name',
@@ -364,5 +388,67 @@ $(function(){
         embed : true,
         multiple : true,//打开多选模式
         data : selectMenuGroupData
+    });
+
+
+    var loadCityMenu = function(){
+        var pss = $('#selectMenuEmbedProvince');
+        $('#selectMenuEmbedCity').selectMenu({
+            showField : 'name',
+            keyField : 'id',
+            title: 'City',
+            embed : true,
+            data : function(){
+                var arr = new Array(), values = pss.selectMenuValues();
+                if(values && values.length){
+                    $.each(city, function(i,row){
+                        if(row.pId === values[0].id) arr.push(row);
+                    });
+                }
+                return arr;
+            },
+            eSelect: function(data){
+                bDialog.alert('You selected <b>'+data[0].name+'</b> city of <b>'+pss.selectMenuValues()[0].name+'</b>！');
+            }
+        });
+    };
+    $('#selectMenuEmbedProvince').selectMenu({
+        showField : 'name',
+        keyField : 'id',
+        title: 'Province',
+        embed : true,
+        multiple : false,
+        data : province,
+        eSelect: function(data){
+            loadCityMenu();
+        }
+    });
+    loadCityMenu();
+
+    $('#selectMenuProvince').click(function(){
+        $(this).selectMenu({
+            showField : 'name',
+            keyField : 'id',
+            data : province,
+            eSelect: function(data){
+                if(data && data.length){
+                    $('#kbdSelectedProvince').text(data[0].name);
+                    var arr = new Array();
+                    $.each(city, function(i,row){
+                        if(row.pId === data[0].id) arr.push(row);
+                    });
+                    if(arr.length) $('#selectPageCity').selectPageData(arr);
+                }
+            }
+        });
+    });
+    $('#selectPageCity').selectPage({
+        showField: 'name',
+        keyField: 'id',
+        data: [],
+        eSelect: function(data){
+            if(data)
+                bDialog.alert('You selected <b>'+data.name+'</b> city of <b>'+$('#selectMenuProvince').selectMenuValues()[0].name+'</b>！');
+        }
     });
 });

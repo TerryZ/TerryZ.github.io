@@ -9,7 +9,8 @@
 	<link rel="stylesheet" href="../lib/syntaxhighlighter/styles/shCore.css" type="text/css">
 	<link rel="stylesheet" href="../lib/syntaxhighlighter/styles/shThemeDefault.css" type="text/css">
 	
-	<link rel="stylesheet" href="../lib/selectmenu/selectmenu.css" type="text/css">
+    <link rel="stylesheet" href="../lib/selectmenu/selectmenu.css" type="text/css">
+    <link rel="stylesheet" href="../lib/selectpage/selectpage.css" type="text/css">
     <link rel="stylesheet" href="../lib/bdialog/b.dialog.bootstrap3.css" type="text/css">
     
 	<link rel="stylesheet" href="../css/selectmenu/header.css" />
@@ -576,7 +577,151 @@ $('#selectMenuEmbedBase').selectMenu({
         </div>
 		
 		
-		
+        <div class="row-fluid">
+            <h4 class="heading">7.Data linkage <small>multiple function use cases</small></h4>
+            <div class="row">
+                <div class="col-md-4">
+                    <div id="selectMenuEmbedProvince"></div>
+                </div>
+                <div class="col-md-4">
+                    <div id="selectMenuEmbedCity"></div>
+                </div>
+            </div>
+
+
+            <script type="syntaxhighlighter" class="brush:js">
+<![CDATA[
+//define chinese province and city data, just use to example
+var province = [
+    {id:'001',name:'Guangdong'},
+    {id:'002',name:'Fujian'},
+    {id:'003',name:'Hebei'},
+    {id:'004',name:'Jiangsu'},
+    {id:'005',name:'Zhejiang'}
+];
+var city = [
+    {id:'001',pId:'001',name:'Guangzhou'},
+    {id:'002',pId:'001',name:'Shenzhen'},
+    {id:'003',pId:'002',name:'Fuzhou'},
+    {id:'004',pId:'002',name:'Xiamen'},
+    {id:'005',pId:'003',name:'Shijiazhuang'},
+    {id:'006',pId:'003',name:'Baoding'},
+    {id:'007',pId:'004',name:'Nanjing'},
+    {id:'008',pId:'004',name:'Wuxi'},
+    {id:'009',pId:'005',name:'hangzhou'},
+    {id:'010',pId:'005',name:'Wenzhou'}
+];
+var loadCityMenu = function(){
+    var pss = $('#selectMenuEmbedProvince');
+    $('#selectMenuEmbedCity').selectMenu({
+        showField : 'name',
+        keyField : 'id',
+        title: 'City',
+        embed : true,
+        data : function(){//Dynamic filter city list, when province has not select, it will show empty list
+            var arr = new Array(), values = pss.selectMenuValues();
+            if(values && values.length){
+                $.each(city, function(i,row){
+                    if(row.pId === values[0].id) arr.push(row);
+                });
+            }
+            return arr;
+        },
+        eSelect: function(data){
+            bDialog.alert('You selected <b>'+data[0].name+'</b> city of <b>'+pss.selectMenuValues()[0].name+'</b>!');
+        }
+    });
+};
+//Province menu init
+$('#selectMenuEmbedProvince').selectMenu({
+    showField : 'name',
+    keyField : 'id',
+    title: 'Province',
+    embed : true,
+    multiple : false,
+    data : province,
+    eSelect: function(data){
+        loadCityMenu();//refresh city list after select province
+    }
+});
+//init city menu（use empty data）
+loadCityMenu();
+]]>
+            </script>
+
+
+
+
+            <h4 class="heading">With the other plugin linkage <small>SelectPage、bDialog</small></h4>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h4><a href="https://github.com/TerryZ/SelectPage" target="_blank">SelectPage</a></h4>
+                    <p>A simple style and powerful selection jQuery plugin, including ajax remote data, autocomplete, pagination, tags, i18n and keyboard navigation features</p>
+                    <h4><a href="https://github.com/TerryZ/bDialog" target="_blank">bDialog</a></h4>
+                    <p>Extend the Bootstrap Modal features, making dialog more functions and easier to use, dialog type including :
+                    <ul>
+                        <li>Modal</li>
+                        <li>Alert</li>
+                        <li>Mask</li>
+                        <li>Toast</li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-default" id="selectMenuProvince">Select Province <i class="fa fa-caret-down"></i></button>
+                    Selected province：<kbd id="kbdSelectedProvince">none</kbd>
+                </div>
+                <div class="col-md-3">
+                    <input type="text" id="selectPageCity" class="form-control" placeholder="Select City" >
+                </div>
+            </div>
+            <script type="syntaxhighlighter" class="brush:js">
+<![CDATA[
+//html
+<div class="row">
+    <div class="col-md-3">
+        <button type="button" class="btn btn-default" id="selectMenuProvince">Select Province <i class="fa fa-caret-down"></i></button>
+        Selected province：<kbd id="kbdSelectedProvince">none</kbd>
+    </div>
+    <div class="col-md-3">
+        <input type="text" id="selectPageCity" class="form-control" placeholder="Select City" >
+    </div>
+</div>
+//javascript
+//init selectmenu
+$('#selectMenuProvince').click(function(){
+    $(this).selectMenu({
+        showField : 'name',
+        keyField : 'id',
+        data : province,
+        eSelect: function(data){
+            if(data && data.length){
+                $('#kbdSelectedProvince').text(data[0].name);
+                //refresh city list
+                var arr = new Array();
+                $.each(city, function(i,row){
+                    if(row.pId === data[0].id) arr.push(row);
+                });
+                if(arr.length) $('#selectPageCity').selectPageData(arr);
+            }
+        }
+    });
+});
+//init SelectPage
+$('#selectPageCity').selectPage({
+    showField: 'name',
+    keyField: 'id',
+    data: [],
+    eSelect: function(data){
+        if(data)
+            bDialog.alert('You selected <b>'+data.name+'</b> city of <b>'+$('#selectMenuProvince').selectMenuValues()[0].name+'</b>！');
+    }
+});
+]]>
+            </script>
+        </div>
 		
 		
 
@@ -596,6 +741,7 @@ $('#selectMenuEmbedBase').selectMenu({
     <script type="text/javascript" src="../lib/syntaxhighlighter/scripts/shBrushJava.js" ></script>
     <script type="text/javascript" src="../lib/syntaxhighlighter/scripts/shBrushJScript.js" ></script>
     <script type="text/javascript" src="../lib/selectmenu/selectmenu.min.js" ></script>
+    <script type="text/javascript" src="../lib/selectpage/selectpage.min.js" ></script>
     <script type="text/javascript" src="../lib/bdialog/b.dialog.min.js" ></script>
     <script type="text/javascript" src="../js/selectmenu/demo.js" ></script>
     <script type="text/javascript" src="../js/common.js" ></script>
