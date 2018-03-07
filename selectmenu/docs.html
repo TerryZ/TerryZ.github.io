@@ -44,8 +44,10 @@
 						<li><a href="#orderBy">orderBy</a></li>
 						<li><a href="#eSelect">eSelect</a></li>
 						<li><a href="#eTabSwitch">eTabSwitch</a></li>
+						<li><a href="#eHidden">eHidden</a></li>
 						<li><a href="#selectMenuHide">$.fn.selectMenuHide</a></li>
 						<li><a href="#selectMenuClear">$.fn.selectMenuClear</a></li>
+						<li><a href="#selectMenuValues">$.fn.selectMenuValues</a></li>
 					</ul>
 					</div>
 				</div>
@@ -413,6 +415,19 @@ var selectMenuGroupData = [{
 							</li>
 						</ul>
 					</div>
+					<div class="row" id="eHidden">
+						<h3>eHidden <small>Respond to menu hide</small></h3>
+						<ul>
+							<li><strong>type：</strong><code>function</code></li>
+							<li><strong>default：</strong><code>无</code></li>
+							<li><strong>usage：</strong>
+								<div class="usageBox">
+								parameters：data - selected items data
+								<p><code>eHidden : function(data){ $('xxx').val(data.name + data.sex); }</code></p>
+								</div>
+							</li>
+						</ul>
+					</div>
 					<div class="row" id="selectMenuHide">
 						<h3>$.fn.selectMenuHide <small>close menu</small></h3>
 						<ul>
@@ -433,6 +448,18 @@ var selectMenuGroupData = [{
 							<li><strong>usage：</strong>
 								<div class="usageBox">
 								<p><code>$('#someone').selectMenuClear();</code></p>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="row" id="selectMenuValues">
+						<h3>$.fn.selectMenuValues <small>get selected items data（in advance menu mode）</small></h3>
+						<ul>
+							<li><strong>type：</strong><code>function</code></li>
+							<li><strong>default：</strong><code>none</code></li>
+							<li><strong>usage：</strong>
+								<div class="usageBox">
+								<p><code>var data = $('#someone').selectMenuValues();//[Object,Object,...]</code></p>
 								</div>
 							</li>
 						</ul>
