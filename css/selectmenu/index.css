@@ -16,6 +16,7 @@
 }
 .content .row h3{
 	text-align: left;
+    padding-left: 40px;
 	color: #337AB7;
 }
 .content .row h3 i{
