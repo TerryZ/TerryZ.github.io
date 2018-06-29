@@ -16,6 +16,10 @@ body {
     font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
+a, a:hover {
+    text-decoration: none;
+}
+
 .text-vertical-center {
     display: table-cell;
     text-align: center;
@@ -182,17 +186,43 @@ hr.small {
     position: relative;
     width: 100%;
     height: 100%;
-    background: url(../image/bg.jpg) no-repeat center center scroll;
+    /* background: url(../image/bg.jpg) no-repeat center center scroll;this.params */
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
 }
+.text-vertical-center {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    color: white;
+    position: relative;
+}
+
+.text-vertical-center h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 3.5em;
+    font-weight: 700;
+}
+
+.bg-canvas {
+    background:black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+.bg-canvas canvas { width: 100%;height: 100%;}
 
 /* About */
 
 .about {
     padding: 50px 0;
+    background-color: #eee;
 }
 
 /* Funny Box */
@@ -224,11 +254,35 @@ hr.small {
     position: relative;
 }
 
+.services h3 a, .services h3 a:hover { color:#0769AD;width: 135px;display: inline-block;font-weight: 600; }
+.services h3 iframe { vertical-align: middle; }
+
 .service-item {
     margin-bottom: 30px;
 }
 .service-item .item-icon {
     padding: 25px 0px 0px 0px;
+}
+
+
+/* vue project area */
+.vue-project {
+    padding: 50px 0;
+    background-color: #35495E;
+    color: white;
+}
+
+.vue-project h3 iframe { vertical-align: middle; }
+.vue-project h3 a, .vue-project h3 a:hover { color:#41B883;width: 150px;display: inline-block; }
+.vue-project ul {
+    color: #eee;
+    width: 500px;
+    margin: 0 auto;
+}
+
+.vue-project ul li{
+    list-style: none;
+    margin-bottom: 40px;
 }
 
 
@@ -250,7 +304,8 @@ hr.small {
     right: 0;
     bottom: 0;
     left: 0;
-	box-sizing: border-box;
+    box-sizing: border-box;
+    opacity: 0.5;
 }
 .bg-icon:after {
     content: "";
