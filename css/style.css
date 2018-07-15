@@ -262,7 +262,7 @@ hr.small {
     position: relative;
 }
 
-.services h3 a, .services h3 a:hover { color:#0769AD;width: 150px;display: inline-block;font-weight: 600; }
+.services h3 a, .services h3 a:hover { color:#0769AD;display: inline-block;font-weight: 600; }
 .services iframe { vertical-align: middle; }
 
 .service-item {
@@ -281,7 +281,7 @@ hr.small {
 }
 
 .vue-project iframe { vertical-align: middle; }
-.vue-project h3 a, .vue-project h3 a:hover { color:#41B883;width: 150px;display: inline-block; }
+.vue-project h3 a, .vue-project h3 a:hover { color:#41B883;display: inline-block; }
 .vue-project ul {
     color: #eee;
     /* width: 500px; */
