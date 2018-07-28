@@ -23,52 +23,50 @@
 
 
 	<div class="content">
-	<div class="container" >
-		<h1 class="heading">下拉分页控件 <small>支持下拉，分页，键盘操作等功能</small></h1>
+	<div class="container" >		
 		<div class="row-fluid">
-			<h4 class="heading">1.Base initialization <small>获得选中文本，清除选中，修改选中，禁用/启用</small></h4>
+			<h3 class="heading">1.Base initialization <small>get selected text, clear selected, change selected, enabled/disabled</small></h3>
 			<div id="testRow" style="">
                 <input type="text" id="selectPage" class="" placeholder="input to search" >
-                <button type="button" class="btn btn-default" id="func1"><i class="fa fa-file-text-o"></i> 获得选中项目的文本内容</button>
-                <button type="button" class="btn btn-default" id="func2"><i class="fa fa-ban"></i> 清除所有选中的项目</button>
+                <button type="button" class="btn btn-default" id="func1"><i class="fa fa-file-text-o"></i> Selected Text</button>
+                <button type="button" class="btn btn-default" id="func2"><i class="fa fa-ban"></i> Clear Selected</button>
                 <button type="button" class="btn btn-default" id="func3"><i class="fa fa-check-square-o "></i> Change Selected item</button>
                 <button type="button" class="btn btn-default" id="funcDisabled"><i class="fa fa-hand-paper-o "></i> Enable/Disabled</button>
             </div>
 <script type="syntaxhighlighter" class="brush:js">
 <![CDATA[
-//表单声明元素
+//Input element
 <input type="text" id="selectPage" >
-//定义数组，在服务端返回的数据也以该格式返回：Array[{Object},{...}]
+//defined data list, same format for server side
+//Array[{Object},{...}]
 var tag_data = [
 	{id:1 ,name:'Chicago Bulls',desc:'芝加哥公牛'},
 	{id:2 ,name:'Cleveland Cavaliers',desc:'克里夫兰骑士'},
 	{id:3 ,name:'Detroit Pistons',desc:'底特律活塞'},
 	{id:4 ,name:'Indiana Pacers',desc:'印第安纳步行者'}
 ];
-//showField：设置下拉列表中显示文本的列
-//keyField：设置下拉列表项目中项目的KEY值，用于提交表单
-//data：数据源，可以是JSON数据格式，也可以是URL
+//basic initialization
 $('#selectPage').selectPage({
 	showField : 'desc',
 	keyField : 'id',
 	data : tag_data
 });
-//获得选中项目的文本内容
+//get selected item text
 $('#func1').click(function(){
 	alert($('#selectPage').selectPageText());
 });
-//清除所有选中的项目
+//clear selected item
 $('#func2').click(function(){
 	$('#selectPage').selectPageClear();
 });
-//动态修改选中项目
+//chnage selected item and refresh item
 $('#func3').click(function(){
 	$('#selectPage').val('20');
 	$('#selectPage').selectPageRefresh();
 });
-//设置插件禁用 / 启用
+//enabled and disabled plugin
 $('#funcDisabled').click(function(){
-    if($('#selectPage').selectPageDisabled())//判断当前状态
+    if($('#selectPage').selectPageDisabled())//get state
         $('#selectPage').selectPageDisabled(false);
     else
         $('#selectPage').selectPageDisabled(true);
@@ -78,20 +76,18 @@ $('#funcDisabled').click(function(){
 		</div>
 
         <div class="row-fluid">
-            <h4 class="heading">2.Select only mode <small>readonly（不允许输入），close page bar，列表高度</small></h4>
-            <input type="text" id="selectPageSelectOnly" class="form-control" placeholder="请输入查询关键字" >
+            <h4 class="heading">2.Select only mode <small>readonly, close page bar, list height</small></h4>
+            <input type="text" id="selectPageSelectOnly" class="form-control" placeholder="input to search" >
             <script type="syntaxhighlighter" class="brush:js">
 <![CDATA[
-//将插件设置成纯下拉列表模式
 $('#selectPageSelectOnly').selectPage({
     showField : 'name',
     keyField : 'id',
     data : tag_data,
-    //仅选择模式，不允许输入查询关键字
     selectOnly : true,
-    //关闭分页栏，数据将会一次性在列表中展示，上限200个项目
+    //close pagination bar
     pagination : false,
-    //关闭分页的状态下，列表显示的项目个数，其它的项目以滚动条滚动方式展现（默认10个）
+    //the height of list, default: 10
     listSize : 15,
     multiple : true
 });
@@ -141,7 +137,7 @@ $('#selectPage').selectPage({
 		</div>
 			
 		<div class="row-fluid">
-			<h4 class="heading">4.项目显示文本自定义 <small>显示内容格式化，关闭下拉按钮</small></h4>
+			<h4 class="heading">4. Item content customize <small>customize row render, close down arrow</small></h4>
 			<div class="row">
 				<div class="col-md-6">
 					<input type="text" id="selectPage2" class="form-control" value="4" placeholder="请输入查询关键字" >
@@ -158,11 +154,10 @@ $('#selectPage').selectPage({
 	showField : 'desc',
 	keyField : 'id',
 	data : tag_data,
-	//设置每页显示记录数
 	pageSize : 5,
-	//关闭向下的三角尖按钮
+	//close down arrow button
 	dropButton : false,
-	//格式化显示项目，提供源数据进行使用
+	//customize row content render
 	formatItem : function(data){
 		return data.desc + '(' + data.name + ')';
 	}
@@ -171,20 +166,20 @@ $('#selectPage').selectPage({
 </script>
 		</div>
 		<div class="row-fluid">
-			<h4 class="heading">5.多项选择模式 <small>多选模式（标签形式），多选初始化设置</small></h4>
+			<h4 class="heading">5. Multiple selection mode <small>multiple (tags form), multiple selected init</small></h4>
             <div class="row">
                 <div class="col-md-12">
-                    <input type="text" id="selectPage3" class="form-control" value="7,2,3" placeholder="请输入查询关键字" >
+                    <input type="text" id="selectPage3" class="form-control" value="7,2,3" placeholder="" >
                 </div>
             </div>
 <script type="syntaxhighlighter" class="brush:js">
 <![CDATA[
-<input type="text" id="selectPage" class="form-control" value="7,2,3" placeholder="请输入查询关键字" >
+<input type="text" id="selectPage" class="form-control" value="7,2,3" >
 $('#selectPage').selectPage({
 	showField : 'desc',
 	keyField : 'id',
 	data : tag_data,
-	//启用多选模式
+	//open multiple selection mode
 	multiple : true
 });
 ]]>
@@ -192,7 +187,7 @@ $('#selectPage').selectPage({
 		</div>
 		
 		<div class="row-fluid">
-			<h4 class="heading">6.多项选择模式限制最大选中项目 <small>点击不关闭列表，限制最多选中个数</small></h4>
+			<h4 class="heading">6. Max item selected limit <small></small></h4>
 			<input type="text" id="selectPage4" class="form-control" placeholder="请输入查询关键字" >
 <script type="syntaxhighlighter" class="brush:js">
 <![CDATA[
@@ -200,11 +195,9 @@ $('#selectPage').selectPage({
 	showField : 'desc',
 	keyField : 'id',
 	data : tag_data,
-	//启用多选模式
 	multiple : true,
-	//限制最多选中三个项目
 	maxSelectLimit : 3,
-	//设置选中项目后不关闭列表
+	//close list after item picked, default: false
 	selectToCloseList : false
 });
 ]]>
@@ -212,8 +205,8 @@ $('#selectPage').selectPage({
 		</div>
 
 		<div class="row-fluid">
-			<h4 class="heading">7.事件回调处理 <small>项目选中回调</small></h4>
-			<input type="text" id="selectPage5" class="form-control" placeholder="请输入查询关键字" >
+			<h4 class="heading">7.Events <small>eSelect</small></h4>
+			<input type="text" id="selectPage5" class="form-control" placeholder="" >
 			<div id="callbackLog" class="logBox"></div>
 <script type="syntaxhighlighter" class="brush:js">
 <![CDATA[
@@ -222,8 +215,8 @@ $('#selectPage').selectPage({
 	keyField : 'id',
 	data : tag_data,
 	multiple : true,
-	//选中项目后的回调处理
-	//入参：data：选中行的原始数据对象
+	//selected item callback
+	//data: item raw data
 	eSelect : function(data){
 		$('#callbackLog').append(data.desc + '(' + data.name + ')<br/>');
 	}
@@ -373,12 +366,14 @@ public void loadUserList(){
 		</div>
 		
 		<div class="row-fluid">
-			<h4 class="heading">9.动态修改数据源 <small>动态修改数据源（服务端模式不支持）</small></h4>
+			<h4 class="heading">9. Dynamic change data source <small>not for server side mode</small></h4>
 			<div class="row">
 				<div class="col-md-5">
 					<input type="text" id="selectPage7" class="form-control" placeholder="请输入查询关键字" >
 				</div>
-				<button type="button" class="btn btn-default" id="btnModifyDataSource"><i class="fa fa-database"></i> 修改数据源</button>
+				<button type="button" class="btn btn-default" id="btnModifyDataSource">
+                    <i class="fa fa-database"></i> Change data source
+                </button>
 			</div>
 
 <script type="syntaxhighlighter" class="brush:js">
@@ -536,11 +531,13 @@ $('#selectPageCity').selectPage({
         <input type="text" id="selectPageProvince1" class="form-control" placeholder="Select Area" >
     </div>
     <div class="col-md-3">
-        <button type="button" class="btn btn-default" id="selectMenuCity">Select Team <i class="fa fa-caret-down"></i></button>
+        <button type="button" class="btn btn-default" id="selectMenuCity">
+            Select Team <i class="fa fa-caret-down"></i>
+        </button>
     </div>
 </div>
 //javascript
-//SelectPage初始化
+//init SelectPage
 $('#selectPageProvince1').selectPage({
     showField: 'name',
     keyField: 'id',
@@ -549,15 +546,15 @@ $('#selectPageProvince1').selectPage({
         $('#selectMenuCity').selectMenuClear();
     }
 });
-//SelectMenu的初始化，以及使用动态数据源
+//init SelectMenu, using dynamic data source
 $('#selectMenuCity').click(function(){
     var pv = $('#selectPageProvince1');
     if(!pv.val()){
         bDialog.alert('请选择一个省份！');
     }else{
         $(this).selectMenu({
-            showField : 'name',//指定显示文本的字段
-            keyField : 'id',//指定id的字段
+            showField : 'name',
+            keyField : 'id',
             data : function(){
                 var arr = new Array();
                 $.each(city, function(i,row){
