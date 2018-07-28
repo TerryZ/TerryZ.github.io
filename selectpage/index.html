@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../lib/selectmenu/selectmenu.css" type="text/css">
     
 	<link rel="stylesheet" href="../css/header.css" />
-	<link rel="stylesheet" href="../css/index.css" />
+	<link rel="stylesheet" href="../css/selectpage/index.css" />
 
 </head>
 
@@ -19,7 +19,8 @@
 
     <div class="content" style="padding-bottom: 60px;">
         <div class="container">
-        	<div class="row">
+            <!--
+            <div class="row" style="margin-bottom: 50px;">
             	<div class="col-md-5 pluginImg">
             		<img alt="SelectPage" src="../image/SelectPage1.png">
             	</div>
@@ -35,54 +36,94 @@
 		                <p>
 							<a class="btn btn-primary" href="https://github.com/TerryZ/SelectPage" role="button">Download SelectPage</a>
 							<a class="btn btn-default" href="https://github.com/TerryZ/SelectPage/issues/new" role="button" target="_blank">Feedback</a>
-                         <a class="btn btn-default" href="https://github.com/TerryZ/SelectPage" target="_blank" role="button"><i class="fa fa-star"></i> Add star, to support project</a>
+                         <a class="btn btn-default" href="https://github.com/TerryZ/SelectPage" target="_blank" role="button"><i class="fa fa-star"></i> Add star to support</a>
                         </p>
 		            </div>
             	</div>
             </div>
+            -->
 
-            <div class="row" style="">
+            <div class="center-block text-center head-container">
+                <h1>SelectPage</h1>
+                <p>
+                    A simple style and powerful selection jQuery plugin, <br>
+                    including ajax remote data, autocomplete, pagination, tags, i18n and keyboard navigation features
+                </p>
+
+                <p>
+                    <iframe src="https://ghbtns.com/github-btn.html?user=TerryZ&repo=SelectPage&type=star&count=true" frameborder="0" scrolling="0" width="100px" height="20px"></iframe>
+                    <iframe src="https://ghbtns.com/github-btn.html?user=TerryZ&repo=SelectPage&type=fork&count=true" frameborder="0" scrolling="0" width="100px" height="20px"></iframe>
+                </p>
+
+                <p>
+                    <img alt="SelectPage" src="../image/SelectPage1.png">
+                </p>
+
+
+                <p>Last released version: <strong>v<span id="versionNum"></span></strong></p>
+                <p>The icons in SelectPage used are made by  <a href="http://www.iconfont.cn" target="_blank">IconFont</a></p>
+                <p>
+                    <a class="btn btn-primary" href="https://github.com/TerryZ/SelectPage">
+                        <i class="fa fa-fw fa-github"></i> Github
+                    </a>
+                    <a class="btn btn-default" href="https://github.com/TerryZ/SelectPage/issues/new" target="_blank">
+                        <i class="fa fa-fw fa-commenting-o"></i> Feedback
+                    </a>
+                    <a class="btn btn-default" href="https://github.com/TerryZ/SelectPage" target="_blank"><i class="fa fa-star"></i> Add star to support</a>
+                </p>
+            </div>
+
+            <div class="row features center-block" >
                 <div class="col-md-4">
-                    <h3><i class="fa fa-fw fa-plug"></i> jQuery plugin</h3>
-                    <p class="desc">SelectPage basis on jQuery 1.x library development</p>
+                    <h1><i class="fa fa-fw fa-plug"></i></h1>
+                    <h3>jQuery plugin</h3>
+                    <p class="desc">Developed based on jQuery 1.x version</p>
                 </div>
                 <div class="col-md-4">
-                    <h3><i class="fa fa-fw fa-desktop"></i> Simple interface</h3>
-                    <p class="desc">The interface of SelectPage was simple and friendly, do not need to modify the style can be easily used in a variety of UI</p>
+                    <h1><i class="fa fa-fw fa-desktop"></i></h1>
+                    <h3>Simple style</h3>
+                    <p class="desc">Simple and refreshing style, adaptive to any UI environment</p>
                 </div>
                 <div class="col-md-4">
-                    <h3><i class="fa fa-fw fa-database"></i> Remote data</h3>
-                    <p class="desc">The datasource can be local json data, can also be remote data (ajax) too</p>
+                    <h1><i class="fa fa-fw fa-database"></i></h1>
+                    <h3>Remote data</h3>
+                    <p class="desc">The datasource of list support local json and remote data (ajax)</p>
                 </div>
             </div>
 
-            <div class="row" style="">
+            <div class="row features center-block">
                 <div class="col-md-4">
-                    <h3><i class="fa fa-fw fa-list"></i> Dropdown list</h3>
-                    <p class="desc">待选项目将以下拉列表的形式进行展示</p>
+                    <h1><i class="fa fa-fw fa-list"></i></h1>
+                    <h3>Customization</h3>
+                    <p class="desc">Config options to custom SelectPage functions and look</p>
                 </div>
                 <div class="col-md-4">
-                    <h3><i class="fa fa-fw fa-terminal"></i> Autocomplete</h3>
-                    <p class="desc">根据在输入框中输入的关键字时行快速检索，并在列表中展示匹配的项目</p>
+                    <h1><i class="fa fa-fw fa-terminal"></i></h1>
+                    <h3>Autocomplete</h3>
+                    <p class="desc">Input keywords to filter items of all data</p>
                 </div>
                 <div class="col-md-4">
-                    <h3><i class="fa fa-fw fa-file-text-o"></i> Pagination</h3>
-                    <p class="desc">待选项目在超过一定数量时，可根据指定的每页显示数进行分页展示</p>
+                    <h1><i class="fa fa-fw fa-caret-square-o-right"></i></h1>
+                    <h3>Pagination</h3>
+                    <p class="desc">Showing pagination to indicate a series of related content exists across multiple pages</p>
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row features center-block">
                 <div class="col-md-4">
-                    <h3><i class="fa fa-fw fa-tags"></i> Multiple select</h3>
-                    <p class="desc">打开插件多项目选择功能后，选中的项目将以标签（Tag）的形式存放在输入框中</p>
+                    <h1><i class="fa fa-fw fa-tags"></i></h1>
+                    <h3>Tags input</h3>
+                    <p class="desc">Tags form for mutltiple items selection</p>
                 </div>
                 <div class="col-md-4">
-                    <h3><i class="fa fa-fw fa-keyboard-o"></i> Keyboard navigate</h3>
-                    <p class="desc">插件的下拉，分页等操作均可以使用键盘进行快速导航、操作，提高输入效率</p>
+                    <h1><i class="fa fa-fw fa-keyboard-o"></i></h1>
+                    <h3>Keyboard navigate</h3>
+                    <p class="desc">Using keyboard to quick navigate, turning page, pick item</p>
                 </div>
                 <div class="col-md-4">
-                    <h3><i class="fa fa-fw fa-language"></i> I18n</h3>
-                    <p class="desc">支持国际化多语言切换，在国际化的项目中可快速应用</p>
+                    <h1><i class="fa fa-fw fa-language"></i></h1>
+                    <h3>I18n</h3>
+                    <p class="desc">Provide Chinese, English, Japanese, German, Spanish, Brazilian Portuguese languages</p>
                 </div>
             </div>
         </div>
