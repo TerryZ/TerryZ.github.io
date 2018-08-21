@@ -24,13 +24,31 @@
 }
 
 .content .head-container {
-	padding: 100px 0 150px;
+	padding: 150px 0 210px;
+}
+
+.content .head-container .container {
+	width: 860px;
+}
+
+.content .head-container h1 {
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+	font-weight: 700;
+	font-size: 46px;
 }
 
 .content .row.features {
 	width: 800px;
 }
 
+.plugin-description {
+	font-size: 20px;
+	color: black;
+}
+
+.plugin-thumbnail {
+	padding-top: 50px;
+}
 
 
 .content .desc{
@@ -45,4 +63,11 @@
 }
 .pluginImg img{
 	margin-top: 50px;
+}
+
+.plugin-features{
+	background-color: #F2F4F8;
+	padding: 100px 0;
+	height: 100%;
+	position: relative;
 }
