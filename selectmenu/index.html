@@ -17,74 +17,102 @@
 <body>
 
 <div class="content">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-5 pluginImg">
-                <img alt="SelectMenu" src="../image/SelectMenuGroup.png">
+
+    <div class="center-block head-container">
+        <div class="container">
+
+            <div class="col-md-5 plugin-thumbnail">
+                    <img alt="SelectMenu" src="../image/SelectMenuGroup.png">
             </div>
             <div class="col-md-7">
-                <div class="jumbotron">
-                    <h1>Simple、easy、diversity menu solution</h1>
-                    <p>
-                        The icons in SelectMenu used are made by  <a href="http://www.iconfont.cn" target="_blank">IconFont</a> <br>
-                        <iframe src="https://ghbtns.com/github-btn.html?user=TerryZ&repo=SelectMenu&type=star&count=true" frameborder="0" scrolling="0" width="100px" height="20px"></iframe>
-                        <iframe src="https://ghbtns.com/github-btn.html?user=TerryZ&repo=SelectMenu&type=fork&count=true" frameborder="0" scrolling="0" width="100px" height="20px"></iframe>
-                    </p>
-                    <p>Last released version：<strong>v<span id="versionNum"></span></strong></p>
-                    <p>
-                        <a class="btn btn-primary" href="https://github.com/TerryZ/SelectMenu" role="button">Download SelectMenu</a>
-                        <a class="btn btn-default" href="https://github.com/TerryZ/SelectMenu/issues/new" role="button" target="_blank">Feedback</a>
-                        <a class="btn btn-default" href="https://github.com/TerryZ/SelectMenu" target="_blank" role="button"><i class="fa fa-star"></i> Add star, to support project</a>
-                    </p>
+                <h1>SelectMenu</h1>
+                <p>
+                    <iframe src="https://ghbtns.com/github-btn.html?user=TerryZ&repo=SelectMenu&type=star&count=true" frameborder="0" scrolling="0" width="100px" height="20px"></iframe>
+                    <iframe src="https://ghbtns.com/github-btn.html?user=TerryZ&repo=SelectMenu&type=fork&count=true" frameborder="0" scrolling="0" width="100px" height="20px"></iframe>
+                </p>
+
+                <p class="plugin-description">
+                    Simple, easy and diversity menu solutions. Provide regular mode menu, advance menu with quick search and group type, 
+                    support multiple modes such as dynamic menu data, call menu with mouse right click and embedded to page and so on
+                </p>
+
+                <br>
+                <p class="text-muted">Last released version：<strong>v<span id="versionNum"></span></strong></p>
+                <p>The icons in SelectMenu used are made by  <a href="http://www.iconfont.cn" target="_blank">IconFont</a></p>
+                <p>
+                    <a class="btn btn-primary" href="https://github.com/TerryZ/SelectMenu">
+                        <i class="fa fa-fw fa-github"></i> <strong>Github</strong>
+                    </a>
+                    <a class="btn btn-default" href="https://github.com/TerryZ/SelectMenu/issues/new" target="_blank">
+                        <i class="fa fa-fw fa-commenting-o"></i> Feedback
+                    </a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <div class="plugin-features">
+        <div class="container">
+            <div class="row features center-block" >
+                <div class="col-md-4">
+                    <h1><i class="fa fa-fw fa-plug"></i></h1>
+                    <h3>jQuery plugin</h3>
+                    <p class="desc">SelectMenu basis on jQuery 1.x library development</p>
+                </div>
+                <div class="col-md-4">
+                    <h1><i class="fa fa-fw fa-desktop"></i></h1>
+                    <h3>Simple interface</h3>
+                    <p class="desc">The interface of SelectMenu was simple and friendly, do not need to modify the style can be easily used in a variety of UI</p>
+                </div>
+                <div class="col-md-4">
+                    <h1><i class="fa fa-fw fa-tags"></i></h1>
+                    <h3>Multiple Selection</h3>
+                    <p class="desc">In advanced mode, menu item can be selected for multiple items</p>
+                </div>
+            </div>
+    
+            <div class="row features center-block" >
+                <div class="col-md-4">
+                    <h1><i class="fa fa-fw fa-bars"></i></h1>
+                    <h3>Regular menu</h3>
+                    <p class="desc">Regular menu presentation, display menu item and support multiple level menu, can use link jump or callback processing execution result</p>
+                </div>
+                <div class="col-md-4">
+                    <h1><i class="fa fa-fw fa-cogs"></i></h1>
+                    <h3>Advanced menu</h3>
+                    <p class="desc">In the advanced menu mode, the menu supports quick search (autocomplete), multi-group data (Tabs), set menu display height, and so on</p>
+                </div>
+                <div class="col-md-4">
+                    <h1><i class="fa fa-fw fa-sliders"></i></h1>
+                    <h3>Customizable</h3>
+                    <p class="desc">SelectMenu provides many configurable parameters, so that the menu is flexible for a variety of use scenarios</p>
+                </div>
+            </div>
+    
+            <div class="row features center-block">
+                <div class="col-md-4">
+                    <h1><i class="fa fa-fw fa-database"></i></h1>
+                    <h3>Dynamic data</h3>
+                    <p class="desc">In addition to the Json data in a fixed format, the data source can also be used to dynamically set the items in the menu using dynamic acquisition</p>
+                </div>
+                <div class="col-md-4">
+                    <h1><i class="fa fa-fw fa-keyboard-o"></i></h1>
+                    <h3>Keyboard</h3>
+                    <p class="desc">To select menu item, use keyboard to perform navigation and selection operations, improve operational efficiency</p>
+                </div>
+                <div class="col-md-4">
+                    <h1><i class="fa fa-fw fa-language"></i></h1>
+                    <h3>i18n</h3>
+                    <p class="desc">Support international multi-language switching, in the i18n project can be quickly applied</p>
                 </div>
             </div>
         </div>
-
-        <div class="row" style="margin-top: 40px;">
-            <div class="col-md-4">
-                <h3><i class="fa fa-fw fa-plug"></i> jQuery plugin</h3>
-                <p class="desc">SelectMenu basis on jQuery 1.x library development</p>
-            </div>
-            <div class="col-md-4">
-                <h3><i class="fa fa-fw fa-desktop"></i> Simple interface</h3>
-                <p class="desc">The interface of SelectMenu was simple and friendly, do not need to modify the style can be easily used in a variety of UI</p>
-            </div>
-            <div class="col-md-4">
-                <h3><i class="fa fa-fw fa-database"></i> Dynamic data</h3>
-                <p class="desc">In addition to the Json data in a fixed format, the data source can also be used to dynamically set the items in the menu using dynamic acquisition</p>
-            </div>
-        </div>
-
-        <div class="row" style="">
-            <div class="col-md-4">
-                <h3><i class="fa fa-fw fa-bars"></i> Regular menu</h3>
-                <p class="desc">Regular menu presentation, display menu item and support multiple level menu, can use link jump or callback processing execution result</p>
-            </div>
-            <div class="col-md-4">
-                <h3><i class="fa fa-fw fa-cogs"></i> Advanced menu</h3>
-                <p class="desc">In the advanced menu mode, the menu supports quick search (autocomplete), multi-group data (Tabs), set menu display height, and so on</p>
-            </div>
-            <div class="col-md-4">
-                <h3><i class="fa fa-fw fa-sliders"></i> Customizable</h3>
-                <p class="desc">SelectMenu provides many configurable parameters, so that the menu is flexible for a variety of use scenarios</p>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-4">
-                <h3><i class="fa fa-fw fa-tags"></i> Multiple Selection</h3>
-                <p class="desc">In advanced mode, menu item can be selected for multiple items</p>
-            </div>
-            <div class="col-md-4">
-                <h3><i class="fa fa-fw fa-keyboard-o"></i> Keyboard</h3>
-                <p class="desc">To select menu item, use keyboard to perform navigation and selection operations, improve operational efficiency</p>
-            </div>
-            <div class="col-md-4">
-                <h3><i class="fa fa-fw fa-language"></i> i18n</h3>
-                <p class="desc">Support international multi-language switching, in the i18n project can be quickly applied</p>
-            </div>
-        </div>
     </div>
+
+
 </div>
 
 

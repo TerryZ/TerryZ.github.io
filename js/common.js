@@ -41,7 +41,9 @@ $(function(){
         {content:'<i class="fa fa-fw fa-bars"></i> SelectMenu',url : 'https://terryz.github.io/selectmenu'},
         {content:'<i class="fa fa-fw fa-window-restore"></i> bDialog',url : 'https://terryz.github.io/bdialog'},
         {content:'<i class="fa fa-fw fa-caret-square-o-right"></i> bPage',url : 'https://terryz.github.io/bpage'},
-        {content:'<i class="fa fa-fw fa-folder-o"></i> bTabs',url : 'https://terryz.github.io/btabs'}
+        {content:'<i class="fa fa-fw fa-folder-o"></i> bTabs',url : 'https://terryz.github.io/btabs'},
+        {content:'sm_divider'},
+        {content:'<i class="fa fa-fw fa-plug"></i> Vuejs plugin series',url : 'https://terryz.github.io/vue'}
     ];
     $('#lnkMyProjects').click(function(){
         $(this).selectMenu({
