@@ -283,7 +283,7 @@ hr.small {
 .vue-project iframe { vertical-align: middle; }
 .vue-project h3 a, .vue-project h3 a:hover { color:#41B883;display: inline-block; }
 .vue-project ul {
-    color: #eee;
+    color: #ddd;
     /* width: 500px; */
     /* margin: 0 auto; */
 }
