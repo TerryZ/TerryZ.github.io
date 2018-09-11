@@ -94,6 +94,10 @@ a, a:hover {
 hr.small {
     max-width: 100px;
 }
+hr.small.dark {
+    border-top: 1px solid #AAAAAA;
+    margin: 30px auto;
+}
 
 .subTitle{
 	margin-left: 570px;
@@ -276,24 +280,28 @@ hr.small {
 /* vue project area */
 .vue-project {
     padding: 100px 0;
-    background-color: #35495E;
+    /* background-color: #35495E; */
+    background-color: #E5EBEF;
     color: white;
 }
-
-.vue-project iframe { vertical-align: middle; }
+.vue-project .container { width: 930px; }
+.vue-project h3.head{ color: #000;text-align: center; }
 .vue-project h3 a, .vue-project h3 a:hover { color:#41B883;display: inline-block; }
 .vue-project ul {
     color: #ddd;
     /* width: 500px; */
     /* margin: 0 auto; */
+    padding: 0;
+    margin: 0;
 }
 
 .vue-project ul li{
     list-style: none;
     margin-bottom: 40px;
-    height: 180px;
+    height: 200px;
 }
-
+.vue-project ul li h3{ text-align: center; }
+.vue-project ul li p { color: #555;text-align: center;padding: 0 15px; }
 
 .works-area{
 	z-index: 1;
