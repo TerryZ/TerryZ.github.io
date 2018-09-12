@@ -105,7 +105,7 @@ $('#selectPageSelectOnly').selectPage({
             <div class="row">
                 <div class="col-md-12">
                     <dl>
-                        <dt>多关键字联合查询演示</dt>
+                        <dt>Multiple search keywoads</dt>
                         <dd>在输入框中输入“湖 火”，两个字之间有一个半角空格，请观察在输入“湖”和“湖 火”两种情况下结果列表的展示内容。
                             当前设置了andOr : 'OR'即是希望结果集找到包含“湖”或“火”两个关键字的内容</dd>
                     </dl>
@@ -113,8 +113,8 @@ $('#selectPageSelectOnly').selectPage({
             </div>
 <script type="syntaxhighlighter" class="brush:js">
 <![CDATA[
-//设置初始化值有设置 data-init 属性或直接设置 value 属性值
-//value / data-init：设置列表初始被选中的项目，传递值为keyField对应的内容
+//There are 2 ways to initialize selected item, set 'data-init' attribute or 'value' attribute
+//The setting content corresponding to 'keyField' option
 <div class="row">
 	<div class="pull-right col-md-6">
 		<input type="text" id="selectPage1" data-init="4" class="form-control" >
@@ -124,7 +124,7 @@ $('#selectPage').selectPage({
     showField : 'desc',
     keyField : 'id',
     data : tag_data,
-    //多查询条件之间的“与”“或”关系
+    //multiple keywords relationship 'OR', 'AND'
     andOr : 'OR',
     //设置结果集排序，若只指定字段，不指定排序方式，则默认使用asc升序模式
     //排序字段若不指定，则默认对showField指定的列进行升序排列
