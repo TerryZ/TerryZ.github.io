@@ -53,7 +53,7 @@ $(function(){
 		data : tag_data
 	});
 	$('#selectPage1').selectPage({
-		showField : 'desc',
+		showField : 'name',
 		keyField : 'id',
 		data : tag_data,
         andOr : 'OR',

@@ -96,21 +96,13 @@ $('#selectPageSelectOnly').selectPage({
         </div>
 
 		<div class="row-fluid">
-			<h4 class="heading">3.Init selected item <small>初始选中，多查询条件，多排序</small></h4>
+			<h4 class="heading">3.Init selected item <small>selected item in initialization, multiple sort column</small></h4>
 			<div class="row">
 				<div class="pull-right col-md-6">
 					<input type="text" id="selectPage1" class="form-control" data-init="4" >
 				</div>
 			</div>
-            <div class="row">
-                <div class="col-md-12">
-                    <dl>
-                        <dt>Multiple search keywoads</dt>
-                        <dd>在输入框中输入“湖 火”，两个字之间有一个半角空格，请观察在输入“湖”和“湖 火”两种情况下结果列表的展示内容。
-                            当前设置了andOr : 'OR'即是希望结果集找到包含“湖”或“火”两个关键字的内容</dd>
-                    </dl>
-                </div>
-            </div>
+
 <script type="syntaxhighlighter" class="brush:js">
 <![CDATA[
 //There are 2 ways to initialize selected item, set 'data-init' attribute or 'value' attribute
@@ -126,10 +118,10 @@ $('#selectPage').selectPage({
     data : tag_data,
     //multiple keywords relationship 'OR', 'AND'
     andOr : 'OR',
-    //设置结果集排序，若只指定字段，不指定排序方式，则默认使用asc升序模式
-    //排序字段若不指定，则默认对showField指定的列进行升序排列
-    //若需要多字段排序，则设置['id desc','name']
-    //当前案例设置了使用id字段的内容进行降序排序
+    //set list sort order, if specified colunm without sort type, list will sort by ascending order
+    //sort field if not specified, than use 'showField' option specified column to sort
+    //more than one sort column: ['id desc','name']
+    //there is using 'id' column to descending order
     orderBy : ['id desc']
 });
 ]]>
@@ -564,7 +556,8 @@ $('#selectMenuCity').click(function(){
             },
             eSelect: function(data){
                 if(data.length)
-                    bDialog.alert('You choice <b>'+pv.selectPageText()+'</b> province <b>'+data[0].name+'</b> city!');
+                    bDialog.alert('You choice <b>'+pv.selectPageText()+
+                        '</b> province <b>'+data[0].name+'</b> city!');
             }
         });
     }
