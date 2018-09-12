@@ -140,7 +140,7 @@ $('#selectPage').selectPage({
 			<h4 class="heading">4. Item content customize <small>customize row render, close down arrow</small></h4>
 			<div class="row">
 				<div class="col-md-6">
-					<input type="text" id="selectPage2" class="form-control" value="4" placeholder="请输入查询关键字" >
+					<input type="text" id="selectPage2" class="form-control" value="4" placeholder="Enter your search keywords" >
 				</div>
 			</div>
 <script type="syntaxhighlighter" class="brush:js">
@@ -188,7 +188,7 @@ $('#selectPage').selectPage({
 		
 		<div class="row-fluid">
 			<h4 class="heading">6. Max item selected limit <small></small></h4>
-			<input type="text" id="selectPage4" class="form-control" placeholder="请输入查询关键字" >
+			<input type="text" id="selectPage4" class="form-control" placeholder="Enter your search keywords" >
 <script type="syntaxhighlighter" class="brush:js">
 <![CDATA[
 $('#selectPage').selectPage({
@@ -395,7 +395,7 @@ $('#selectPage').selectPageData(data);
 		
 		
         <div class="row-fluid">
-            <h4 class="heading">10.数据联动 <small>多功能同时使用案例</small></h4>
+            <h4 class="heading">10.Data linkage</h4>
             <div class="row">
                 <div class="col-md-3">
                     <input type="text" id="selectPageProvince" class="form-control" placeholder="Select Area" >
@@ -408,7 +408,7 @@ $('#selectPage').selectPageData(data);
 
             <script type="syntaxhighlighter" class="brush:js">
 <![CDATA[
-//定义省和城市的数据，仅作演示
+//defined province and city data for demo
 var province = [
     {id:'001',name:'广东'},
     {id:'002',name:'福建'},
@@ -428,7 +428,7 @@ var city = [
     {id:'009',pId:'005',name:'杭州'},
     {id:'010',pId:'005',name:'温州'}
 ];
-//省份选择器初始化
+//province selector initialization
 $('#selectPageProvince').selectPage({
     showField: 'name',
     keyField: 'id',
@@ -443,7 +443,7 @@ $('#selectPageProvince').selectPage({
             if(arr.length) $('#selectPageCity').selectPageData(arr);
         }
     },
-    eClear: function(){//清空时，同时清空城市内容
+    eClear: function(){//when clear province, clear the city at the same time
         $('#selectPageCity').selectPageClear();
         $('#selectPageCity').selectPageData([]);
     }
@@ -458,7 +458,7 @@ $('#selectPageCity').selectPage({
             </script>
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <h4>服务端数据模式的联动</h4>
+                    <h4>Server side mode data linkage</h4>
                     <ul>
                         <li>服务端模式的 SelectPage 进行联动与静态模式的区在于数据过滤处理在服务端处理</li>
                         <li>初始化城市选择器时，需要处理请求数据，返回空列表</li>
@@ -470,19 +470,19 @@ $('#selectPageCity').selectPage({
             <script type="syntaxhighlighter" class="brush:js">
 <![CDATA[
 var lastProvince = '';
-//省份选择器初始化
+//province selector initialization
 $('#selectPageProvince').selectPage({
     showField: 'name',
     keyField: 'id',
     data: 'http://aaa.com/loadProvince',
-    //选择省份时，清空城市列表已选中的项目
+    //when clear province, clear the city at the same time
     eSelect: function (data) {
         if(data && lastProvince !== data.id){
             $('#selectPageCity').selectPageClear();
         }
     }
 });
-//城市选择器的初始化，使用空数据进行初始化
+//city selector initialization, use empty data
 $('#selectPageCity').selectPage({
     showField: 'name',
     keyField: 'id',
@@ -499,18 +499,18 @@ $('#selectPageCity').selectPage({
 
 
 
-            <h4 class="heading">与其它插件的联动 <small>SelectMenu、bDialog等</small></h4>
+            <h4 class="heading">data linkage with other plugins <small>SelectMenu、bDialog</small></h4>
             <div class="panel panel-default">
                 <div class="panel-body">
                     <h4><a href="https://github.com/TerryZ/SelectMenu" target="_blank">SelectMenu</a></h4>
-                    <p>简洁、易用、多样的菜单解决方案</p>
+                    <p>Simple, easily and diversity menu solution</p>
                     <h4><a href="https://github.com/TerryZ/bDialog" target="_blank">bDialog</a></h4>
-                    <p>可多层嵌套、高定制化的模态窗口，包含有多种使用形式
+                    <p>A multi-layer nested, highly customizable powerful dialog plugin
                         <ul>
-                            <li>Modal <small class="text-muted">模态弹出窗口，可以拥有独立上下文的窗口</small></li>
-                            <li>Alert <small class="text-muted">消息提示对话框</small></li>
-                            <li>Mask <small class="text-muted">显示一个全屏遮罩</small></li>
-                            <li>Toast <small class="text-muted">边角信息提示对话框，可以在屏幕的8个边角显示对话框</small></li>
+                            <li>Modal</li>
+                            <li>Alert</li>
+                            <li>Mask</li>
+                            <li>Toast</li>
                         </ul>
                     </p>
                 </div>
@@ -550,7 +550,7 @@ $('#selectPageProvince1').selectPage({
 $('#selectMenuCity').click(function(){
     var pv = $('#selectPageProvince1');
     if(!pv.val()){
-        bDialog.alert('请选择一个省份！');
+        bDialog.alert('Please select a province!');
     }else{
         $(this).selectMenu({
             showField : 'name',
@@ -564,7 +564,7 @@ $('#selectMenuCity').click(function(){
             },
             eSelect: function(data){
                 if(data.length)
-                    bDialog.alert('您选择了 <b>'+pv.selectPageText()+'</b> 省 <b>'+data[0].name+'</b> 市！');
+                    bDialog.alert('You choice <b>'+pv.selectPageText()+'</b> province <b>'+data[0].name+'</b> city!');
             }
         });
     }
