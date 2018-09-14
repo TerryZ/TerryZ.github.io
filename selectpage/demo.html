@@ -219,8 +219,8 @@ $('#selectPage').selectPage({
 		
 		
 		<div class="row-fluid">
-			<h4 class="heading">8.Ajax请求服务端数据模式 <small>服务端数据模式（ajax），服务端请求参数，请求完成的数据处理回调，服务端模式的初始化</small></h4>
-			<input type="text" id="selectPage6" class="form-control" data-init="1" placeholder="请输入查询关键字" >
+			<h4 class="heading">8. Remote data source <small>服务端数据模式（ajax），服务端请求参数，请求完成的数据处理回调，服务端模式的初始化</small></h4>
+			<input type="text" id="selectPage6" class="form-control" data-init="1" placeholder="Enter your search keywords" >
 			<p style="color:red;">静态页面无法展示ajax服务端数据读取，敬请参考代码使用</p>
 <script type="syntaxhighlighter" class="brush:js">
 <![CDATA[
@@ -232,20 +232,17 @@ $('#selectPage5').selectPage({
 	//ajax请求后服务端返回的数据格式处理
 	//返回的数据里必须包含list（Array）和totalRow（number|string）两个节点
 	eAjaxSuccess : function(d){
-		var result;
-		if(d) result = d.values.gridResult;
-		else result = undefined;
-		return result;
+		return d ? d.values.gridResult : undefined;
 	}
 });
 ]]>
 </script>
 <script type="syntaxhighlighter" class="brush:js">
 <![CDATA[
-//服务端返回的JSON数据格式
-//这里的示例数据，有些节点不是必须的，最重要的是list和totalRow两个节点必须存在
-//所以在上面的代码中，设置了eAjaxSuccess的回调中将values.gridResult节点
-//返回，因为在该节点下存在list和totalRow两个数据项
+//The server side return data format
+//In example, some nodes are not required, but 'list' and 'totalRow' are required
+//So in the previous example, set 'eAjaxSuccess' callback and return 'values.gridResult' node
+//Because there is no 'list' and 'totalRow' node in data root node
 {
     "values": {
         "gridResult": {
@@ -263,12 +260,12 @@ $('#selectPage5').selectPage({
 }
 ]]>
 </script>
-            <h4>服务端需要接收处理的参数</h4>
+            <h4>Need to receive parameters on server side</h4>
             <dl class="dl-horizontal ajaxDesc">
                 <dt>pageNumber</dt>
-                <dd>当前页号</dd>
+                <dd>Current page number</dd>
                 <dt>pageSize</dt>
-                <dd>每页显示记录数</dd>
+                <dd>The number of records in page</dd>
                 <dt>searchTable</dt>
                 <dd>查询的数据表，此字段可根据具体需求指定，默认设置'tbl'</dd>
                 <dt>andOr</dt>
