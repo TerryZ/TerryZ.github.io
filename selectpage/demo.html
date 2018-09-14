@@ -312,23 +312,23 @@ $('#selectPage5').selectPage({
             </div>
 <script type="syntaxhighlighter" class="brush:java">
 <![CDATA[
-//服务端处理样例（J2EE-JFinal的Controller代码）
+//server side case(j2ee - JFinal controller)
 public void loadUserList(){
     StringBuilder sb = new StringBuilder();
     List<Object> params = new ArrayList<Object>();
-    if(StringUtils.isNotEmpty(getPara("userName"))){//用户姓名
+    if(StringUtils.isNotEmpty(getPara("userName"))){//user name
         sb.append(" and name like ?");
         params.add("%" + getPara("userName") + "%");
     }
-    if(StringUtils.isNotEmpty(getPara("userSex"))){//用户性别
+    if(StringUtils.isNotEmpty(getPara("userSex"))){//user sex
         sb.append(" and sex = ?");
         params.add(getPara("userSex"));
     }
-    if(StringUtils.isNotEmpty(getPara("userStatus"))){//用户状态
+    if(StringUtils.isNotEmpty(getPara("userStatus"))){//user status
         sb.append(" and status = ?");
         params.add(getPara("userStatus"));
     }
-    //用于查询初始化化值
+    //search selected item data
     if(StringUtils.isNotEmpty(getPara("searchKey")) && StringUtils.isNotEmpty(getPara("searchValue"))){
         String value = getPara("searchValue");
         String[] valuearr = value.split(",");
