@@ -428,7 +428,7 @@ $('#selectPageProvince').selectPage({
             $.each(city, function(i,row){
                 if(row.pId === data.id) arr.push(row);
             });
-            //从城市数据中过滤省份是选择的省，并刷新城市的选择器数据
+            //update city data
             if(arr.length) $('#selectPageCity').selectPageData(arr);
         }
     },
@@ -437,7 +437,7 @@ $('#selectPageProvince').selectPage({
         $('#selectPageCity').selectPageData([]);
     }
 });
-//城市选择器的初始化，使用空数据进行初始化
+//initialization city selector, use empty data
 $('#selectPageCity').selectPage({
     showField: 'name',
     keyField: 'id',
@@ -476,8 +476,8 @@ $('#selectPageCity').selectPage({
     showField: 'name',
     keyField: 'id',
     data: 'http://aaa.com/loadCity',
-    //向服务端提交的参数中，增加已选中的
-    //设置返回-1，意为通知服务端返回空列表，初始化时使用
+    //send selected province to server side
+    //send -1 to return empty list (server side need to catch and return empty list)
     params: function(){
         var pv = $('#selectPageProvince').val();
         return {'province': pv?pv:'-1'};
@@ -488,7 +488,7 @@ $('#selectPageCity').selectPage({
 
 
 
-            <h4 class="heading">data linkage with other plugins <small>SelectMenu、bDialog</small></h4>
+            <h4 class="heading">Data linkage with other plugins <small>SelectMenu、bDialog</small></h4>
             <div class="panel panel-default">
                 <div class="panel-body">
                     <h4><a href="https://github.com/TerryZ/SelectMenu" target="_blank">SelectMenu</a></h4>
