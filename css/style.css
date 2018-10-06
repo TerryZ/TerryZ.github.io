@@ -20,7 +20,7 @@ body {
 h2 { font-size: 40px; }
 h3 { font-size: 28px; }
 
-a, a:hover {
+a, a:hover, a:visited {
     text-decoration: none;
 }
 
