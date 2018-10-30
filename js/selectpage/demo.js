@@ -91,6 +91,13 @@ $(function(){
 		multiple : true,
 		eSelect : function(data){
 			$('#callbackLog').append(data.desc + '(' + data.name + ')<br/>');
+		},
+		eTagRemove: function(datas){
+			if(datas && datas.length){
+				for(var i=0;i<datas.length;i++){
+					$('#callbackLog').append(datas[i].desc  + '(' + datas[i].name + ') item removed<br/>');
+				}
+			}
 		}
 	});
 	/*
