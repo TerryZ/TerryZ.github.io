@@ -18,6 +18,9 @@
       ],
       "@page/*": [
         "src/pages/*"
+      ],
+      "@contents/*": [
+        "src/contents/*"
       ]
     },
     "jsx": "preserve",
