@@ -10,6 +10,15 @@ export default defineConfig({
   devToolbar: {
     enabled: false
   },
+  markdown: {
+    shikiConfig: {
+      themes: {
+        light: 'github-light',
+        dark: 'github-dark'
+      },
+      wrap: true
+    }
+  },
   integrations: [vue()],
   vite: {
     plugins: [tailwindcss()]

@@ -1,3 +1,8 @@
+---
+layout: ../layouts/MarkdownLayout.astro
+title: Terry's Profile
+---
+
 # Terry
 
 A lost coder

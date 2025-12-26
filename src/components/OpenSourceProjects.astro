@@ -1,5 +1,5 @@
 ---
-import ProjectItem from '@components/Project.astro'
+import LanguageProjects from './LanguageProjects.astro'
 
 const vue3Projects = [
   { name: 'v-page', link: 'https://github.com/TerryZ/v-page' },
@@ -7,26 +7,46 @@ const vue3Projects = [
   { name: 'v-region', link: 'https://github.com/TerryZ/v-region' },
   { name: 'v-selectpage', link: 'https://github.com/TerryZ/v-selectpage' },
   { name: 'v-dialogs', link: 'https://github.com/TerryZ/v-dialogs' },
-  { name: 'v-layouts', link: 'https://github.com/TerryZ/v-layouts' },
-  { name: 'v-selectmenu', link: 'https://github.com/TerryZ/v-selectmenu' }
+  { name: 'v-selectmenu', link: 'https://github.com/TerryZ/v-selectmenu' },
+  { name: 'v-layouts', link: 'https://github.com/TerryZ/v-layouts' }
+]
+const vue2Projects = [
+  { name: 'v-page', link: 'https://github.com/TerryZ/v-page/tree/dev-vue-2' },
+  { name: 'v-dropdown', link: 'https://github.com/TerryZ/v-dropdown/tree/dev-vue-2' },
+  { name: 'v-region', link: 'https://github.com/TerryZ/v-region/tree/dev-vue2' },
+  { name: 'v-selectpage', link: 'https://github.com/TerryZ/v-selectpage/tree/dev-vue-2' },
+  { name: 'v-dialogs', link: 'https://github.com/TerryZ/v-dialogs/tree/dev-vue-2' },
+  { name: 'v-selectmenu', link: 'https://github.com/TerryZ/v-selectmenu/tree/dev-vue-2' },
+  { name: 'v-suggest', link: 'https://github.com/TerryZ/v-suggest' },
+  { name: 'v-uploader', link: 'https://github.com/TerryZ/v-uploader' },
+  { name: 'v-gallery', link: 'https://github.com/TerryZ/v-gallery' },
+  { name: 'v-playback', link: 'https://github.com/TerryZ/v-playback' }
+]
+const jqueryProjects = [
+  { name: 'bPage', link: 'https://github.com/TerryZ/bPage' },
+  { name: 'bDialog', link: 'https://github.com/TerryZ/bDialog' },
+  { name: 'bTabs', link: 'https://github.com/TerryZ/bTabs' },
+  { name: 'SelectPage', link: 'https://github.com/TerryZ/SelectPage' },
+  { name: 'SelectMenu', link: 'https://github.com/TerryZ/SelectMenu' }
 ]
 ---
 
-<div class="w-[50vw] h-screen flex flex-col justify-center items-start ps-8 bg-gray-50 gap-8">
-  <div>
-    <h3 class="font-bold">Vue 3 components</h3>
-    <div class="flex flex-nowrap gap-4">
-      {vue3Projects.map((project) => <ProjectItem name={project.name} link={project.link} />)}
-    </div>
-  </div>
-
-  <div>
-    <h3 class="font-bold">Vue 2 components</h3>
-    <div>projects</div>
-  </div>
-
-  <div>
-    <h3 class="font-bold">jQuery components</h3>
-    <div>projects</div>
-  </div>
+<div
+  class="w-[50vw] h-screen flex flex-col justify-center items-start px-8 bg-gray-50 gap-8 dark:bg-gray-950/90 font-mono"
+>
+  <LanguageProjects
+    language="Vue 3 components"
+    docsUrl="https://terryz.github.io/docs-vue3/"
+    projects={vue3Projects}
+  />
+  <LanguageProjects
+    language="Vue 2 components"
+    docsUrl="https://terryz.github.io/docs-vue/"
+    projects={vue2Projects}
+  />
+  <LanguageProjects
+    language="jQuery components"
+    docsUrl="https://terryz.github.io/docs-jq/"
+    projects={jqueryProjects}
+  />
 </div>

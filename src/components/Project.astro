@@ -3,7 +3,11 @@ const { name, link } = Astro.props
 ---
 
 <div>
-  <a href={link} target="_blank">
+  <a
+    href={link}
+    target="_blank"
+    class="text-gray-600 underline decoration-gray-300 underline-offset-4 dark:decoration-gray-700"
+  >
     <h4>{name}</h4>
   </a>
 </div>
